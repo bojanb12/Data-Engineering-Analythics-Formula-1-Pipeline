@@ -34,6 +34,8 @@ kafka_topic_driverStandings = 'f1_data_topic_driverStandings'
 kafka_topic_constructorStandings = 'f1_data_topic_constructorStandings'
 kafka_topic_raceResults = 'your_kafka_topic_raceResults'
 
+
+
 # function for postgresql engine
 def get_db_engine():
     connection = BaseHook.get_connection(postgres_conn_id)
