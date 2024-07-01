@@ -1,0 +1,389 @@
+[2024-06-12T10:40:31.801+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T10:40:31.822+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T10:40:31.830+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T10:40:31.830+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T10:40:31.840+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorStandingsDim_transform> on 2024-06-11 00:00:00+00:00
+[2024-06-12T10:40:31.846+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=467) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T10:40:31.847+0000] {standard_task_runner.py:63} INFO - Started process 481 to run task
+[2024-06-12T10:40:31.848+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorStandingsDim_transform', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp6zr8vz_k']
+[2024-06-12T10:40:31.850+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask constructorStandingsDim_transform
+[2024-06-12T10:40:31.894+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [running]> on host 52285cb34a44
+[2024-06-12T10:40:34.339+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorStandingsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T10:40:34.341+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T10:40:34.401+0000] {python.py:237} INFO - Done. Returned value was:         constructorStandingsId  ...  points_constructorstandings
+0                        24932  ...                         40.0
+232                      24777  ...                         55.0
+680                      24789  ...                         88.0
+1016                     24824  ...                         92.0
+1187                     24836  ...                         98.0
+...                        ...  ...                          ...
+513282                   27880  ...                        104.0
+513429                   26005  ...                          8.0
+514821                   26556  ...                          1.0
+515041                   25940  ...                          0.0
+517927                   26414  ...                          0.0
+
+[2398 rows x 5 columns]
+[2024-06-12T10:40:34.412+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T10:40:34.478+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorStandingsDim_transform, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T104031, end_date=20240612T104034
+[2024-06-12T10:40:34.574+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T10:40:34.596+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T11:05:02.884+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T11:05:02.906+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:05:02.915+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:05:02.915+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T11:05:02.925+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorStandingsDim_transform> on 2024-06-11 00:00:00+00:00
+[2024-06-12T11:05:02.932+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=178) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T11:05:02.933+0000] {standard_task_runner.py:63} INFO - Started process 195 to run task
+[2024-06-12T11:05:02.933+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorStandingsDim_transform', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpzmmf3ou4']
+[2024-06-12T11:05:02.935+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask constructorStandingsDim_transform
+[2024-06-12T11:05:02.981+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [running]> on host a8d8326d12bd
+[2024-06-12T11:05:05.176+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorStandingsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T11:05:05.185+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T11:05:05.293+0000] {python.py:237} INFO - Done. Returned value was:         constructorStandingsId  ...  points_constructorstandings
+0                        24932  ...                         40.0
+232                      24777  ...                         55.0
+680                      24789  ...                         88.0
+1016                     24824  ...                         92.0
+1187                     24836  ...                         98.0
+...                        ...  ...                          ...
+513282                   27880  ...                        104.0
+513429                   26005  ...                          8.0
+514821                   26556  ...                          1.0
+515041                   25940  ...                          0.0
+517927                   26414  ...                          0.0
+
+[2398 rows x 5 columns]
+[2024-06-12T11:05:05.315+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T11:05:05.470+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorStandingsDim_transform, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T110502, end_date=20240612T110505
+[2024-06-12T11:05:05.555+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T11:05:05.738+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T11:17:57.782+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T11:17:57.802+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:17:57.811+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:17:57.811+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T11:17:57.821+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorStandingsDim_transform> on 2024-06-11 00:00:00+00:00
+[2024-06-12T11:17:57.826+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=93) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T11:17:57.828+0000] {standard_task_runner.py:63} INFO - Started process 109 to run task
+[2024-06-12T11:17:57.829+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorStandingsDim_transform', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpdpjg9mpo']
+[2024-06-12T11:17:57.831+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask constructorStandingsDim_transform
+[2024-06-12T11:17:57.874+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [running]> on host e07cec2adf81
+[2024-06-12T11:18:00.035+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorStandingsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T11:18:00.037+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T11:18:00.091+0000] {python.py:237} INFO - Done. Returned value was:         constructorStandingsId  ...  points_constructorstandings
+0                        24932  ...                         40.0
+232                      24777  ...                         55.0
+680                      24789  ...                         88.0
+1016                     24824  ...                         92.0
+1187                     24836  ...                         98.0
+...                        ...  ...                          ...
+513282                   27880  ...                        104.0
+513429                   26005  ...                          8.0
+514821                   26556  ...                          1.0
+515041                   25940  ...                          0.0
+517927                   26414  ...                          0.0
+
+[2398 rows x 5 columns]
+[2024-06-12T11:18:00.108+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T11:18:00.152+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorStandingsDim_transform, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T111757, end_date=20240612T111800
+[2024-06-12T11:18:00.206+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T11:18:00.220+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T11:33:54.840+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T11:33:54.864+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:33:54.872+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:33:54.873+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T11:33:54.885+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorStandingsDim_transform> on 2024-06-11 00:00:00+00:00
+[2024-06-12T11:33:54.891+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=262) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T11:33:54.893+0000] {standard_task_runner.py:63} INFO - Started process 275 to run task
+[2024-06-12T11:33:54.893+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorStandingsDim_transform', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpr_i9kgw_']
+[2024-06-12T11:33:54.895+0000] {standard_task_runner.py:91} INFO - Job 21: Subtask constructorStandingsDim_transform
+[2024-06-12T11:33:54.941+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [running]> on host 16e46b42a87a
+[2024-06-12T11:33:58.072+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorStandingsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T11:33:58.094+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T11:33:58.137+0000] {python.py:237} INFO - Done. Returned value was:         constructorStandingsId  ...  points_constructorstandings
+0                        24932  ...                         40.0
+232                      24777  ...                         55.0
+680                      24789  ...                         88.0
+1016                     24824  ...                         92.0
+1187                     24836  ...                         98.0
+...                        ...  ...                          ...
+513282                   27880  ...                        104.0
+513429                   26005  ...                          8.0
+514821                   26556  ...                          1.0
+515041                   25940  ...                          0.0
+517927                   26414  ...                          0.0
+
+[2398 rows x 5 columns]
+[2024-06-12T11:33:58.147+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T11:33:58.223+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorStandingsDim_transform, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T113354, end_date=20240612T113358
+[2024-06-12T11:33:58.323+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T11:33:58.567+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T11:33:58.571+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T11:38:00.324+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T11:38:00.345+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:38:00.353+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:38:00.353+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T11:38:00.365+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorStandingsDim_transform> on 2024-06-11 00:00:00+00:00
+[2024-06-12T11:38:00.371+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=93) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T11:38:00.373+0000] {standard_task_runner.py:63} INFO - Started process 110 to run task
+[2024-06-12T11:38:00.373+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorStandingsDim_transform', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpk87a0csr']
+[2024-06-12T11:38:00.375+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask constructorStandingsDim_transform
+[2024-06-12T11:38:00.425+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [running]> on host 33197dc676ae
+[2024-06-12T11:38:02.496+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorStandingsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T11:38:02.500+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T11:38:02.577+0000] {python.py:237} INFO - Done. Returned value was:         constructorStandingsId  ...  points_constructorstandings
+0                        24932  ...                         40.0
+232                      24777  ...                         55.0
+680                      24789  ...                         88.0
+1016                     24824  ...                         92.0
+1187                     24836  ...                         98.0
+...                        ...  ...                          ...
+513282                   27880  ...                        104.0
+513429                   26005  ...                          8.0
+514821                   26556  ...                          1.0
+515041                   25940  ...                          0.0
+517927                   26414  ...                          0.0
+
+[2398 rows x 5 columns]
+[2024-06-12T11:38:02.593+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T11:38:02.668+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorStandingsDim_transform, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T113800, end_date=20240612T113802
+[2024-06-12T11:38:02.755+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T11:38:02.778+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T11:38:02.779+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T11:55:59.170+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T11:55:59.193+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:55:59.201+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:55:59.201+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T11:55:59.212+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorStandingsDim_transform> on 2024-06-11 00:00:00+00:00
+[2024-06-12T11:55:59.219+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=91) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T11:55:59.220+0000] {standard_task_runner.py:63} INFO - Started process 105 to run task
+[2024-06-12T11:55:59.220+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorStandingsDim_transform', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpvwto1222']
+[2024-06-12T11:55:59.222+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask constructorStandingsDim_transform
+[2024-06-12T11:55:59.266+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [running]> on host e699387b7fc9
+[2024-06-12T11:56:01.252+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorStandingsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T11:56:01.255+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T11:56:01.329+0000] {python.py:237} INFO - Done. Returned value was:         constructorStandingsId  ...  points_constructorstandings
+0                        24932  ...                         40.0
+232                      24777  ...                         55.0
+680                      24789  ...                         88.0
+1016                     24824  ...                         92.0
+1187                     24836  ...                         98.0
+...                        ...  ...                          ...
+513282                   27880  ...                        104.0
+513429                   26005  ...                          8.0
+514821                   26556  ...                          1.0
+515041                   25940  ...                          0.0
+517927                   26414  ...                          0.0
+
+[2398 rows x 5 columns]
+[2024-06-12T11:56:01.346+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T11:56:01.453+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorStandingsDim_transform, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T115559, end_date=20240612T115601
+[2024-06-12T11:56:01.522+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T11:56:01.537+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T12:08:22.285+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T12:08:22.307+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T12:08:22.314+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T12:08:22.314+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T12:08:22.328+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorStandingsDim_transform> on 2024-06-11 00:00:00+00:00
+[2024-06-12T12:08:22.334+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=141) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T12:08:22.335+0000] {standard_task_runner.py:63} INFO - Started process 163 to run task
+[2024-06-12T12:08:22.336+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorStandingsDim_transform', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpzmnodm7l']
+[2024-06-12T12:08:22.339+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask constructorStandingsDim_transform
+[2024-06-12T12:08:22.384+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [running]> on host 7c9178d6b02a
+[2024-06-12T12:08:24.800+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorStandingsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T12:08:24.806+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T12:08:24.848+0000] {python.py:237} INFO - Done. Returned value was:         constructorStandingsId  ...  points_constructorstandings
+0                        24932  ...                         40.0
+232                      24777  ...                         55.0
+680                      24789  ...                         88.0
+1016                     24824  ...                         92.0
+1187                     24836  ...                         98.0
+...                        ...  ...                          ...
+513282                   27880  ...                        104.0
+513429                   26005  ...                          8.0
+514821                   26556  ...                          1.0
+515041                   25940  ...                          0.0
+517927                   26414  ...                          0.0
+
+[2398 rows x 5 columns]
+[2024-06-12T12:08:24.861+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T12:08:24.901+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorStandingsDim_transform, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T120822, end_date=20240612T120824
+[2024-06-12T12:08:24.983+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T12:08:25.112+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T12:31:59.130+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T12:31:59.150+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T12:31:59.158+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T12:31:59.158+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T12:31:59.173+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorStandingsDim_transform> on 2024-06-11 00:00:00+00:00
+[2024-06-12T12:31:59.178+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=140) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T12:31:59.179+0000] {standard_task_runner.py:63} INFO - Started process 159 to run task
+[2024-06-12T12:31:59.180+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorStandingsDim_transform', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpp2h5kcnh']
+[2024-06-12T12:31:59.183+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask constructorStandingsDim_transform
+[2024-06-12T12:31:59.225+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [running]> on host 79a7d5bd11df
+[2024-06-12T12:32:01.569+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorStandingsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T12:32:01.571+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T12:32:01.610+0000] {python.py:237} INFO - Done. Returned value was:         constructorStandingsId  ...  points_constructorstandings
+0                        24932  ...                         40.0
+232                      24777  ...                         55.0
+680                      24789  ...                         88.0
+1016                     24824  ...                         92.0
+1187                     24836  ...                         98.0
+...                        ...  ...                          ...
+513282                   27880  ...                        104.0
+513429                   26005  ...                          8.0
+514821                   26556  ...                          1.0
+515041                   25940  ...                          0.0
+517927                   26414  ...                          0.0
+
+[2398 rows x 5 columns]
+[2024-06-12T12:32:01.622+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T12:32:01.658+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorStandingsDim_transform, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T123159, end_date=20240612T123201
+[2024-06-12T12:32:01.739+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T12:32:01.751+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T12:56:48.471+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T12:56:48.490+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T12:56:48.497+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T12:56:48.497+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T12:56:48.507+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorStandingsDim_transform> on 2024-06-11 00:00:00+00:00
+[2024-06-12T12:56:48.512+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=127) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T12:56:48.513+0000] {standard_task_runner.py:63} INFO - Started process 143 to run task
+[2024-06-12T12:56:48.514+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorStandingsDim_transform', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmptslmq8i0']
+[2024-06-12T12:56:48.515+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask constructorStandingsDim_transform
+[2024-06-12T12:56:48.562+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [running]> on host ce972f89b6ce
+[2024-06-12T12:56:50.908+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorStandingsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T12:56:50.911+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T12:56:50.940+0000] {python.py:237} INFO - Done. Returned value was:         constructorStandingsId  ...  points_constructorstandings
+0                        24932  ...                         40.0
+232                      24777  ...                         55.0
+680                      24789  ...                         88.0
+1016                     24824  ...                         92.0
+1187                     24836  ...                         98.0
+...                        ...  ...                          ...
+513282                   27880  ...                        104.0
+513429                   26005  ...                          8.0
+514821                   26556  ...                          1.0
+515041                   25940  ...                          0.0
+517927                   26414  ...                          0.0
+
+[2398 rows x 5 columns]
+[2024-06-12T12:56:50.950+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T12:56:50.981+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorStandingsDim_transform, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T125648, end_date=20240612T125650
+[2024-06-12T12:56:51.055+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T12:56:51.074+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T12:56:51.075+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T13:11:12.394+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T13:11:12.417+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T13:11:12.423+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T13:11:12.424+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T13:11:12.435+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorStandingsDim_transform> on 2024-06-11 00:00:00+00:00
+[2024-06-12T13:11:12.441+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=100) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T13:11:12.445+0000] {standard_task_runner.py:63} INFO - Started process 115 to run task
+[2024-06-12T13:11:12.447+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorStandingsDim_transform', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmprlst093e']
+[2024-06-12T13:11:12.450+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask constructorStandingsDim_transform
+[2024-06-12T13:11:12.500+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [running]> on host 75496fb8ac8a
+[2024-06-12T13:11:15.366+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorStandingsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T13:11:15.389+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T13:11:15.464+0000] {python.py:237} INFO - Done. Returned value was:         constructorStandingsId  ...  points_constructorstandings
+0                        24932  ...                         40.0
+232                      24777  ...                         55.0
+680                      24789  ...                         88.0
+1016                     24824  ...                         92.0
+1187                     24836  ...                         98.0
+...                        ...  ...                          ...
+513282                   27880  ...                        104.0
+513429                   26005  ...                          8.0
+514821                   26556  ...                          1.0
+515041                   25940  ...                          0.0
+517927                   26414  ...                          0.0
+
+[2398 rows x 5 columns]
+[2024-06-12T13:11:15.475+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T13:11:15.526+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorStandingsDim_transform, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T131112, end_date=20240612T131115
+[2024-06-12T13:11:15.626+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T13:11:15.906+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T13:24:11.454+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T13:24:11.476+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T13:24:11.484+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T13:24:11.484+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T13:24:11.498+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorStandingsDim_transform> on 2024-06-11 00:00:00+00:00
+[2024-06-12T13:24:11.503+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=109) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T13:24:11.505+0000] {standard_task_runner.py:63} INFO - Started process 126 to run task
+[2024-06-12T13:24:11.505+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorStandingsDim_transform', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpsr212dv1']
+[2024-06-12T13:24:11.507+0000] {standard_task_runner.py:91} INFO - Job 13: Subtask constructorStandingsDim_transform
+[2024-06-12T13:24:11.569+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [running]> on host 7ad193764747
+[2024-06-12T13:24:13.824+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorStandingsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T13:24:13.826+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T13:24:13.856+0000] {python.py:237} INFO - Done. Returned value was:         constructorStandingsId  ...  points_constructorstandings
+0                        24932  ...                         40.0
+232                      24777  ...                         55.0
+680                      24789  ...                         88.0
+1016                     24824  ...                         92.0
+1187                     24836  ...                         98.0
+...                        ...  ...                          ...
+513282                   27880  ...                        104.0
+513429                   26005  ...                          8.0
+514821                   26556  ...                          1.0
+515041                   25940  ...                          0.0
+517927                   26414  ...                          0.0
+
+[2398 rows x 5 columns]
+[2024-06-12T13:24:13.866+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T13:24:13.897+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorStandingsDim_transform, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T132411, end_date=20240612T132413
+[2024-06-12T13:24:13.968+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T13:24:13.991+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T13:24:13.992+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T13:31:18.247+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T13:31:18.269+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T13:31:18.279+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T13:31:18.280+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T13:31:18.291+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorStandingsDim_transform> on 2024-06-11 00:00:00+00:00
+[2024-06-12T13:31:18.298+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=94) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T13:31:18.299+0000] {standard_task_runner.py:63} INFO - Started process 108 to run task
+[2024-06-12T13:31:18.300+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorStandingsDim_transform', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpiah73fvi']
+[2024-06-12T13:31:18.303+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask constructorStandingsDim_transform
+[2024-06-12T13:31:18.351+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorStandingsDim_transform scheduled__2024-06-11T00:00:00+00:00 [running]> on host c05e5b3efdbc
+[2024-06-12T13:31:20.574+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorStandingsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T13:31:20.576+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T13:31:20.633+0000] {python.py:237} INFO - Done. Returned value was:         constructorStandingsId  ...  points_constructorstandings
+0                        24932  ...                         40.0
+232                      24777  ...                         55.0
+680                      24789  ...                         88.0
+1016                     24824  ...                         92.0
+1187                     24836  ...                         98.0
+...                        ...  ...                          ...
+513282                   27880  ...                        104.0
+513429                   26005  ...                          8.0
+514821                   26556  ...                          1.0
+515041                   25940  ...                          0.0
+517927                   26414  ...                          0.0
+
+[2398 rows x 5 columns]
+[2024-06-12T13:31:20.646+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T13:31:20.698+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorStandingsDim_transform, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T133118, end_date=20240612T133120
+[2024-06-12T13:31:20.794+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T13:31:20.820+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T13:31:20.822+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

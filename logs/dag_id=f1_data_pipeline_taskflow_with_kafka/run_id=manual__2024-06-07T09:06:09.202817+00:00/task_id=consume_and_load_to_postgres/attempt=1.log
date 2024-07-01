@@ -1,0 +1,34 @@
+[2024-06-07T09:06:12.810+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T09:06:12.827+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.consume_and_load_to_postgres manual__2024-06-07T09:06:09.202817+00:00 [queued]>
+[2024-06-07T09:06:12.833+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.consume_and_load_to_postgres manual__2024-06-07T09:06:09.202817+00:00 [queued]>
+[2024-06-07T09:06:12.833+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T09:06:12.842+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): consume_and_load_to_postgres> on 2024-06-07 09:06:09.202817+00:00
+[2024-06-07T09:06:12.846+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=218) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T09:06:12.847+0000] {standard_task_runner.py:63} INFO - Started process 220 to run task
+[2024-06-07T09:06:12.848+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow_with_kafka', 'consume_and_load_to_postgres', 'manual__2024-06-07T09:06:09.202817+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/kafkaProduce.py', '--cfg-path', '/tmp/tmpn22b0otx']
+[2024-06-07T09:06:12.850+0000] {standard_task_runner.py:91} INFO - Job 81: Subtask consume_and_load_to_postgres
+[2024-06-07T09:06:12.882+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow_with_kafka.consume_and_load_to_postgres manual__2024-06-07T09:06:09.202817+00:00 [running]> on host 9459748fcbed
+[2024-06-07T09:06:12.935+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow_with_kafka' AIRFLOW_CTX_TASK_ID='consume_and_load_to_postgres' AIRFLOW_CTX_EXECUTION_DATE='2024-06-07T09:06:09.202817+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-07T09:06:09.202817+00:00'
+[2024-06-07T09:06:12.935+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T09:06:12.937+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.6', 9092)]>: connecting to kafka:9092 [('172.18.0.6', 9092) IPv4]
+[2024-06-07T09:06:12.937+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-07T09:06:12.938+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.6', 9092)]>: Connection complete.
+[2024-06-07T09:06:13.040+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-07T09:06:13.041+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-07T09:06:13.042+0000] {consumer.py:122} WARNING - group_id is None: disabling auto-commit.
+[2024-06-07T09:06:13.042+0000] {subscription_state.py:167} INFO - Updating subscribed topics to: ('f1_data_topic',)
+[2024-06-07T09:06:13.043+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-07T09:06:13.044+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-07T09:06:13.046+0000] {subscription_state.py:253} INFO - Updated partition assignment: [('f1_data_topic', 0)]
+[2024-06-07T09:06:13.048+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.6', 9092)]>: connecting to kafka:9092 [('172.18.0.6', 9092) IPv4]
+[2024-06-07T09:06:13.048+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.6', 9092)]>: Connection complete.
+[2024-06-07T09:06:13.049+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.6', 9092)]>: Closing connection. 
+[2024-06-07T09:12:56.864+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-06-07T09:12:56.865+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T09:12:56.866+0000] {process_utils.py:132} INFO - Sending 15 to group 220. PIDs of all processes in the group: [220]
+[2024-06-07T09:12:56.866+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 220
+[2024-06-07T09:12:56.866+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-06-07T09:12:56.866+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T09:12:56.892+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=220, status='terminated', exitcode=0, started='09:06:11') (220) terminated with exit code 0

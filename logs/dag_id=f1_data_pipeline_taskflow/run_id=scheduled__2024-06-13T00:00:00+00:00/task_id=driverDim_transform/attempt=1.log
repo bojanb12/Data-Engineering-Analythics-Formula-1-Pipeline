@@ -1,0 +1,744 @@
+[2024-06-14T07:29:35.472+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T07:29:35.490+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T07:29:35.499+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T07:29:35.500+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T07:29:35.511+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T07:29:35.516+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=498) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T07:29:35.518+0000] {standard_task_runner.py:63} INFO - Started process 516 to run task
+[2024-06-14T07:29:35.519+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpvg3bdffm']
+[2024-06-14T07:29:35.520+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask driverDim_transform
+[2024-06-14T07:29:35.566+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host aece75d0a06d
+[2024-06-14T07:29:38.070+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T07:29:38.072+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T07:29:38.162+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T07:29:38.185+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T07:29:38.225+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T072935, end_date=20240614T072938
+[2024-06-14T07:29:38.513+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T07:29:38.539+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T07:29:38.541+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T07:56:09.184+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T07:56:09.210+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T07:56:09.221+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T07:56:09.222+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T07:56:09.236+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T07:56:09.244+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=100) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T07:56:09.245+0000] {standard_task_runner.py:63} INFO - Started process 118 to run task
+[2024-06-14T07:56:09.246+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmprw0w6rhv']
+[2024-06-14T07:56:09.250+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask driverDim_transform
+[2024-06-14T07:56:09.303+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 22673327f9c1
+[2024-06-14T07:56:12.405+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T07:56:12.457+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T07:56:12.605+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T07:56:12.617+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T07:56:12.658+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T075609, end_date=20240614T075612
+[2024-06-14T07:56:12.731+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T07:56:13.057+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T08:03:02.053+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T08:03:02.075+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:03:02.084+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:03:02.084+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T08:03:02.096+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T08:03:02.102+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=133) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T08:03:02.103+0000] {standard_task_runner.py:63} INFO - Started process 151 to run task
+[2024-06-14T08:03:02.104+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpitaoydy5']
+[2024-06-14T08:03:02.107+0000] {standard_task_runner.py:91} INFO - Job 16: Subtask driverDim_transform
+[2024-06-14T08:03:02.171+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 73204506bf77
+[2024-06-14T08:03:05.080+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T08:03:05.094+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T08:03:05.201+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T08:03:05.223+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T08:03:05.261+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T080302, end_date=20240614T080305
+[2024-06-14T08:03:05.326+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T08:03:05.531+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T08:04:58.265+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T08:04:58.289+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:04:58.298+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:04:58.298+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T08:04:58.309+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T08:04:58.314+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=99) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T08:04:58.316+0000] {standard_task_runner.py:63} INFO - Started process 117 to run task
+[2024-06-14T08:04:58.317+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpjuui7i8l']
+[2024-06-14T08:04:58.319+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask driverDim_transform
+[2024-06-14T08:04:58.367+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 75ebf4a056df
+[2024-06-14T08:05:00.661+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T08:05:00.663+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T08:05:00.752+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T08:05:00.772+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T08:05:00.820+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T080458, end_date=20240614T080500
+[2024-06-14T08:05:00.876+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T08:05:00.935+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T08:33:24.778+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T08:33:24.799+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:33:24.807+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:33:24.807+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T08:33:24.821+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T08:33:24.828+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=115) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T08:33:24.829+0000] {standard_task_runner.py:63} INFO - Started process 138 to run task
+[2024-06-14T08:33:24.830+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpy1d4_c45']
+[2024-06-14T08:33:24.832+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask driverDim_transform
+[2024-06-14T08:33:24.887+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 02396e2d7ca5
+[2024-06-14T08:33:27.574+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T08:33:27.588+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T08:33:27.678+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T08:33:27.693+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T08:33:27.726+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T083324, end_date=20240614T083327
+[2024-06-14T08:33:27.815+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T08:33:28.075+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T08:33:28.082+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T08:56:27.876+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T08:56:27.897+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:56:27.906+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:56:27.906+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T08:56:27.917+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T08:56:27.926+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T08:56:27.928+0000] {standard_task_runner.py:63} INFO - Started process 213 to run task
+[2024-06-14T08:56:27.926+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpkrkmn9wc']
+[2024-06-14T08:56:27.931+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask driverDim_transform
+[2024-06-14T08:56:27.997+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 78c0b56418d0
+[2024-06-14T08:56:30.362+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T08:56:30.369+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T08:56:30.462+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T08:56:30.478+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T08:56:30.551+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T085627, end_date=20240614T085630
+[2024-06-14T08:56:30.642+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T08:56:30.862+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T08:56:30.868+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T09:05:18.128+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T09:05:18.311+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T09:05:18.319+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T09:05:18.320+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T09:05:18.331+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T09:05:18.337+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=137) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T09:05:18.338+0000] {standard_task_runner.py:63} INFO - Started process 157 to run task
+[2024-06-14T09:05:18.338+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpm9x5jdpe']
+[2024-06-14T09:05:18.340+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask driverDim_transform
+[2024-06-14T09:05:18.402+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 2998375d03a6
+[2024-06-14T09:05:20.830+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T09:05:20.833+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T09:05:20.935+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T09:05:20.958+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T09:05:20.984+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T090518, end_date=20240614T090520
+[2024-06-14T09:05:21.071+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T09:05:21.080+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T09:27:20.562+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T09:27:20.807+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T09:27:20.816+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T09:27:20.816+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T09:27:20.846+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T09:27:20.852+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=129) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T09:27:20.854+0000] {standard_task_runner.py:63} INFO - Started process 146 to run task
+[2024-06-14T09:27:20.855+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp5o2heeja']
+[2024-06-14T09:27:20.858+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask driverDim_transform
+[2024-06-14T09:27:20.920+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 05f8e2de7bcc
+[2024-06-14T09:27:23.720+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T09:27:23.740+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T09:27:23.871+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T09:27:23.894+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T09:27:23.944+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T092720, end_date=20240614T092723
+[2024-06-14T09:27:24.019+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T09:27:24.182+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T10:47:06.524+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T10:47:06.547+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T10:47:06.556+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T10:47:06.556+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T10:47:06.575+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T10:47:06.583+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=116) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T10:47:06.584+0000] {standard_task_runner.py:63} INFO - Started process 132 to run task
+[2024-06-14T10:47:06.585+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpi4oskh5i']
+[2024-06-14T10:47:06.587+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask driverDim_transform
+[2024-06-14T10:47:06.652+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 3182b36e244b
+[2024-06-14T10:47:10.690+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T10:47:10.692+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T10:47:10.766+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T10:47:10.784+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T10:47:10.866+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T104706, end_date=20240614T104710
+[2024-06-14T10:47:10.979+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T10:47:11.014+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T10:47:11.016+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T10:51:53.885+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T10:51:53.910+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T10:51:53.917+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T10:51:53.918+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T10:51:53.933+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T10:51:53.939+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=162) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T10:51:53.941+0000] {standard_task_runner.py:63} INFO - Started process 183 to run task
+[2024-06-14T10:51:53.941+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpp62g3jf6']
+[2024-06-14T10:51:53.943+0000] {standard_task_runner.py:91} INFO - Job 12: Subtask driverDim_transform
+[2024-06-14T10:51:53.997+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host e391edf20c31
+[2024-06-14T10:51:57.236+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T10:51:57.238+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T10:51:57.308+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T10:51:57.324+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T10:51:57.357+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T105153, end_date=20240614T105157
+[2024-06-14T10:51:57.407+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T10:51:57.416+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T10:55:37.838+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T10:55:37.859+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T10:55:37.867+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T10:55:37.867+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T10:55:37.880+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T10:55:37.886+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=100) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T10:55:37.889+0000] {standard_task_runner.py:63} INFO - Started process 117 to run task
+[2024-06-14T10:55:37.890+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpkai6_ztl']
+[2024-06-14T10:55:37.893+0000] {standard_task_runner.py:91} INFO - Job 12: Subtask driverDim_transform
+[2024-06-14T10:55:37.959+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host c9e393690dc3
+[2024-06-14T10:55:40.558+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T10:55:40.575+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T10:55:40.658+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T10:55:40.673+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T10:55:40.718+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T105537, end_date=20240614T105540
+[2024-06-14T10:55:40.812+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T10:55:40.967+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T11:03:44.324+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T11:03:44.346+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:03:44.355+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:03:44.356+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T11:03:44.366+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T11:03:44.372+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=155) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T11:03:44.373+0000] {standard_task_runner.py:63} INFO - Started process 172 to run task
+[2024-06-14T11:03:44.374+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpmhmsdpcc']
+[2024-06-14T11:03:44.377+0000] {standard_task_runner.py:91} INFO - Job 13: Subtask driverDim_transform
+[2024-06-14T11:03:44.426+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host cfca011b7e89
+[2024-06-14T11:03:47.389+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T11:03:47.392+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T11:03:47.475+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T11:03:47.489+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T11:03:47.529+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T110344, end_date=20240614T110347
+[2024-06-14T11:03:47.632+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T11:03:47.643+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T11:08:15.398+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T11:08:15.418+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:08:15.426+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:08:15.426+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T11:08:15.441+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T11:08:15.447+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=117) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T11:08:15.448+0000] {standard_task_runner.py:63} INFO - Started process 130 to run task
+[2024-06-14T11:08:15.449+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpkpw835e5']
+[2024-06-14T11:08:15.451+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask driverDim_transform
+[2024-06-14T11:08:15.526+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 6e52e947d844
+[2024-06-14T11:08:18.114+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T11:08:18.118+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T11:08:18.247+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T11:08:18.264+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T11:08:18.297+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T110815, end_date=20240614T110818
+[2024-06-14T11:08:18.387+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T11:08:18.400+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T11:15:47.500+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T11:15:47.523+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:15:47.532+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:15:47.532+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T11:15:47.546+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T11:15:47.552+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=124) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T11:15:47.554+0000] {standard_task_runner.py:63} INFO - Started process 142 to run task
+[2024-06-14T11:15:47.554+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpw39gws7m']
+[2024-06-14T11:15:47.557+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask driverDim_transform
+[2024-06-14T11:15:47.621+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 82d779af27dd
+[2024-06-14T11:15:52.739+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T11:15:52.741+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T11:15:52.857+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T11:15:52.881+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T11:15:52.927+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T111547, end_date=20240614T111552
+[2024-06-14T11:15:53.065+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T11:15:53.074+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T11:21:09.358+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T11:21:09.383+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:21:09.391+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:21:09.392+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T11:21:09.406+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T11:21:09.412+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=99) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T11:21:09.414+0000] {standard_task_runner.py:63} INFO - Started process 117 to run task
+[2024-06-14T11:21:09.414+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpwv_paz_1']
+[2024-06-14T11:21:09.416+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask driverDim_transform
+[2024-06-14T11:21:09.468+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 385858123cc9
+[2024-06-14T11:21:11.942+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T11:21:11.964+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T11:21:12.045+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T11:21:12.060+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T11:21:12.094+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T112109, end_date=20240614T112112
+[2024-06-14T11:21:12.158+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T11:21:12.350+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T11:26:11.437+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T11:26:11.458+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:26:11.467+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:26:11.467+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T11:26:11.478+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T11:26:11.485+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=133) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T11:26:11.487+0000] {standard_task_runner.py:63} INFO - Started process 145 to run task
+[2024-06-14T11:26:11.487+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpgk0p2fzl']
+[2024-06-14T11:26:11.489+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask driverDim_transform
+[2024-06-14T11:26:11.551+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 3da481cb81cd
+[2024-06-14T11:26:15.200+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T11:26:15.201+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T11:26:15.294+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T11:26:15.306+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T11:26:15.334+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T112611, end_date=20240614T112615
+[2024-06-14T11:26:15.378+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T11:26:15.390+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T11:30:44.278+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T11:30:44.301+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:30:44.308+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:30:44.309+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T11:30:44.327+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T11:30:44.333+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=113) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T11:30:44.335+0000] {standard_task_runner.py:63} INFO - Started process 124 to run task
+[2024-06-14T11:30:44.335+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp7praknr0']
+[2024-06-14T11:30:44.337+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask driverDim_transform
+[2024-06-14T11:30:44.390+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 397171faad63
+[2024-06-14T11:30:47.718+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T11:30:47.720+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T11:30:47.822+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T11:30:47.837+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T11:30:47.865+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T113044, end_date=20240614T113047
+[2024-06-14T11:30:47.983+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T11:30:48.012+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T11:30:48.014+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T11:35:24.656+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T11:35:24.674+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:35:24.682+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:35:24.682+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T11:35:24.694+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T11:35:24.699+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=107) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T11:35:24.701+0000] {standard_task_runner.py:63} INFO - Started process 123 to run task
+[2024-06-14T11:35:24.701+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpnrxk29b3']
+[2024-06-14T11:35:24.703+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask driverDim_transform
+[2024-06-14T11:35:24.751+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host d0ca0375d865
+[2024-06-14T11:35:26.673+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T11:35:26.674+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T11:35:26.749+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T11:35:26.765+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T11:35:26.790+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T113524, end_date=20240614T113526
+[2024-06-14T11:35:26.893+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T11:35:26.919+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T11:35:26.921+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T11:42:45.757+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T11:42:45.780+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:42:45.790+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T11:42:45.790+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T11:42:45.806+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T11:42:45.812+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=115) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T11:42:45.814+0000] {standard_task_runner.py:63} INFO - Started process 129 to run task
+[2024-06-14T11:42:45.814+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpvbn6lf5m']
+[2024-06-14T11:42:45.817+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask driverDim_transform
+[2024-06-14T11:42:45.878+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host aae9b98b8a12
+[2024-06-14T11:42:47.952+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T11:42:47.954+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T11:42:48.025+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T11:42:48.037+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T11:42:48.063+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T114245, end_date=20240614T114248
+[2024-06-14T11:42:48.134+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T11:42:48.144+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T12:17:18.154+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T12:17:18.173+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T12:17:18.182+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T12:17:18.182+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T12:17:18.193+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T12:17:18.199+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=105) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T12:17:18.200+0000] {standard_task_runner.py:63} INFO - Started process 122 to run task
+[2024-06-14T12:17:18.201+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmph9k_ro8m']
+[2024-06-14T12:17:18.202+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask driverDim_transform
+[2024-06-14T12:17:18.256+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host e4ecbb11494f
+[2024-06-14T12:17:20.011+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T12:17:20.013+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T12:17:20.088+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T12:17:20.109+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T12:17:20.136+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T121718, end_date=20240614T121720
+[2024-06-14T12:17:20.210+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T12:17:20.228+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T12:17:20.229+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T12:44:49.136+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T12:44:49.312+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T12:44:49.319+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T12:44:49.319+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T12:44:49.329+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T12:44:49.335+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=101) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T12:44:49.336+0000] {standard_task_runner.py:63} INFO - Started process 114 to run task
+[2024-06-14T12:44:49.336+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpp02hocr6']
+[2024-06-14T12:44:49.338+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask driverDim_transform
+[2024-06-14T12:44:49.380+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 23fced7d152c
+[2024-06-14T12:44:51.150+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T12:44:51.153+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T12:44:51.253+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T12:44:51.265+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T12:44:51.291+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T124449, end_date=20240614T124451
+[2024-06-14T12:44:51.345+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T12:44:51.353+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T13:32:22.610+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T13:32:22.778+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T13:32:22.787+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T13:32:22.788+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T13:32:22.798+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T13:32:22.804+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=92) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T13:32:22.805+0000] {standard_task_runner.py:63} INFO - Started process 111 to run task
+[2024-06-14T13:32:22.805+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp9prpiq90']
+[2024-06-14T13:32:22.807+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask driverDim_transform
+[2024-06-14T13:32:22.850+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 5a14b9f42b04
+[2024-06-14T13:32:24.730+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T13:32:24.734+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T13:32:24.800+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T13:32:24.820+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T13:32:24.846+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T133222, end_date=20240614T133224
+[2024-06-14T13:32:24.909+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T13:32:24.927+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T13:32:24.928+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T13:56:35.650+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T13:56:35.669+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T13:56:35.676+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T13:56:35.676+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T13:56:35.688+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverDim_transform> on 2024-06-13 00:00:00+00:00
+[2024-06-14T13:56:35.693+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=118) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T13:56:35.694+0000] {standard_task_runner.py:63} INFO - Started process 138 to run task
+[2024-06-14T13:56:35.694+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverDim_transform', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmprq4wjszd']
+[2024-06-14T13:56:35.696+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask driverDim_transform
+[2024-06-14T13:56:35.738+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverDim_transform scheduled__2024-06-13T00:00:00+00:00 [running]> on host 32b182b24782
+[2024-06-14T13:56:37.608+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T13:56:37.610+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T13:56:37.695+0000] {python.py:237} INFO - Done. Returned value was:         driverId  ...                                                url
+0             18  ...         http://en.wikipedia.org/wiki/Jenson_Button
+116            1  ...        http://en.wikipedia.org/wiki/Lewis_Hamilton
+3566         815  ...     http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+7366         825  ...       http://en.wikipedia.org/wiki/Kevin_Magnussen
+10801          4  ...       http://en.wikipedia.org/wiki/Fernando_Alonso
+...          ...  ...                                                ...
+297735       834  ...  http://en.wikipedia.org/wiki/Alexander_Rossi_%...
+346416       829  ...          http://en.wikipedia.org/wiki/Will_Stevens
+441722        39  ...    http://en.wikipedia.org/wiki/Narain_Karthikeyan
+442485       833  ...         http://en.wikipedia.org/wiki/Roberto_Merhi
+442957       837  ...          http://en.wikipedia.org/wiki/Rio_Haryanto
+
+[65 rows x 9 columns]
+[2024-06-14T13:56:37.710+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T13:56:37.739+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverDim_transform, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T135635, end_date=20240614T135637
+[2024-06-14T13:56:37.791+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T13:56:37.801+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

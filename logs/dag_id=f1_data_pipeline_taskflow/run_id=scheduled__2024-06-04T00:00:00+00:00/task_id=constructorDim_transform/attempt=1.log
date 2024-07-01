@@ -1,0 +1,452 @@
+[2024-06-05T07:10:00.145+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-05T07:10:00.166+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T07:10:00.173+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T07:10:00.173+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-05T07:10:00.184+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorDim_transform> on 2024-06-04 00:00:00+00:00
+[2024-06-05T07:10:00.189+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=161) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-05T07:10:00.190+0000] {standard_task_runner.py:63} INFO - Started process 181 to run task
+[2024-06-05T07:10:00.190+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorDim_transform', 'scheduled__2024-06-04T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp6zcdytds']
+[2024-06-05T07:10:00.192+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask constructorDim_transform
+[2024-06-05T07:10:00.237+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [running]> on host add871a599c8
+[2024-06-05T07:10:02.168+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-04T00:00:00+00:00'
+[2024-06-05T07:10:02.171+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-05T07:10:02.305+0000] {python.py:237} INFO - Done. Returned value was:         constructorId  ...                                   url_constructors
+0                   1  ...               http://en.wikipedia.org/wiki/McLaren
+28696               9  ...       http://en.wikipedia.org/wiki/Red_Bull_Racing
+73996               6  ...      http://en.wikipedia.org/wiki/Scuderia_Ferrari
+118525            117  ...  http://en.wikipedia.org/wiki/Aston_Martin_in_F...
+125663            131  ...  http://en.wikipedia.org/wiki/Mercedes-Benz_in_...
+173941            214  ...        http://en.wikipedia.org/wiki/Alpine_F1_Team
+181307             15  ...                http://en.wikipedia.org/wiki/Sauber
+191700            207  ...           http://en.wikipedia.org/wiki/Caterham_F1
+193332            208  ...              http://en.wikipedia.org/wiki/Lotus_F1
+203641             51  ...  http://en.wikipedia.org/wiki/Alfa_Romeo_in_For...
+211897             10  ...  http://en.wikipedia.org/wiki/Racing_Point_Forc...
+229622            211  ...  http://en.wikipedia.org/wiki/Racing_Point_F1_Team
+233527              5  ...   http://en.wikipedia.org/wiki/Scuderia_Toro_Rosso
+248454              4  ...  http://en.wikipedia.org/wiki/Renault_in_Formul...
+255351            213  ...   http://en.wikipedia.org/wiki/Scuderia_AlphaTauri
+263628              3  ...  http://en.wikipedia.org/wiki/Williams_Grand_Pr...
+286300            206  ...           http://en.wikipedia.org/wiki/Marussia_F1
+287718            210  ...          http://en.wikipedia.org/wiki/Haas_F1_Team
+297680            164  ...       http://en.wikipedia.org/wiki/Hispania_Racing
+297735            209  ...      http://en.wikipedia.org/wiki/Manor_Motorsport
+
+[20 rows x 5 columns]
+[2024-06-05T07:10:02.316+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-05T07:10:02.339+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorDim_transform, run_id=scheduled__2024-06-04T00:00:00+00:00, execution_date=20240604T000000, start_date=20240605T071000, end_date=20240605T071002
+[2024-06-05T07:10:02.390+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-05T07:10:02.409+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-05T07:10:02.410+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-05T09:14:50.685+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-05T09:14:50.711+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T09:14:50.719+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T09:14:50.719+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-05T09:14:50.730+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorDim_transform> on 2024-06-04 00:00:00+00:00
+[2024-06-05T09:14:50.737+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=99) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-05T09:14:50.738+0000] {standard_task_runner.py:63} INFO - Started process 112 to run task
+[2024-06-05T09:14:50.738+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorDim_transform', 'scheduled__2024-06-04T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp21htmeoe']
+[2024-06-05T09:14:50.740+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask constructorDim_transform
+[2024-06-05T09:14:50.790+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [running]> on host b40b31c0938c
+[2024-06-05T09:14:54.257+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-04T00:00:00+00:00'
+[2024-06-05T09:14:54.265+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-05T09:14:54.384+0000] {python.py:237} INFO - Done. Returned value was:         constructorId  ...                                   url_constructors
+0                   1  ...               http://en.wikipedia.org/wiki/McLaren
+28696               9  ...       http://en.wikipedia.org/wiki/Red_Bull_Racing
+73996               6  ...      http://en.wikipedia.org/wiki/Scuderia_Ferrari
+118525            117  ...  http://en.wikipedia.org/wiki/Aston_Martin_in_F...
+125663            131  ...  http://en.wikipedia.org/wiki/Mercedes-Benz_in_...
+173941            214  ...        http://en.wikipedia.org/wiki/Alpine_F1_Team
+181307             15  ...                http://en.wikipedia.org/wiki/Sauber
+191700            207  ...           http://en.wikipedia.org/wiki/Caterham_F1
+193332            208  ...              http://en.wikipedia.org/wiki/Lotus_F1
+203641             51  ...  http://en.wikipedia.org/wiki/Alfa_Romeo_in_For...
+211897             10  ...  http://en.wikipedia.org/wiki/Racing_Point_Forc...
+229622            211  ...  http://en.wikipedia.org/wiki/Racing_Point_F1_Team
+233527              5  ...   http://en.wikipedia.org/wiki/Scuderia_Toro_Rosso
+248454              4  ...  http://en.wikipedia.org/wiki/Renault_in_Formul...
+255351            213  ...   http://en.wikipedia.org/wiki/Scuderia_AlphaTauri
+263628              3  ...  http://en.wikipedia.org/wiki/Williams_Grand_Pr...
+286300            206  ...           http://en.wikipedia.org/wiki/Marussia_F1
+287718            210  ...          http://en.wikipedia.org/wiki/Haas_F1_Team
+297680            164  ...       http://en.wikipedia.org/wiki/Hispania_Racing
+297735            209  ...      http://en.wikipedia.org/wiki/Manor_Motorsport
+
+[20 rows x 5 columns]
+[2024-06-05T09:14:54.395+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-05T09:14:54.425+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorDim_transform, run_id=scheduled__2024-06-04T00:00:00+00:00, execution_date=20240604T000000, start_date=20240605T091450, end_date=20240605T091454
+[2024-06-05T09:14:54.520+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-05T09:14:54.553+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-05T09:57:20.198+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-05T09:57:20.217+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T09:57:20.224+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T09:57:20.224+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-05T09:57:20.237+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorDim_transform> on 2024-06-04 00:00:00+00:00
+[2024-06-05T09:57:20.242+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=101) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-05T09:57:20.243+0000] {standard_task_runner.py:63} INFO - Started process 119 to run task
+[2024-06-05T09:57:20.245+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorDim_transform', 'scheduled__2024-06-04T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp05zhqpd7']
+[2024-06-05T09:57:20.247+0000] {standard_task_runner.py:91} INFO - Job 12: Subtask constructorDim_transform
+[2024-06-05T09:57:20.298+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [running]> on host 4404d6f11afd
+[2024-06-05T09:57:22.457+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-04T00:00:00+00:00'
+[2024-06-05T09:57:22.459+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-05T09:57:22.568+0000] {python.py:237} INFO - Done. Returned value was:         constructorId  ...                                   url_constructors
+0                   1  ...               http://en.wikipedia.org/wiki/McLaren
+28696               9  ...       http://en.wikipedia.org/wiki/Red_Bull_Racing
+73996               6  ...      http://en.wikipedia.org/wiki/Scuderia_Ferrari
+118525            117  ...  http://en.wikipedia.org/wiki/Aston_Martin_in_F...
+125663            131  ...  http://en.wikipedia.org/wiki/Mercedes-Benz_in_...
+173941            214  ...        http://en.wikipedia.org/wiki/Alpine_F1_Team
+181307             15  ...                http://en.wikipedia.org/wiki/Sauber
+191700            207  ...           http://en.wikipedia.org/wiki/Caterham_F1
+193332            208  ...              http://en.wikipedia.org/wiki/Lotus_F1
+203641             51  ...  http://en.wikipedia.org/wiki/Alfa_Romeo_in_For...
+211897             10  ...  http://en.wikipedia.org/wiki/Racing_Point_Forc...
+229622            211  ...  http://en.wikipedia.org/wiki/Racing_Point_F1_Team
+233527              5  ...   http://en.wikipedia.org/wiki/Scuderia_Toro_Rosso
+248454              4  ...  http://en.wikipedia.org/wiki/Renault_in_Formul...
+255351            213  ...   http://en.wikipedia.org/wiki/Scuderia_AlphaTauri
+263628              3  ...  http://en.wikipedia.org/wiki/Williams_Grand_Pr...
+286300            206  ...           http://en.wikipedia.org/wiki/Marussia_F1
+287718            210  ...          http://en.wikipedia.org/wiki/Haas_F1_Team
+297680            164  ...       http://en.wikipedia.org/wiki/Hispania_Racing
+297735            209  ...      http://en.wikipedia.org/wiki/Manor_Motorsport
+
+[20 rows x 5 columns]
+[2024-06-05T09:57:22.577+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-05T09:57:22.605+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorDim_transform, run_id=scheduled__2024-06-04T00:00:00+00:00, execution_date=20240604T000000, start_date=20240605T095720, end_date=20240605T095722
+[2024-06-05T09:57:22.666+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-05T09:57:22.676+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-05T10:05:46.508+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-05T10:05:46.526+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T10:05:46.533+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T10:05:46.534+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-05T10:05:46.545+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorDim_transform> on 2024-06-04 00:00:00+00:00
+[2024-06-05T10:05:46.550+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=162) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-05T10:05:46.552+0000] {standard_task_runner.py:63} INFO - Started process 176 to run task
+[2024-06-05T10:05:46.552+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorDim_transform', 'scheduled__2024-06-04T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpjjsmsr09']
+[2024-06-05T10:05:46.554+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask constructorDim_transform
+[2024-06-05T10:05:46.600+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [running]> on host c82c00099500
+[2024-06-05T10:05:48.605+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-04T00:00:00+00:00'
+[2024-06-05T10:05:48.607+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-05T10:05:48.736+0000] {python.py:237} INFO - Done. Returned value was:         constructorId  ...                                   url_constructors
+0                   1  ...               http://en.wikipedia.org/wiki/McLaren
+28696               9  ...       http://en.wikipedia.org/wiki/Red_Bull_Racing
+73996               6  ...      http://en.wikipedia.org/wiki/Scuderia_Ferrari
+118525            117  ...  http://en.wikipedia.org/wiki/Aston_Martin_in_F...
+125663            131  ...  http://en.wikipedia.org/wiki/Mercedes-Benz_in_...
+173941            214  ...        http://en.wikipedia.org/wiki/Alpine_F1_Team
+181307             15  ...                http://en.wikipedia.org/wiki/Sauber
+191700            207  ...           http://en.wikipedia.org/wiki/Caterham_F1
+193332            208  ...              http://en.wikipedia.org/wiki/Lotus_F1
+203641             51  ...  http://en.wikipedia.org/wiki/Alfa_Romeo_in_For...
+211897             10  ...  http://en.wikipedia.org/wiki/Racing_Point_Forc...
+229622            211  ...  http://en.wikipedia.org/wiki/Racing_Point_F1_Team
+233527              5  ...   http://en.wikipedia.org/wiki/Scuderia_Toro_Rosso
+248454              4  ...  http://en.wikipedia.org/wiki/Renault_in_Formul...
+255351            213  ...   http://en.wikipedia.org/wiki/Scuderia_AlphaTauri
+263628              3  ...  http://en.wikipedia.org/wiki/Williams_Grand_Pr...
+286300            206  ...           http://en.wikipedia.org/wiki/Marussia_F1
+287718            210  ...          http://en.wikipedia.org/wiki/Haas_F1_Team
+297680            164  ...       http://en.wikipedia.org/wiki/Hispania_Racing
+297735            209  ...      http://en.wikipedia.org/wiki/Manor_Motorsport
+
+[20 rows x 5 columns]
+[2024-06-05T10:05:48.748+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-05T10:05:48.775+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorDim_transform, run_id=scheduled__2024-06-04T00:00:00+00:00, execution_date=20240604T000000, start_date=20240605T100546, end_date=20240605T100548
+[2024-06-05T10:05:48.863+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-05T10:05:48.874+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-05T10:27:21.351+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-05T10:27:21.511+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T10:27:21.520+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T10:27:21.521+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-05T10:27:21.532+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorDim_transform> on 2024-06-04 00:00:00+00:00
+[2024-06-05T10:27:21.537+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=117) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-05T10:27:21.538+0000] {standard_task_runner.py:63} INFO - Started process 135 to run task
+[2024-06-05T10:27:21.538+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorDim_transform', 'scheduled__2024-06-04T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp8091b1sz']
+[2024-06-05T10:27:21.540+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask constructorDim_transform
+[2024-06-05T10:27:21.583+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [running]> on host 6ad0dd8168be
+[2024-06-05T10:27:23.494+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-04T00:00:00+00:00'
+[2024-06-05T10:27:23.503+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-05T10:27:23.637+0000] {python.py:237} INFO - Done. Returned value was:         constructorId  ...                                   url_constructors
+0                   1  ...               http://en.wikipedia.org/wiki/McLaren
+28696               9  ...       http://en.wikipedia.org/wiki/Red_Bull_Racing
+73996               6  ...      http://en.wikipedia.org/wiki/Scuderia_Ferrari
+118525            117  ...  http://en.wikipedia.org/wiki/Aston_Martin_in_F...
+125663            131  ...  http://en.wikipedia.org/wiki/Mercedes-Benz_in_...
+173941            214  ...        http://en.wikipedia.org/wiki/Alpine_F1_Team
+181307             15  ...                http://en.wikipedia.org/wiki/Sauber
+191700            207  ...           http://en.wikipedia.org/wiki/Caterham_F1
+193332            208  ...              http://en.wikipedia.org/wiki/Lotus_F1
+203641             51  ...  http://en.wikipedia.org/wiki/Alfa_Romeo_in_For...
+211897             10  ...  http://en.wikipedia.org/wiki/Racing_Point_Forc...
+229622            211  ...  http://en.wikipedia.org/wiki/Racing_Point_F1_Team
+233527              5  ...   http://en.wikipedia.org/wiki/Scuderia_Toro_Rosso
+248454              4  ...  http://en.wikipedia.org/wiki/Renault_in_Formul...
+255351            213  ...   http://en.wikipedia.org/wiki/Scuderia_AlphaTauri
+263628              3  ...  http://en.wikipedia.org/wiki/Williams_Grand_Pr...
+286300            206  ...           http://en.wikipedia.org/wiki/Marussia_F1
+287718            210  ...          http://en.wikipedia.org/wiki/Haas_F1_Team
+297680            164  ...       http://en.wikipedia.org/wiki/Hispania_Racing
+297735            209  ...      http://en.wikipedia.org/wiki/Manor_Motorsport
+
+[20 rows x 5 columns]
+[2024-06-05T10:27:23.646+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-05T10:27:23.677+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorDim_transform, run_id=scheduled__2024-06-04T00:00:00+00:00, execution_date=20240604T000000, start_date=20240605T102721, end_date=20240605T102723
+[2024-06-05T10:27:23.725+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-05T10:27:23.737+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-05T12:24:22.064+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-05T12:24:22.085+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T12:24:22.093+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T12:24:22.093+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-05T12:24:22.105+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorDim_transform> on 2024-06-04 00:00:00+00:00
+[2024-06-05T12:24:22.111+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=175) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-05T12:24:22.112+0000] {standard_task_runner.py:63} INFO - Started process 202 to run task
+[2024-06-05T12:24:22.113+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorDim_transform', 'scheduled__2024-06-04T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpms8z5bsd']
+[2024-06-05T12:24:22.115+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask constructorDim_transform
+[2024-06-05T12:24:22.160+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [running]> on host f5493de6508e
+[2024-06-05T12:24:24.492+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-04T00:00:00+00:00'
+[2024-06-05T12:24:24.494+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-05T12:24:24.622+0000] {python.py:237} INFO - Done. Returned value was:         constructorId  ...                                   url_constructors
+0                   1  ...               http://en.wikipedia.org/wiki/McLaren
+28696               9  ...       http://en.wikipedia.org/wiki/Red_Bull_Racing
+73996               6  ...      http://en.wikipedia.org/wiki/Scuderia_Ferrari
+118525            117  ...  http://en.wikipedia.org/wiki/Aston_Martin_in_F...
+125663            131  ...  http://en.wikipedia.org/wiki/Mercedes-Benz_in_...
+173941            214  ...        http://en.wikipedia.org/wiki/Alpine_F1_Team
+181307             15  ...                http://en.wikipedia.org/wiki/Sauber
+191700            207  ...           http://en.wikipedia.org/wiki/Caterham_F1
+193332            208  ...              http://en.wikipedia.org/wiki/Lotus_F1
+203641             51  ...  http://en.wikipedia.org/wiki/Alfa_Romeo_in_For...
+211897             10  ...  http://en.wikipedia.org/wiki/Racing_Point_Forc...
+229622            211  ...  http://en.wikipedia.org/wiki/Racing_Point_F1_Team
+233527              5  ...   http://en.wikipedia.org/wiki/Scuderia_Toro_Rosso
+248454              4  ...  http://en.wikipedia.org/wiki/Renault_in_Formul...
+255351            213  ...   http://en.wikipedia.org/wiki/Scuderia_AlphaTauri
+263628              3  ...  http://en.wikipedia.org/wiki/Williams_Grand_Pr...
+286300            206  ...           http://en.wikipedia.org/wiki/Marussia_F1
+287718            210  ...          http://en.wikipedia.org/wiki/Haas_F1_Team
+297680            164  ...       http://en.wikipedia.org/wiki/Hispania_Racing
+297735            209  ...      http://en.wikipedia.org/wiki/Manor_Motorsport
+
+[20 rows x 5 columns]
+[2024-06-05T12:24:24.632+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-05T12:24:24.663+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorDim_transform, run_id=scheduled__2024-06-04T00:00:00+00:00, execution_date=20240604T000000, start_date=20240605T122422, end_date=20240605T122424
+[2024-06-05T12:24:24.725+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-05T12:24:24.736+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-05T13:55:30.610+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-05T13:55:30.633+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T13:55:30.641+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T13:55:30.641+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-05T13:55:30.653+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorDim_transform> on 2024-06-04 00:00:00+00:00
+[2024-06-05T13:55:30.658+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=92) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-05T13:55:30.659+0000] {standard_task_runner.py:63} INFO - Started process 114 to run task
+[2024-06-05T13:55:30.660+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorDim_transform', 'scheduled__2024-06-04T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpb0d3mg69']
+[2024-06-05T13:55:30.661+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask constructorDim_transform
+[2024-06-05T13:55:30.704+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [running]> on host 097d29da6aa2
+[2024-06-05T13:55:33.063+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-04T00:00:00+00:00'
+[2024-06-05T13:55:33.065+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-05T13:55:33.179+0000] {python.py:237} INFO - Done. Returned value was:         constructorId  ...                                   url_constructors
+0                   1  ...               http://en.wikipedia.org/wiki/McLaren
+28696               9  ...       http://en.wikipedia.org/wiki/Red_Bull_Racing
+73996               6  ...      http://en.wikipedia.org/wiki/Scuderia_Ferrari
+118525            117  ...  http://en.wikipedia.org/wiki/Aston_Martin_in_F...
+125663            131  ...  http://en.wikipedia.org/wiki/Mercedes-Benz_in_...
+173941            214  ...        http://en.wikipedia.org/wiki/Alpine_F1_Team
+181307             15  ...                http://en.wikipedia.org/wiki/Sauber
+191700            207  ...           http://en.wikipedia.org/wiki/Caterham_F1
+193332            208  ...              http://en.wikipedia.org/wiki/Lotus_F1
+203641             51  ...  http://en.wikipedia.org/wiki/Alfa_Romeo_in_For...
+211897             10  ...  http://en.wikipedia.org/wiki/Racing_Point_Forc...
+229622            211  ...  http://en.wikipedia.org/wiki/Racing_Point_F1_Team
+233527              5  ...   http://en.wikipedia.org/wiki/Scuderia_Toro_Rosso
+248454              4  ...  http://en.wikipedia.org/wiki/Renault_in_Formul...
+255351            213  ...   http://en.wikipedia.org/wiki/Scuderia_AlphaTauri
+263628              3  ...  http://en.wikipedia.org/wiki/Williams_Grand_Pr...
+286300            206  ...           http://en.wikipedia.org/wiki/Marussia_F1
+287718            210  ...          http://en.wikipedia.org/wiki/Haas_F1_Team
+297680            164  ...       http://en.wikipedia.org/wiki/Hispania_Racing
+297735            209  ...      http://en.wikipedia.org/wiki/Manor_Motorsport
+
+[20 rows x 5 columns]
+[2024-06-05T13:55:33.189+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-05T13:55:33.218+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorDim_transform, run_id=scheduled__2024-06-04T00:00:00+00:00, execution_date=20240604T000000, start_date=20240605T135530, end_date=20240605T135533
+[2024-06-05T13:55:33.271+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-05T13:55:33.281+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-05T14:24:40.595+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-05T14:24:40.614+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T14:24:40.621+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T14:24:40.621+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-05T14:24:40.634+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorDim_transform> on 2024-06-04 00:00:00+00:00
+[2024-06-05T14:24:40.640+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=98) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-05T14:24:40.641+0000] {standard_task_runner.py:63} INFO - Started process 116 to run task
+[2024-06-05T14:24:40.642+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorDim_transform', 'scheduled__2024-06-04T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp9c6ze7gy']
+[2024-06-05T14:24:40.644+0000] {standard_task_runner.py:91} INFO - Job 12: Subtask constructorDim_transform
+[2024-06-05T14:24:40.688+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [running]> on host 3da1f8dc12f1
+[2024-06-05T14:24:43.418+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-04T00:00:00+00:00'
+[2024-06-05T14:24:43.437+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-05T14:24:43.583+0000] {python.py:237} INFO - Done. Returned value was:         constructorId  ...                                   url_constructors
+0                   1  ...               http://en.wikipedia.org/wiki/McLaren
+28696               9  ...       http://en.wikipedia.org/wiki/Red_Bull_Racing
+73996               6  ...      http://en.wikipedia.org/wiki/Scuderia_Ferrari
+118525            117  ...  http://en.wikipedia.org/wiki/Aston_Martin_in_F...
+125663            131  ...  http://en.wikipedia.org/wiki/Mercedes-Benz_in_...
+173941            214  ...        http://en.wikipedia.org/wiki/Alpine_F1_Team
+181307             15  ...                http://en.wikipedia.org/wiki/Sauber
+191700            207  ...           http://en.wikipedia.org/wiki/Caterham_F1
+193332            208  ...              http://en.wikipedia.org/wiki/Lotus_F1
+203641             51  ...  http://en.wikipedia.org/wiki/Alfa_Romeo_in_For...
+211897             10  ...  http://en.wikipedia.org/wiki/Racing_Point_Forc...
+229622            211  ...  http://en.wikipedia.org/wiki/Racing_Point_F1_Team
+233527              5  ...   http://en.wikipedia.org/wiki/Scuderia_Toro_Rosso
+248454              4  ...  http://en.wikipedia.org/wiki/Renault_in_Formul...
+255351            213  ...   http://en.wikipedia.org/wiki/Scuderia_AlphaTauri
+263628              3  ...  http://en.wikipedia.org/wiki/Williams_Grand_Pr...
+286300            206  ...           http://en.wikipedia.org/wiki/Marussia_F1
+287718            210  ...          http://en.wikipedia.org/wiki/Haas_F1_Team
+297680            164  ...       http://en.wikipedia.org/wiki/Hispania_Racing
+297735            209  ...      http://en.wikipedia.org/wiki/Manor_Motorsport
+
+[20 rows x 5 columns]
+[2024-06-05T14:24:43.594+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-05T14:24:43.626+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorDim_transform, run_id=scheduled__2024-06-04T00:00:00+00:00, execution_date=20240604T000000, start_date=20240605T142440, end_date=20240605T142443
+[2024-06-05T14:24:43.726+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-05T14:24:43.903+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-05T14:27:42.310+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-05T14:27:42.330+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T14:27:42.340+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T14:27:42.340+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-05T14:27:42.351+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorDim_transform> on 2024-06-04 00:00:00+00:00
+[2024-06-05T14:27:42.358+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=101) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-05T14:27:42.359+0000] {standard_task_runner.py:63} INFO - Started process 116 to run task
+[2024-06-05T14:27:42.359+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorDim_transform', 'scheduled__2024-06-04T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpjf5jd9es']
+[2024-06-05T14:27:42.362+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask constructorDim_transform
+[2024-06-05T14:27:42.416+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [running]> on host d1c992285f47
+[2024-06-05T14:27:44.641+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-04T00:00:00+00:00'
+[2024-06-05T14:27:44.642+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-05T14:27:44.783+0000] {python.py:237} INFO - Done. Returned value was:         constructorId  ...                                   url_constructors
+0                   1  ...               http://en.wikipedia.org/wiki/McLaren
+28696               9  ...       http://en.wikipedia.org/wiki/Red_Bull_Racing
+73996               6  ...      http://en.wikipedia.org/wiki/Scuderia_Ferrari
+118525            117  ...  http://en.wikipedia.org/wiki/Aston_Martin_in_F...
+125663            131  ...  http://en.wikipedia.org/wiki/Mercedes-Benz_in_...
+173941            214  ...        http://en.wikipedia.org/wiki/Alpine_F1_Team
+181307             15  ...                http://en.wikipedia.org/wiki/Sauber
+191700            207  ...           http://en.wikipedia.org/wiki/Caterham_F1
+193332            208  ...              http://en.wikipedia.org/wiki/Lotus_F1
+203641             51  ...  http://en.wikipedia.org/wiki/Alfa_Romeo_in_For...
+211897             10  ...  http://en.wikipedia.org/wiki/Racing_Point_Forc...
+229622            211  ...  http://en.wikipedia.org/wiki/Racing_Point_F1_Team
+233527              5  ...   http://en.wikipedia.org/wiki/Scuderia_Toro_Rosso
+248454              4  ...  http://en.wikipedia.org/wiki/Renault_in_Formul...
+255351            213  ...   http://en.wikipedia.org/wiki/Scuderia_AlphaTauri
+263628              3  ...  http://en.wikipedia.org/wiki/Williams_Grand_Pr...
+286300            206  ...           http://en.wikipedia.org/wiki/Marussia_F1
+287718            210  ...          http://en.wikipedia.org/wiki/Haas_F1_Team
+297680            164  ...       http://en.wikipedia.org/wiki/Hispania_Racing
+297735            209  ...      http://en.wikipedia.org/wiki/Manor_Motorsport
+
+[20 rows x 5 columns]
+[2024-06-05T14:27:44.793+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-05T14:27:44.826+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorDim_transform, run_id=scheduled__2024-06-04T00:00:00+00:00, execution_date=20240604T000000, start_date=20240605T142742, end_date=20240605T142744
+[2024-06-05T14:27:44.886+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-05T14:27:44.897+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-05T14:34:45.071+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-05T14:34:45.097+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T14:34:45.105+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T14:34:45.105+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-05T14:34:45.120+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorDim_transform> on 2024-06-04 00:00:00+00:00
+[2024-06-05T14:34:45.128+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=101) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-05T14:34:45.130+0000] {standard_task_runner.py:63} INFO - Started process 114 to run task
+[2024-06-05T14:34:45.130+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorDim_transform', 'scheduled__2024-06-04T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp95s_llna']
+[2024-06-05T14:34:45.135+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask constructorDim_transform
+[2024-06-05T14:34:45.201+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [running]> on host 0c159eaec4ac
+[2024-06-05T14:34:47.550+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-04T00:00:00+00:00'
+[2024-06-05T14:34:47.552+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-05T14:34:47.677+0000] {python.py:237} INFO - Done. Returned value was:         constructorId  ...                                   url_constructors
+0                   1  ...               http://en.wikipedia.org/wiki/McLaren
+28696               9  ...       http://en.wikipedia.org/wiki/Red_Bull_Racing
+73996               6  ...      http://en.wikipedia.org/wiki/Scuderia_Ferrari
+118525            117  ...  http://en.wikipedia.org/wiki/Aston_Martin_in_F...
+125663            131  ...  http://en.wikipedia.org/wiki/Mercedes-Benz_in_...
+173941            214  ...        http://en.wikipedia.org/wiki/Alpine_F1_Team
+181307             15  ...                http://en.wikipedia.org/wiki/Sauber
+191700            207  ...           http://en.wikipedia.org/wiki/Caterham_F1
+193332            208  ...              http://en.wikipedia.org/wiki/Lotus_F1
+203641             51  ...  http://en.wikipedia.org/wiki/Alfa_Romeo_in_For...
+211897             10  ...  http://en.wikipedia.org/wiki/Racing_Point_Forc...
+229622            211  ...  http://en.wikipedia.org/wiki/Racing_Point_F1_Team
+233527              5  ...   http://en.wikipedia.org/wiki/Scuderia_Toro_Rosso
+248454              4  ...  http://en.wikipedia.org/wiki/Renault_in_Formul...
+255351            213  ...   http://en.wikipedia.org/wiki/Scuderia_AlphaTauri
+263628              3  ...  http://en.wikipedia.org/wiki/Williams_Grand_Pr...
+286300            206  ...           http://en.wikipedia.org/wiki/Marussia_F1
+287718            210  ...          http://en.wikipedia.org/wiki/Haas_F1_Team
+297680            164  ...       http://en.wikipedia.org/wiki/Hispania_Racing
+297735            209  ...      http://en.wikipedia.org/wiki/Manor_Motorsport
+
+[20 rows x 5 columns]
+[2024-06-05T14:34:47.692+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-05T14:34:47.721+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorDim_transform, run_id=scheduled__2024-06-04T00:00:00+00:00, execution_date=20240604T000000, start_date=20240605T143445, end_date=20240605T143447
+[2024-06-05T14:34:47.807+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-05T14:34:47.816+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-05T14:42:54.747+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-05T14:42:54.765+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T14:42:54.773+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [queued]>
+[2024-06-05T14:42:54.774+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-05T14:42:54.784+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): constructorDim_transform> on 2024-06-04 00:00:00+00:00
+[2024-06-05T14:42:54.789+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=109) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-05T14:42:54.791+0000] {standard_task_runner.py:63} INFO - Started process 126 to run task
+[2024-06-05T14:42:54.792+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'constructorDim_transform', 'scheduled__2024-06-04T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp4mio16da']
+[2024-06-05T14:42:54.793+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask constructorDim_transform
+[2024-06-05T14:42:54.842+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.constructorDim_transform scheduled__2024-06-04T00:00:00+00:00 [running]> on host dc71de5e87bd
+[2024-06-05T14:42:56.939+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='constructorDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-04T00:00:00+00:00'
+[2024-06-05T14:42:56.943+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-05T14:42:57.132+0000] {python.py:237} INFO - Done. Returned value was:         constructorId  ...                                   url_constructors
+0                   1  ...               http://en.wikipedia.org/wiki/McLaren
+28696               9  ...       http://en.wikipedia.org/wiki/Red_Bull_Racing
+73996               6  ...      http://en.wikipedia.org/wiki/Scuderia_Ferrari
+118525            117  ...  http://en.wikipedia.org/wiki/Aston_Martin_in_F...
+125663            131  ...  http://en.wikipedia.org/wiki/Mercedes-Benz_in_...
+173941            214  ...        http://en.wikipedia.org/wiki/Alpine_F1_Team
+181307             15  ...                http://en.wikipedia.org/wiki/Sauber
+191700            207  ...           http://en.wikipedia.org/wiki/Caterham_F1
+193332            208  ...              http://en.wikipedia.org/wiki/Lotus_F1
+203641             51  ...  http://en.wikipedia.org/wiki/Alfa_Romeo_in_For...
+211897             10  ...  http://en.wikipedia.org/wiki/Racing_Point_Forc...
+229622            211  ...  http://en.wikipedia.org/wiki/Racing_Point_F1_Team
+233527              5  ...   http://en.wikipedia.org/wiki/Scuderia_Toro_Rosso
+248454              4  ...  http://en.wikipedia.org/wiki/Renault_in_Formul...
+255351            213  ...   http://en.wikipedia.org/wiki/Scuderia_AlphaTauri
+263628              3  ...  http://en.wikipedia.org/wiki/Williams_Grand_Pr...
+286300            206  ...           http://en.wikipedia.org/wiki/Marussia_F1
+287718            210  ...          http://en.wikipedia.org/wiki/Haas_F1_Team
+297680            164  ...       http://en.wikipedia.org/wiki/Hispania_Racing
+297735            209  ...      http://en.wikipedia.org/wiki/Manor_Motorsport
+
+[20 rows x 5 columns]
+[2024-06-05T14:42:57.146+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-05T14:42:57.180+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=constructorDim_transform, run_id=scheduled__2024-06-04T00:00:00+00:00, execution_date=20240604T000000, start_date=20240605T144254, end_date=20240605T144257
+[2024-06-05T14:42:57.254+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-05T14:42:57.269+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

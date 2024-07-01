@@ -1,0 +1,477 @@
+[2024-06-19T07:28:11.009+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T07:28:11.023+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T07:28:11.027+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T07:28:11.028+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T07:28:11.036+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T07:28:11.040+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=109) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T07:28:11.041+0000] {standard_task_runner.py:63} INFO - Started process 113 to run task
+[2024-06-19T07:28:11.041+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmpmxagqjnf']
+[2024-06-19T07:28:11.043+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask wait_for_publish_dag
+[2024-06-19T07:28:11.075+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host 5d5bc16a80d8
+[2024-06-19T07:28:11.129+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T07:28:11.130+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T07:28:11.131+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T07:28:11.131+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T07:28:11.131+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T07:28:41.137+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T07:29:11.148+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T07:29:41.160+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T07:30:11.173+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T07:30:41.181+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T07:31:11.188+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T07:31:41.194+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T07:32:11.201+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T07:32:41.207+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T07:33:11.215+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T07:33:41.224+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T07:34:11.231+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T07:34:41.241+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T07:34:41.252+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-06-19T07:34:41.252+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-19T07:34:41.262+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=wait_for_publish_dag, run_id=scheduled__2024-06-18T00:00:00+00:00, execution_date=20240618T000000, start_date=20240619T072811, end_date=20240619T073441
+[2024-06-19T07:34:41.311+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-19T07:34:41.340+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-19T07:34:41.341+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-19T08:26:33.630+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T08:26:33.646+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T08:26:33.652+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T08:26:33.652+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T08:26:33.661+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T08:26:33.666+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=83) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T08:26:33.668+0000] {standard_task_runner.py:63} INFO - Started process 86 to run task
+[2024-06-19T08:26:33.668+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmpt5lwy2sc']
+[2024-06-19T08:26:33.670+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask wait_for_publish_dag
+[2024-06-19T08:26:33.709+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host d64590577fb7
+[2024-06-19T08:26:33.772+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T08:26:33.773+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T08:26:33.773+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T08:26:33.774+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:26:33.774+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T08:27:03.781+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:27:33.806+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:28:03.816+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:28:33.826+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:29:03.832+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:29:33.839+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:30:03.846+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:30:33.857+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:31:03.868+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:31:03.878+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-06-19T08:31:03.879+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-19T08:31:03.889+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=wait_for_publish_dag, run_id=scheduled__2024-06-18T00:00:00+00:00, execution_date=20240618T000000, start_date=20240619T082633, end_date=20240619T083103
+[2024-06-19T08:31:03.922+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-19T08:31:03.950+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-19T08:31:03.952+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-19T08:53:39.354+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T08:53:39.368+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T08:53:39.373+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T08:53:39.373+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T08:53:39.382+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T08:53:39.386+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=79) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T08:53:39.387+0000] {standard_task_runner.py:63} INFO - Started process 85 to run task
+[2024-06-19T08:53:39.387+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmpzv7zv0lj']
+[2024-06-19T08:53:39.389+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask wait_for_publish_dag
+[2024-06-19T08:53:39.423+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host e5c8778eab06
+[2024-06-19T08:53:39.482+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T08:53:39.483+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T08:53:39.483+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T08:53:39.483+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:53:39.483+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T08:54:09.490+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:54:39.502+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:55:09.510+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:55:39.517+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:56:09.525+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:56:39.532+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:57:09.541+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:57:39.551+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T08:57:39.562+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-06-19T08:57:39.562+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-19T08:57:39.571+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=wait_for_publish_dag, run_id=scheduled__2024-06-18T00:00:00+00:00, execution_date=20240618T000000, start_date=20240619T085339, end_date=20240619T085739
+[2024-06-19T08:57:39.598+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-19T08:57:39.624+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-19T08:57:39.625+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-19T12:04:56.015+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T12:04:56.031+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T12:04:56.036+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T12:04:56.036+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T12:04:56.045+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T12:04:56.049+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=86) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T12:04:56.051+0000] {standard_task_runner.py:63} INFO - Started process 93 to run task
+[2024-06-19T12:04:56.051+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmp6fyj2nv2']
+[2024-06-19T12:04:56.052+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask wait_for_publish_dag
+[2024-06-19T12:04:56.087+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host eef124934bf8
+[2024-06-19T12:04:56.144+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T12:04:56.145+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T12:04:56.145+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T12:04:56.145+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:04:56.145+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T12:05:26.153+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:05:56.175+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:06:26.212+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:06:56.221+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:07:26.233+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:07:56.240+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:08:26.250+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:08:56.261+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:08:56.270+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-06-19T12:08:56.271+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-19T12:08:56.281+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=wait_for_publish_dag, run_id=scheduled__2024-06-18T00:00:00+00:00, execution_date=20240618T000000, start_date=20240619T120456, end_date=20240619T120856
+[2024-06-19T12:08:56.331+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-19T12:08:56.431+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-19T12:08:56.433+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-19T12:36:06.774+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T12:36:06.790+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T12:36:06.796+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T12:36:06.796+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T12:36:06.807+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T12:36:06.811+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=124) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T12:36:06.812+0000] {standard_task_runner.py:63} INFO - Started process 128 to run task
+[2024-06-19T12:36:06.813+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmpfnvghw7_']
+[2024-06-19T12:36:06.815+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask wait_for_publish_dag
+[2024-06-19T12:36:06.851+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host 3a98e934d90a
+[2024-06-19T12:36:06.913+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T12:36:06.914+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T12:36:06.914+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T12:36:06.914+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:36:06.914+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T12:36:36.921+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:37:06.978+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:37:37.314+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:38:07.343+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:38:37.360+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:39:07.375+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:39:37.396+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:40:07.411+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:40:07.426+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-06-19T12:40:07.429+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-19T12:40:07.540+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=wait_for_publish_dag, run_id=scheduled__2024-06-18T00:00:00+00:00, execution_date=20240618T000000, start_date=20240619T123606, end_date=20240619T124007
+[2024-06-19T12:40:07.676+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-19T12:40:07.952+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-19T12:40:07.954+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-19T12:52:36.362+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T12:52:36.377+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T12:52:36.382+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T12:52:36.382+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T12:52:36.390+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T12:52:36.394+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=84) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T12:52:36.395+0000] {standard_task_runner.py:63} INFO - Started process 87 to run task
+[2024-06-19T12:52:36.395+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmpaqwdf3qo']
+[2024-06-19T12:52:36.397+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask wait_for_publish_dag
+[2024-06-19T12:52:36.430+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host 9426bfe013d2
+[2024-06-19T12:52:36.487+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T12:52:36.488+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T12:52:36.488+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T12:52:36.488+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:52:36.488+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T12:53:06.495+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:53:36.514+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:54:06.541+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:54:36.554+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:55:06.562+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:55:36.574+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:56:06.583+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:56:36.590+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T12:56:36.598+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-06-19T12:56:36.599+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-19T12:56:36.610+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=wait_for_publish_dag, run_id=scheduled__2024-06-18T00:00:00+00:00, execution_date=20240618T000000, start_date=20240619T125236, end_date=20240619T125636
+[2024-06-19T12:56:36.671+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-19T12:56:36.828+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-19T12:56:36.830+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-19T13:02:38.128+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T13:02:38.143+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T13:02:38.147+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T13:02:38.147+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T13:02:38.154+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T13:02:38.158+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=84) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T13:02:38.159+0000] {standard_task_runner.py:63} INFO - Started process 88 to run task
+[2024-06-19T13:02:38.160+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmpe270y2p_']
+[2024-06-19T13:02:38.161+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask wait_for_publish_dag
+[2024-06-19T13:02:38.194+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host 6fa64189ef34
+[2024-06-19T13:02:38.251+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T13:02:38.251+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T13:02:38.252+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T13:02:38.252+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:02:38.252+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T13:03:08.259+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:03:38.280+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:04:08.306+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:04:38.315+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:05:08.323+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:05:38.330+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:06:08.339+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:06:38.347+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:06:38.359+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-06-19T13:06:38.360+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-19T13:06:38.371+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=wait_for_publish_dag, run_id=scheduled__2024-06-18T00:00:00+00:00, execution_date=20240618T000000, start_date=20240619T130238, end_date=20240619T130638
+[2024-06-19T13:06:38.429+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-19T13:06:38.548+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-19T13:06:38.549+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-19T13:16:23.958+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T13:16:23.974+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T13:16:23.978+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T13:16:23.979+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T13:16:23.986+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T13:16:23.991+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=83) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T13:16:23.992+0000] {standard_task_runner.py:63} INFO - Started process 88 to run task
+[2024-06-19T13:16:23.992+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmpqiikfdwv']
+[2024-06-19T13:16:23.993+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask wait_for_publish_dag
+[2024-06-19T13:16:24.028+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host d5b44298ec9f
+[2024-06-19T13:16:24.087+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T13:16:24.088+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T13:16:24.089+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T13:16:24.089+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:16:24.089+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T13:16:54.097+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:17:24.108+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:17:54.122+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:18:24.130+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:18:54.141+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:19:24.151+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:19:54.160+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:20:24.170+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:20:24.178+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-06-19T13:20:24.178+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-19T13:20:24.187+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=wait_for_publish_dag, run_id=scheduled__2024-06-18T00:00:00+00:00, execution_date=20240618T000000, start_date=20240619T131623, end_date=20240619T132024
+[2024-06-19T13:20:24.225+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-19T13:20:24.252+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-19T13:20:24.253+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-19T13:26:52.209+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T13:26:52.226+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T13:26:52.233+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T13:26:52.233+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T13:26:52.244+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T13:26:52.249+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=73) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T13:26:52.250+0000] {standard_task_runner.py:63} INFO - Started process 79 to run task
+[2024-06-19T13:26:52.250+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmpjzmgotaq']
+[2024-06-19T13:26:52.252+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask wait_for_publish_dag
+[2024-06-19T13:26:52.297+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host fc0cf0aa1225
+[2024-06-19T13:26:52.368+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T13:26:52.369+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T13:26:52.369+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T13:26:52.369+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:26:52.369+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T13:27:22.379+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:27:52.393+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:28:22.405+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:28:52.414+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:29:22.423+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:29:52.434+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:30:22.442+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:30:52.449+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:30:52.456+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-06-19T13:30:52.456+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-19T13:30:52.465+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=wait_for_publish_dag, run_id=scheduled__2024-06-18T00:00:00+00:00, execution_date=20240618T000000, start_date=20240619T132652, end_date=20240619T133052
+[2024-06-19T13:30:52.478+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-19T13:30:52.507+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-19T13:30:52.508+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-19T13:35:22.402+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T13:35:22.417+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T13:35:22.423+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T13:35:22.423+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T13:35:22.431+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T13:35:22.436+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=73) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T13:35:22.437+0000] {standard_task_runner.py:63} INFO - Started process 78 to run task
+[2024-06-19T13:35:22.438+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmph_pb7deb']
+[2024-06-19T13:35:22.440+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask wait_for_publish_dag
+[2024-06-19T13:35:22.481+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host a7ca02a49f0a
+[2024-06-19T13:35:22.541+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T13:35:22.542+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T13:35:22.543+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T13:35:22.543+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:35:22.543+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T13:35:52.550+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:37:01.434+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T13:37:01.449+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T13:37:01.454+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T13:37:01.454+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T13:37:01.464+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T13:37:01.468+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T13:37:01.470+0000] {standard_task_runner.py:63} INFO - Started process 73 to run task
+[2024-06-19T13:37:01.471+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmp4phuiqrm']
+[2024-06-19T13:37:01.472+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask wait_for_publish_dag
+[2024-06-19T13:37:01.511+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host 790bccf90551
+[2024-06-19T13:37:01.573+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T13:37:01.574+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T13:37:01.574+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T13:37:01.574+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:37:01.574+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T13:37:31.582+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:38:01.598+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:38:31.611+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:39:01.619+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:39:31.628+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:40:01.639+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:40:31.648+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:41:01.659+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T13:41:01.670+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-06-19T13:41:01.670+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-19T13:41:01.679+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=wait_for_publish_dag, run_id=scheduled__2024-06-18T00:00:00+00:00, execution_date=20240618T000000, start_date=20240619T133701, end_date=20240619T134101
+[2024-06-19T13:41:01.719+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-19T13:41:01.744+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-19T13:41:01.746+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-19T14:00:46.454+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T14:00:46.468+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T14:00:46.472+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T14:00:46.473+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T14:00:46.481+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T14:00:46.485+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=78) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T14:00:46.486+0000] {standard_task_runner.py:63} INFO - Started process 83 to run task
+[2024-06-19T14:00:46.486+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmpeidbc8x0']
+[2024-06-19T14:00:46.487+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask wait_for_publish_dag
+[2024-06-19T14:00:46.520+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host 0ff0d3189758
+[2024-06-19T14:00:46.575+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T14:00:46.575+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T14:00:46.576+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T14:00:46.576+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:00:46.576+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T14:01:16.584+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:01:46.592+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:02:16.605+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:02:46.612+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:04:23.503+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T14:04:23.519+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T14:04:23.525+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T14:04:23.525+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T14:04:23.536+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T14:04:23.543+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=65) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T14:04:23.545+0000] {standard_task_runner.py:63} INFO - Started process 81 to run task
+[2024-06-19T14:04:23.546+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmpr8g0uo7d']
+[2024-06-19T14:04:23.548+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask wait_for_publish_dag
+[2024-06-19T14:04:23.593+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host dc92dd71b4a2
+[2024-06-19T14:04:23.657+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T14:04:23.658+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T14:04:23.658+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T14:04:23.659+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:04:23.659+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T14:04:53.668+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:05:23.702+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:05:53.713+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:06:23.727+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:06:53.736+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:07:23.746+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:07:53.757+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:07:53.767+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-06-19T14:07:53.767+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-19T14:07:53.776+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=wait_for_publish_dag, run_id=scheduled__2024-06-18T00:00:00+00:00, execution_date=20240618T000000, start_date=20240619T140423, end_date=20240619T140753
+[2024-06-19T14:07:53.807+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-19T14:07:53.834+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-19T14:07:53.835+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-19T14:13:23.203+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T14:13:23.217+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T14:13:23.222+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T14:13:23.222+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T14:13:23.230+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T14:13:23.234+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=104) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T14:13:23.235+0000] {standard_task_runner.py:63} INFO - Started process 108 to run task
+[2024-06-19T14:13:23.235+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmp_dimpnzr']
+[2024-06-19T14:13:23.237+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask wait_for_publish_dag
+[2024-06-19T14:13:23.271+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host 2acd74b25e37
+[2024-06-19T14:13:23.326+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T14:13:23.327+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T14:13:23.327+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T14:13:23.328+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:13:23.328+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T14:13:53.335+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:14:23.346+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:14:53.360+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:15:23.372+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:15:53.380+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:16:23.391+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:16:53.402+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:17:23.410+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:17:23.420+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-06-19T14:17:23.421+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-19T14:17:23.430+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=wait_for_publish_dag, run_id=scheduled__2024-06-18T00:00:00+00:00, execution_date=20240618T000000, start_date=20240619T141323, end_date=20240619T141723
+[2024-06-19T14:17:23.469+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-19T14:17:23.494+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-19T14:17:23.496+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-19T14:25:20.047+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T14:25:20.062+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T14:25:20.067+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [queued]>
+[2024-06-19T14:25:20.068+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T14:25:20.075+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_publish_dag> on 2024-06-18 00:00:00+00:00
+[2024-06-19T14:25:20.080+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=77) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T14:25:20.081+0000] {standard_task_runner.py:63} INFO - Started process 81 to run task
+[2024-06-19T14:25:20.081+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'wait_for_publish_dag', 'scheduled__2024-06-18T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmp4q81cboi']
+[2024-06-19T14:25:20.082+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask wait_for_publish_dag
+[2024-06-19T14:25:20.118+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.wait_for_publish_dag scheduled__2024-06-18T00:00:00+00:00 [running]> on host 7f714baf6013
+[2024-06-19T14:25:20.175+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='wait_for_publish_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T00:00:00+00:00'
+[2024-06-19T14:25:20.176+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T14:25:20.177+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-19T14:25:20.177+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:25:20.177+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-19T14:25:50.185+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:26:20.198+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:26:50.211+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:27:20.219+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:27:50.229+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:28:20.240+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:28:50.250+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:29:20.260+0000] {external_task.py:258} INFO - Poking for tasks ['fetch_and_publish_laps'] in dag f1_data_pipeline_kafka_fetchAndPublish on 2024-06-18T00:00:00+00:00 ... 
+[2024-06-19T14:29:20.268+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-06-19T14:29:20.268+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-19T14:29:20.277+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=wait_for_publish_dag, run_id=scheduled__2024-06-18T00:00:00+00:00, execution_date=20240618T000000, start_date=20240619T142520, end_date=20240619T142920
+[2024-06-19T14:29:20.296+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-19T14:29:20.322+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-19T14:29:20.324+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

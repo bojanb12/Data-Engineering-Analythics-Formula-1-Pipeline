@@ -1,0 +1,283 @@
+[2024-06-17T10:33:50.826+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T10:33:50.841+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.consume_and_load_pitStopsDim manual__2024-06-17T10:33:27.126744+00:00 [queued]>
+[2024-06-17T10:33:50.846+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.consume_and_load_pitStopsDim manual__2024-06-17T10:33:27.126744+00:00 [queued]>
+[2024-06-17T10:33:50.846+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T10:33:50.855+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): consume_and_load_pitStopsDim> on 2024-06-17 10:33:27.126744+00:00
+[2024-06-17T10:33:50.859+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1873) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T10:33:50.860+0000] {standard_task_runner.py:63} INFO - Started process 1880 to run task
+[2024-06-17T10:33:50.861+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'consume_and_load_pitStopsDim', 'manual__2024-06-17T10:33:27.126744+00:00', '--job-id', '56', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmpyoxeivc9']
+[2024-06-17T10:33:50.862+0000] {standard_task_runner.py:91} INFO - Job 56: Subtask consume_and_load_pitStopsDim
+[2024-06-17T10:33:50.890+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.consume_and_load_pitStopsDim manual__2024-06-17T10:33:27.126744+00:00 [running]> on host f37b7fb66c71
+[2024-06-17T10:33:50.945+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='consume_and_load_pitStopsDim' AIRFLOW_CTX_EXECUTION_DATE='2024-06-17T10:33:27.126744+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-17T10:33:27.126744+00:00'
+[2024-06-17T10:33:50.946+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T10:33:50.948+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.20.0.6', 9092)]>: connecting to kafka:9092 [('172.20.0.6', 9092) IPv4]
+[2024-06-17T10:33:50.948+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-17T10:33:50.948+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.20.0.6', 9092)]>: Connection complete.
+[2024-06-17T10:33:51.050+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-17T10:33:51.050+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-17T10:33:51.052+0000] {consumer.py:122} WARNING - group_id is None: disabling auto-commit.
+[2024-06-17T10:33:51.052+0000] {subscription_state.py:167} INFO - Updating subscribed topics to: ('f1_data_topic_pitStops',)
+[2024-06-17T10:33:51.053+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-17T10:33:51.054+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-17T10:33:51.086+0000] {subscription_state.py:253} INFO - Updated partition assignment: [('f1_data_topic_pitStops', 0)]
+[2024-06-17T10:33:51.086+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.20.0.6', 9092)]>: connecting to kafka:9092 [('172.20.0.6', 9092) IPv4]
+[2024-06-17T10:33:51.087+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.20.0.6', 9092)]>: Connection complete.
+[2024-06-17T10:33:51.087+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.20.0.6', 9092)]>: Closing connection. 
+[2024-06-17T10:33:51.192+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hulkenberg', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '18:05:33', 'duration': None}
+[2024-06-17T10:33:51.192+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'zhou', 'stop': 1, 'lap_pitstops': 9, 'time_pitstops': '18:18:39', 'duration': None}
+[2024-06-17T10:33:51.192+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 1, 'lap_pitstops': 9, 'time_pitstops': '18:18:42', 'duration': None}
+[2024-06-17T10:33:51.192+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ocon', 'stop': 1, 'lap_pitstops': 10, 'time_pitstops': '18:20:20', 'duration': None}
+[2024-06-17T10:33:51.193+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sargeant', 'stop': 1, 'lap_pitstops': 10, 'time_pitstops': '18:21:19', 'duration': None}
+[2024-06-17T10:33:51.193+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'russell', 'stop': 1, 'lap_pitstops': 11, 'time_pitstops': '18:21:38', 'duration': None}
+[2024-06-17T10:33:51.193+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'leclerc', 'stop': 1, 'lap_pitstops': 11, 'time_pitstops': '18:21:41', 'duration': None}
+[2024-06-17T10:33:51.193+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'kevin_magnussen', 'stop': 1, 'lap_pitstops': 11, 'time_pitstops': '18:21:55', 'duration': None}
+[2024-06-17T10:33:51.193+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'perez', 'stop': 1, 'lap_pitstops': 12, 'time_pitstops': '18:23:16', 'duration': None}
+[2024-06-17T10:33:51.193+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'piastri', 'stop': 1, 'lap_pitstops': 12, 'time_pitstops': '18:23:24', 'duration': None}
+[2024-06-17T10:33:51.193+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hamilton', 'stop': 1, 'lap_pitstops': 12, 'time_pitstops': '18:23:26', 'duration': None}
+[2024-06-17T10:33:51.193+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'gasly', 'stop': 1, 'lap_pitstops': 12, 'time_pitstops': '18:23:38', 'duration': None}
+[2024-06-17T10:33:51.193+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 1, 'lap_pitstops': 12, 'time_pitstops': '18:23:42', 'duration': None}
+[2024-06-17T10:33:51.193+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'norris', 'stop': 1, 'lap_pitstops': 13, 'time_pitstops': '18:25:00', 'duration': None}
+[2024-06-17T10:33:51.193+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ricciardo', 'stop': 1, 'lap_pitstops': 13, 'time_pitstops': '18:25:17', 'duration': None}
+[2024-06-17T10:33:51.193+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sainz', 'stop': 1, 'lap_pitstops': 14, 'time_pitstops': '18:26:32', 'duration': None}
+[2024-06-17T10:33:51.193+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'tsunoda', 'stop': 1, 'lap_pitstops': 14, 'time_pitstops': '18:26:47', 'duration': None}
+[2024-06-17T10:33:51.193+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'alonso', 'stop': 1, 'lap_pitstops': 15, 'time_pitstops': '18:28:24', 'duration': None}
+[2024-06-17T10:33:51.194+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'albon', 'stop': 1, 'lap_pitstops': 15, 'time_pitstops': '18:28:29', 'duration': None}
+[2024-06-17T10:33:51.194+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'max_verstappen', 'stop': 1, 'lap_pitstops': 17, 'time_pitstops': '18:31:12', 'duration': None}
+[2024-06-17T10:33:51.194+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hulkenberg', 'stop': 2, 'lap_pitstops': 20, 'time_pitstops': '18:37:08', 'duration': None}
+[2024-06-17T10:33:51.194+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 2, 'lap_pitstops': 27, 'time_pitstops': '18:48:25', 'duration': None}
+[2024-06-17T10:33:51.194+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'zhou', 'stop': 2, 'lap_pitstops': 28, 'time_pitstops': '18:49:59', 'duration': None}
+[2024-06-17T10:33:51.194+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sargeant', 'stop': 2, 'lap_pitstops': 28, 'time_pitstops': '18:51:33', 'duration': None}
+[2024-06-17T10:33:51.194+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ocon', 'stop': 2, 'lap_pitstops': 30, 'time_pitstops': '18:53:30', 'duration': None}
+[2024-06-17T10:33:51.194+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 2, 'lap_pitstops': 30, 'time_pitstops': '18:53:32', 'duration': 74.773}
+[2024-06-17T10:33:51.194+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'russell', 'stop': 2, 'lap_pitstops': 31, 'time_pitstops': '18:54:21', 'duration': None}
+[2024-06-17T10:33:51.194+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'gasly', 'stop': 2, 'lap_pitstops': 31, 'time_pitstops': '18:55:10', 'duration': None}
+[2024-06-17T10:33:51.194+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'kevin_magnussen', 'stop': 2, 'lap_pitstops': 32, 'time_pitstops': '18:56:37', 'duration': None}
+[2024-06-17T10:33:51.194+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'norris', 'stop': 2, 'lap_pitstops': 33, 'time_pitstops': '18:57:39', 'duration': None}
+[2024-06-17T10:33:51.194+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'max_verstappen', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '20:15:25', 'duration': None}
+[2024-06-17T10:33:51.194+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'perez', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '20:15:30', 'duration': None}
+[2024-06-17T10:33:51.195+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'leclerc', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '20:15:31', 'duration': None}
+[2024-06-17T10:33:51.195+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'piastri', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '20:15:36', 'duration': None}
+[2024-06-17T10:33:51.195+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'alonso', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '20:15:37', 'duration': None}
+[2024-06-17T10:33:51.195+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'russell', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '20:15:42', 'duration': None}
+[2024-06-17T10:33:51.195+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'tsunoda', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '20:15:51', 'duration': None}
+[2024-06-17T10:33:51.195+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bearman', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '20:15:51', 'duration': None}
+[2024-06-17T10:33:51.195+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'albon', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '20:15:53', 'duration': None}
+[2024-06-17T10:33:51.195+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'kevin_magnussen', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '20:15:53', 'duration': None}
+[2024-06-17T10:33:51.195+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ricciardo', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '20:15:57', 'duration': 63.364}
+[2024-06-17T10:33:51.195+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ocon', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '20:15:59', 'duration': None}
+[2024-06-17T10:33:51.195+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '20:16:00', 'duration': None}
+[2024-06-17T10:33:51.195+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sargeant', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '20:16:01', 'duration': None}
+[2024-06-17T10:33:51.195+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hulkenberg', 'stop': 1, 'lap_pitstops': 33, 'time_pitstops': '20:59:21', 'duration': None}
+[2024-06-17T10:33:51.195+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 2, 'lap_pitstops': 35, 'time_pitstops': '21:02:58', 'duration': None}
+[2024-06-17T10:33:51.196+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hamilton', 'stop': 1, 'lap_pitstops': 36, 'time_pitstops': '21:03:38', 'duration': None}
+[2024-06-17T10:33:51.196+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'norris', 'stop': 1, 'lap_pitstops': 37, 'time_pitstops': '21:05:08', 'duration': None}
+[2024-06-17T10:33:51.196+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'zhou', 'stop': 1, 'lap_pitstops': 41, 'time_pitstops': '21:12:03', 'duration': None}
+[2024-06-17T10:33:51.196+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ricciardo', 'stop': 1, 'lap_pitstops': 5, 'time_pitstops': '15:10:25', 'duration': None}
+[2024-06-17T10:33:51.196+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'albon', 'stop': 1, 'lap_pitstops': 6, 'time_pitstops': '15:11:45', 'duration': None}
+[2024-06-17T10:33:51.196+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'zhou', 'stop': 1, 'lap_pitstops': 6, 'time_pitstops': '15:11:49', 'duration': None}
+[2024-06-17T10:33:51.196+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hamilton', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '15:13:04', 'duration': None}
+[2024-06-17T10:33:51.196+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'kevin_magnussen', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '15:13:08', 'duration': None}
+[2024-06-17T10:33:51.196+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'russell', 'stop': 1, 'lap_pitstops': 8, 'time_pitstops': '15:14:23', 'duration': None}
+[2024-06-17T10:33:51.196+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 1, 'lap_pitstops': 8, 'time_pitstops': '15:14:26', 'duration': None}
+[2024-06-17T10:33:51.196+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 1, 'lap_pitstops': 8, 'time_pitstops': '15:14:30', 'duration': None}
+[2024-06-17T10:33:51.196+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'leclerc', 'stop': 1, 'lap_pitstops': 9, 'time_pitstops': '15:15:42', 'duration': None}
+[2024-06-17T10:33:51.196+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'piastri', 'stop': 1, 'lap_pitstops': 9, 'time_pitstops': '15:15:43', 'duration': None}
+[2024-06-17T10:33:51.196+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'tsunoda', 'stop': 1, 'lap_pitstops': 9, 'time_pitstops': '15:15:50', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ocon', 'stop': 1, 'lap_pitstops': 9, 'time_pitstops': '15:15:55', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'norris', 'stop': 1, 'lap_pitstops': 14, 'time_pitstops': '15:22:37', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'perez', 'stop': 1, 'lap_pitstops': 14, 'time_pitstops': '15:22:45', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sainz', 'stop': 1, 'lap_pitstops': 16, 'time_pitstops': '15:25:14', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ocon', 'stop': 2, 'lap_pitstops': 16, 'time_pitstops': '15:25:58', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'alonso', 'stop': 1, 'lap_pitstops': 17, 'time_pitstops': '15:27:06', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hulkenberg', 'stop': 1, 'lap_pitstops': 17, 'time_pitstops': '15:27:28', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'gasly', 'stop': 1, 'lap_pitstops': 17, 'time_pitstops': '15:27:32', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'albon', 'stop': 2, 'lap_pitstops': 27, 'time_pitstops': '15:41:35', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ricciardo', 'stop': 2, 'lap_pitstops': 29, 'time_pitstops': '15:44:29', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'kevin_magnussen', 'stop': 2, 'lap_pitstops': 33, 'time_pitstops': '15:49:58', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'leclerc', 'stop': 2, 'lap_pitstops': 34, 'time_pitstops': '15:50:35', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'perez', 'stop': 2, 'lap_pitstops': 35, 'time_pitstops': '15:52:18', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hulkenberg', 'stop': 2, 'lap_pitstops': 35, 'time_pitstops': '15:52:40', 'duration': None}
+[2024-06-17T10:33:51.197+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'zhou', 'stop': 2, 'lap_pitstops': 35, 'time_pitstops': '15:52:50', 'duration': None}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'tsunoda', 'stop': 2, 'lap_pitstops': 36, 'time_pitstops': '15:53:59', 'duration': None}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 2, 'lap_pitstops': 36, 'time_pitstops': '15:54:30', 'duration': None}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 2, 'lap_pitstops': 37, 'time_pitstops': '15:55:19', 'duration': None}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'piastri', 'stop': 2, 'lap_pitstops': 39, 'time_pitstops': '15:57:32', 'duration': None}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'max_verstappen', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:05:50', 'duration': 1575.603}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'perez', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:05:52', 'duration': 1577.661}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'norris', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:05:54', 'duration': 1580.116}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sainz', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:05:57', 'duration': 1580.097}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'alonso', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:06:00', 'duration': 1580.924}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'piastri', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:06:03', 'duration': 1580.204}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hamilton', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:06:12', 'duration': 1580.696}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'leclerc', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:06:13', 'duration': 1583.333}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'russell', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:06:18', 'duration': 1581.238}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hulkenberg', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:06:21', 'duration': 1580.886}
+[2024-06-17T10:33:51.198+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:06:22', 'duration': 1582.542}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'tsunoda', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:06:25', 'duration': 1584.553}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ocon', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:06:28', 'duration': 1586.095}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'gasly', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:06:30', 'duration': 1586.793}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:06:35', 'duration': 1585.911}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'kevin_magnussen', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:06:40', 'duration': 1584.63}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sargeant', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:06:43', 'duration': 1585.267}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'zhou', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '14:06:50', 'duration': 1582.912}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hulkenberg', 'stop': 2, 'lap_pitstops': 5, 'time_pitstops': '14:40:46', 'duration': None}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 2, 'lap_pitstops': 6, 'time_pitstops': '14:42:21', 'duration': None}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'tsunoda', 'stop': 2, 'lap_pitstops': 7, 'time_pitstops': '14:43:59', 'duration': None}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'zhou', 'stop': 2, 'lap_pitstops': 7, 'time_pitstops': '14:44:07', 'duration': None}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'norris', 'stop': 2, 'lap_pitstops': 11, 'time_pitstops': '14:50:21', 'duration': None}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'zhou', 'stop': 3, 'lap_pitstops': 11, 'time_pitstops': '14:51:01', 'duration': None}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'piastri', 'stop': 2, 'lap_pitstops': 12, 'time_pitstops': '14:52:06', 'duration': None}
+[2024-06-17T10:33:51.199+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 2, 'lap_pitstops': 12, 'time_pitstops': '14:52:17', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'alonso', 'stop': 2, 'lap_pitstops': 13, 'time_pitstops': '14:53:43', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'perez', 'stop': 2, 'lap_pitstops': 15, 'time_pitstops': '14:56:51', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sainz', 'stop': 2, 'lap_pitstops': 15, 'time_pitstops': '14:56:55', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'max_verstappen', 'stop': 2, 'lap_pitstops': 16, 'time_pitstops': '14:58:23', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hulkenberg', 'stop': 1, 'lap_pitstops': 8, 'time_pitstops': '15:17:30', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'tsunoda', 'stop': 1, 'lap_pitstops': 8, 'time_pitstops': '15:17:35', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'zhou', 'stop': 1, 'lap_pitstops': 8, 'time_pitstops': '15:17:39', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 1, 'lap_pitstops': 9, 'time_pitstops': '15:19:10', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 1, 'lap_pitstops': 9, 'time_pitstops': '15:19:12', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ocon', 'stop': 1, 'lap_pitstops': 9, 'time_pitstops': '15:19:14', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'albon', 'stop': 1, 'lap_pitstops': 9, 'time_pitstops': '15:19:15', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hamilton', 'stop': 1, 'lap_pitstops': 9, 'time_pitstops': '15:19:19', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'alonso', 'stop': 1, 'lap_pitstops': 11, 'time_pitstops': '15:22:28', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'russell', 'stop': 1, 'lap_pitstops': 11, 'time_pitstops': '15:22:32', 'duration': None}
+[2024-06-17T10:33:51.200+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'gasly', 'stop': 1, 'lap_pitstops': 11, 'time_pitstops': '15:22:43', 'duration': None}
+[2024-06-17T10:33:51.201+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sargeant', 'stop': 1, 'lap_pitstops': 12, 'time_pitstops': '15:24:34', 'duration': None}
+[2024-06-17T10:33:51.201+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'max_verstappen', 'stop': 1, 'lap_pitstops': 13, 'time_pitstops': '15:25:33', 'duration': None}
+[2024-06-17T10:33:51.201+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'perez', 'stop': 1, 'lap_pitstops': 13, 'time_pitstops': '15:25:43', 'duration': None}
+[2024-06-17T10:33:51.201+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ricciardo', 'stop': 1, 'lap_pitstops': 14, 'time_pitstops': '15:27:53', 'duration': None}
+[2024-06-17T10:33:51.201+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'piastri', 'stop': 1, 'lap_pitstops': 16, 'time_pitstops': '15:31:03', 'duration': None}
+[2024-06-17T10:33:51.201+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sainz', 'stop': 1, 'lap_pitstops': 17, 'time_pitstops': '15:32:49', 'duration': None}
+[2024-06-17T10:33:51.201+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'kevin_magnussen', 'stop': 1, 'lap_pitstops': 17, 'time_pitstops': '15:33:13', 'duration': None}
+[2024-06-17T10:33:51.201+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'leclerc', 'stop': 1, 'lap_pitstops': 21, 'time_pitstops': '15:39:34', 'duration': None}
+[2024-06-17T10:33:51.201+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 2, 'lap_pitstops': 21, 'time_pitstops': '15:40:07', 'duration': None}
+[2024-06-17T10:33:51.201+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hamilton', 'stop': 2, 'lap_pitstops': 21, 'time_pitstops': '15:40:23', 'duration': None}
+[2024-06-17T10:33:51.201+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'norris', 'stop': 1, 'lap_pitstops': 22, 'time_pitstops': '15:41:37', 'duration': None}
+[2024-06-17T10:33:51.201+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'max_verstappen', 'stop': 2, 'lap_pitstops': 23, 'time_pitstops': '15:43:44', 'duration': None}
+[2024-06-17T10:33:51.201+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'perez', 'stop': 2, 'lap_pitstops': 23, 'time_pitstops': '15:44:03', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'alonso', 'stop': 2, 'lap_pitstops': 23, 'time_pitstops': '15:44:21', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'russell', 'stop': 2, 'lap_pitstops': 23, 'time_pitstops': '15:44:25', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hulkenberg', 'stop': 2, 'lap_pitstops': 23, 'time_pitstops': '15:44:41', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ocon', 'stop': 2, 'lap_pitstops': 23, 'time_pitstops': '15:44:48', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'tsunoda', 'stop': 2, 'lap_pitstops': 23, 'time_pitstops': '15:44:54', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'albon', 'stop': 2, 'lap_pitstops': 23, 'time_pitstops': '15:44:57', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'albon', 'stop': 1, 'lap_pitstops': 10, 'time_pitstops': '16:19:16', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 1, 'lap_pitstops': 11, 'time_pitstops': '16:20:48', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sargeant', 'stop': 1, 'lap_pitstops': 11, 'time_pitstops': '16:20:52', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 1, 'lap_pitstops': 11, 'time_pitstops': '16:20:55', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hulkenberg', 'stop': 1, 'lap_pitstops': 12, 'time_pitstops': '16:22:21', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'gasly', 'stop': 1, 'lap_pitstops': 12, 'time_pitstops': '16:22:22', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'perez', 'stop': 1, 'lap_pitstops': 17, 'time_pitstops': '16:29:57', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'leclerc', 'stop': 1, 'lap_pitstops': 19, 'time_pitstops': '16:32:56', 'duration': None}
+[2024-06-17T10:33:51.202+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ocon', 'stop': 1, 'lap_pitstops': 22, 'time_pitstops': '16:38:08', 'duration': None}
+[2024-06-17T10:33:51.203+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'alonso', 'stop': 1, 'lap_pitstops': 22, 'time_pitstops': '16:38:11', 'duration': None}
+[2024-06-17T10:33:51.203+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'kevin_magnussen', 'stop': 1, 'lap_pitstops': 22, 'time_pitstops': '16:38:18', 'duration': None}
+[2024-06-17T10:33:51.203+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'max_verstappen', 'stop': 1, 'lap_pitstops': 23, 'time_pitstops': '16:39:17', 'duration': None}
+[2024-06-17T10:33:51.203+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'russell', 'stop': 1, 'lap_pitstops': 24, 'time_pitstops': '16:41:18', 'duration': None}
+[2024-06-17T10:33:51.203+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hamilton', 'stop': 1, 'lap_pitstops': 26, 'time_pitstops': '16:44:23', 'duration': None}
+[2024-06-17T10:33:51.203+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'piastri', 'stop': 1, 'lap_pitstops': 27, 'time_pitstops': '16:45:31', 'duration': None}
+[2024-06-17T10:33:51.203+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sainz', 'stop': 1, 'lap_pitstops': 27, 'time_pitstops': '16:45:33', 'duration': None}
+[2024-06-17T10:33:51.203+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'perez', 'stop': 2, 'lap_pitstops': 28, 'time_pitstops': '16:47:40', 'duration': None}
+[2024-06-17T10:33:51.203+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'tsunoda', 'stop': 1, 'lap_pitstops': 28, 'time_pitstops': '16:47:44', 'duration': None}
+[2024-06-17T10:33:51.203+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'zhou', 'stop': 1, 'lap_pitstops': 28, 'time_pitstops': '16:48:01', 'duration': None}
+[2024-06-17T10:33:51.203+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ricciardo', 'stop': 1, 'lap_pitstops': 28, 'time_pitstops': '16:48:05', 'duration': None}
+[2024-06-17T10:33:51.203+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hulkenberg', 'stop': 2, 'lap_pitstops': 28, 'time_pitstops': '16:48:13', 'duration': None}
+[2024-06-17T10:33:51.203+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 2, 'lap_pitstops': 28, 'time_pitstops': '16:48:15', 'duration': None}
+[2024-06-17T10:33:51.203+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'kevin_magnussen', 'stop': 2, 'lap_pitstops': 28, 'time_pitstops': '16:48:47', 'duration': None}
+[2024-06-17T10:33:51.204+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'norris', 'stop': 1, 'lap_pitstops': 29, 'time_pitstops': '16:49:15', 'duration': None}
+[2024-06-17T10:33:51.204+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 2, 'lap_pitstops': 29, 'time_pitstops': '16:50:34', 'duration': None}
+[2024-06-17T10:33:51.204+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'kevin_magnussen', 'stop': 3, 'lap_pitstops': 31, 'time_pitstops': '16:54:36', 'duration': None}
+[2024-06-17T10:33:51.204+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'piastri', 'stop': 2, 'lap_pitstops': 40, 'time_pitstops': '17:08:34', 'duration': None}
+[2024-06-17T10:33:51.204+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'albon', 'stop': 2, 'lap_pitstops': 53, 'time_pitstops': '17:29:03', 'duration': None}
+[2024-06-17T10:33:51.204+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'alonso', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '15:13:08', 'duration': None}
+[2024-06-17T10:33:51.204+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'albon', 'stop': 1, 'lap_pitstops': 8, 'time_pitstops': '15:14:25', 'duration': None}
+[2024-06-17T10:33:51.204+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'gasly', 'stop': 1, 'lap_pitstops': 8, 'time_pitstops': '15:14:26', 'duration': None}
+[2024-06-17T10:33:51.204+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 1, 'lap_pitstops': 8, 'time_pitstops': '15:14:28', 'duration': None}
+[2024-06-17T10:33:51.204+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'albon', 'stop': 2, 'lap_pitstops': 9, 'time_pitstops': '15:17:08', 'duration': None}
+[2024-06-17T10:33:51.204+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ricciardo', 'stop': 1, 'lap_pitstops': 11, 'time_pitstops': '15:18:29', 'duration': None}
+[2024-06-17T10:33:51.204+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'tsunoda', 'stop': 1, 'lap_pitstops': 12, 'time_pitstops': '15:19:49', 'duration': None}
+[2024-06-17T10:33:51.204+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hulkenberg', 'stop': 1, 'lap_pitstops': 13, 'time_pitstops': '15:21:11', 'duration': None}
+[2024-06-17T10:33:51.204+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'russell', 'stop': 1, 'lap_pitstops': 21, 'time_pitstops': '15:31:57', 'duration': None}
+[2024-06-17T10:33:51.205+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'norris', 'stop': 1, 'lap_pitstops': 22, 'time_pitstops': '15:33:08', 'duration': None}
+[2024-06-17T10:33:51.205+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'piastri', 'stop': 1, 'lap_pitstops': 23, 'time_pitstops': '15:34:37', 'duration': None}
+[2024-06-17T10:33:51.205+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'max_verstappen', 'stop': 1, 'lap_pitstops': 24, 'time_pitstops': '15:35:46', 'duration': None}
+[2024-06-17T10:33:51.205+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'albon', 'stop': 3, 'lap_pitstops': 23, 'time_pitstops': '15:36:52', 'duration': None}
+[2024-06-17T10:33:51.205+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'leclerc', 'stop': 1, 'lap_pitstops': 25, 'time_pitstops': '15:37:15', 'duration': None}
+[2024-06-17T10:33:51.205+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ocon', 'stop': 1, 'lap_pitstops': 25, 'time_pitstops': '15:37:56', 'duration': None}
+[2024-06-17T10:33:51.205+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sainz', 'stop': 1, 'lap_pitstops': 27, 'time_pitstops': '15:40:03', 'duration': None}
+[2024-06-17T10:33:51.205+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hamilton', 'stop': 1, 'lap_pitstops': 27, 'time_pitstops': '15:40:14', 'duration': None}
+[2024-06-17T10:33:51.205+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'albon', 'stop': 4, 'lap_pitstops': 28, 'time_pitstops': '15:44:25', 'duration': None}
+[2024-06-17T10:33:51.205+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'gasly', 'stop': 2, 'lap_pitstops': 30, 'time_pitstops': '15:45:06', 'duration': None}
+[2024-06-17T10:33:51.205+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sargeant', 'stop': 1, 'lap_pitstops': 31, 'time_pitstops': '15:46:28', 'duration': None}
+[2024-06-17T10:33:51.205+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'zhou', 'stop': 1, 'lap_pitstops': 33, 'time_pitstops': '15:49:09', 'duration': None}
+[2024-06-17T10:33:51.205+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'perez', 'stop': 1, 'lap_pitstops': 37, 'time_pitstops': '15:54:16', 'duration': None}
+[2024-06-17T10:33:51.205+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 1, 'lap_pitstops': 37, 'time_pitstops': '15:54:22', 'duration': None}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'kevin_magnussen', 'stop': 1, 'lap_pitstops': 37, 'time_pitstops': '15:54:36', 'duration': None}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'alonso', 'stop': 2, 'lap_pitstops': 40, 'time_pitstops': '15:59:03', 'duration': None}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'russell', 'stop': 2, 'lap_pitstops': 52, 'time_pitstops': '16:14:22', 'duration': None}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'alonso', 'stop': 3, 'lap_pitstops': 59, 'time_pitstops': '16:25:23', 'duration': None}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'leclerc', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:04:50', 'duration': 2358.026}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'piastri', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:04:52', 'duration': 2357.645}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'norris', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:04:54', 'duration': 2365.538}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'russell', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:04:56', 'duration': 2369.363}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'max_verstappen', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:04:57', 'duration': 2372.67}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hamilton', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:05:00', 'duration': 2375.369}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'tsunoda', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:05:02', 'duration': 2377.564}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'albon', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:05:05', 'duration': 2381.39}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'gasly', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:05:07', 'duration': 2381.893}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:05:10', 'duration': 2383.588}
+[2024-06-17T10:33:51.206+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ricciardo', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:05:13', 'duration': 2385.823}
+[2024-06-17T10:33:51.207+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'alonso', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:05:15', 'duration': 2389.467}
+[2024-06-17T10:33:51.207+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sargeant', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:05:16', 'duration': 2391.6}
+[2024-06-17T10:33:51.207+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:05:19', 'duration': 2394.053}
+[2024-06-17T10:33:51.207+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sainz', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:05:27', 'duration': 2327.072}
+[2024-06-17T10:33:51.207+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'zhou', 'stop': 1, 'lap_pitstops': 1, 'time_pitstops': '15:05:31', 'duration': 2386.414}
+[2024-06-17T10:33:51.207+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 15, 'lap_pitstops': 2, 'time_pitstops': '16:04:57', 'duration': None}
+[2024-06-17T10:33:51.207+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 42, 'lap_pitstops': 2, 'time_pitstops': '16:41:05', 'duration': None}
+[2024-06-17T10:33:51.207+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 48, 'lap_pitstops': 3, 'time_pitstops': '16:49:27', 'duration': None}
+[2024-06-17T10:33:51.207+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hamilton', 'stop': 51, 'lap_pitstops': 2, 'time_pitstops': '16:52:10', 'duration': None}
+[2024-06-17T10:33:51.207+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'max_verstappen', 'stop': 52, 'lap_pitstops': 2, 'time_pitstops': '16:53:26', 'duration': None}
+[2024-06-17T10:33:51.207+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sargeant', 'stop': 57, 'lap_pitstops': 2, 'time_pitstops': '17:01:43', 'duration': None}
+[2024-06-17T10:33:51.207+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'zhou', 'stop': 70, 'lap_pitstops': 2, 'time_pitstops': '17:19:04', 'duration': None}
+[2024-06-17T10:33:51.207+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'kevin_magnussen', 'stop': 1, 'lap_pitstops': 7, 'time_pitstops': '14:14:25', 'duration': None}
+[2024-06-17T10:33:51.207+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hulkenberg', 'stop': 1, 'lap_pitstops': 12, 'time_pitstops': '14:22:33', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'zhou', 'stop': 1, 'lap_pitstops': 24, 'time_pitstops': '14:40:42', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'max_verstappen', 'stop': 1, 'lap_pitstops': 25, 'time_pitstops': '14:40:52', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'russell', 'stop': 1, 'lap_pitstops': 25, 'time_pitstops': '14:40:52', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'piastri', 'stop': 1, 'lap_pitstops': 25, 'time_pitstops': '14:40:53', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'alonso', 'stop': 1, 'lap_pitstops': 25, 'time_pitstops': '14:41:12', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hamilton', 'stop': 1, 'lap_pitstops': 25, 'time_pitstops': '14:41:13', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'stroll', 'stop': 1, 'lap_pitstops': 25, 'time_pitstops': '14:41:47', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'albon', 'stop': 1, 'lap_pitstops': 25, 'time_pitstops': '14:41:54', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'leclerc', 'stop': 1, 'lap_pitstops': 25, 'time_pitstops': '14:41:58', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sainz', 'stop': 1, 'lap_pitstops': 25, 'time_pitstops': '14:42:01', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'kevin_magnussen', 'stop': 2, 'lap_pitstops': 25, 'time_pitstops': '14:42:03', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'gasly', 'stop': 1, 'lap_pitstops': 25, 'time_pitstops': '14:42:06', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'perez', 'stop': 1, 'lap_pitstops': 25, 'time_pitstops': '14:42:09', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hulkenberg', 'stop': 2, 'lap_pitstops': 25, 'time_pitstops': '14:42:21', 'duration': None}
+[2024-06-17T10:33:51.208+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'norris', 'stop': 1, 'lap_pitstops': 26, 'time_pitstops': '14:42:44', 'duration': None}
+[2024-06-17T10:33:51.209+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ricciardo', 'stop': 1, 'lap_pitstops': 26, 'time_pitstops': '14:43:37', 'duration': None}
+[2024-06-17T10:33:51.209+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'leclerc', 'stop': 2, 'lap_pitstops': 28, 'time_pitstops': '14:47:31', 'duration': None}
+[2024-06-17T10:33:51.209+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'leclerc', 'stop': 3, 'lap_pitstops': 31, 'time_pitstops': '14:53:31', 'duration': None}
+[2024-06-17T10:33:51.209+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'gasly', 'stop': 2, 'lap_pitstops': 40, 'time_pitstops': '15:05:55', 'duration': None}
+[2024-06-17T10:33:51.209+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'kevin_magnussen', 'stop': 3, 'lap_pitstops': 41, 'time_pitstops': '15:07:24', 'duration': None}
+[2024-06-17T10:33:51.209+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'bottas', 'stop': 1, 'lap_pitstops': 42, 'time_pitstops': '15:08:45', 'duration': None}
+[2024-06-17T10:33:51.209+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'hamilton', 'stop': 2, 'lap_pitstops': 43, 'time_pitstops': '15:09:46', 'duration': None}
+[2024-06-17T10:33:51.209+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'ricciardo', 'stop': 2, 'lap_pitstops': 43, 'time_pitstops': '15:10:10', 'duration': None}
+[2024-06-17T10:33:51.209+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'sainz', 'stop': 2, 'lap_pitstops': 43, 'time_pitstops': '15:10:12', 'duration': None}
+[2024-06-17T10:33:51.209+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'perez', 'stop': 2, 'lap_pitstops': 43, 'time_pitstops': '15:10:12', 'duration': None}
+[2024-06-17T10:33:51.209+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'piastri', 'stop': 2, 'lap_pitstops': 44, 'time_pitstops': '15:11:10', 'duration': None}
+[2024-06-17T10:33:51.209+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'alonso', 'stop': 2, 'lap_pitstops': 44, 'time_pitstops': '15:11:23', 'duration': None}
+[2024-06-17T10:33:51.209+0000] {logging_mixin.py:188} INFO - Missing keys in message: {'driverId': 'tsunoda', 'stop': 1, 'lap_pitstops': 44, 'time_pitstops': '15:11:26', 'duration': None}
+[2024-06-17T10:34:01.223+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('172.20.0.6', 9092)]>: Closing connection. 
+[2024-06-17T10:34:01.223+0000] {future.py:77} ERROR - Fetch to node 1 failed: Cancelled: <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('172.20.0.6', 9092)]>
+[2024-06-17T10:34:01.224+0000] {logging_mixin.py:188} INFO - Total number of pit stops loaded into the database: 0
+[2024-06-17T10:34:01.224+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-17T10:34:01.225+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T10:34:01.232+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=consume_and_load_pitStopsDim, run_id=manual__2024-06-17T10:33:27.126744+00:00, execution_date=20240617T103327, start_date=20240617T103350, end_date=20240617T103401
+[2024-06-17T10:34:01.276+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T10:34:01.285+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-17T10:34:01.287+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

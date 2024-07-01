@@ -1,0 +1,487 @@
+[2024-06-17T07:43:07.214+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T07:43:07.235+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T07:43:07.243+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T07:43:07.243+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T07:43:07.258+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-17T07:43:07.264+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=155) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T07:43:07.266+0000] {standard_task_runner.py:63} INFO - Started process 168 to run task
+[2024-06-17T07:43:07.267+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmprbe8yv5g']
+[2024-06-17T07:43:07.269+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask freePracticeDim_transform
+[2024-06-17T07:43:07.321+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host c78fbdbb8669
+[2024-06-17T07:43:09.436+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-17T07:43:09.438+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T07:43:09.533+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-17T07:43:09.544+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T07:43:09.623+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240617T074307, end_date=20240617T074309
+[2024-06-17T07:43:09.679+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T07:43:09.687+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-17T08:17:43.694+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T08:17:43.713+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T08:17:43.721+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T08:17:43.721+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T08:17:43.734+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-17T08:17:43.740+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=124) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T08:17:43.741+0000] {standard_task_runner.py:63} INFO - Started process 136 to run task
+[2024-06-17T08:17:43.741+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp2jtqc_b0']
+[2024-06-17T08:17:43.743+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask freePracticeDim_transform
+[2024-06-17T08:17:43.786+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host 8b2116437c09
+[2024-06-17T08:17:46.247+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-17T08:17:46.249+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T08:17:46.355+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-17T08:17:46.364+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T08:17:46.397+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240617T081743, end_date=20240617T081746
+[2024-06-17T08:17:46.477+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T08:17:46.488+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-17T09:04:08.475+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T09:04:08.495+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T09:04:08.502+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T09:04:08.502+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T09:04:08.514+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-17T09:04:08.519+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=94) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T09:04:08.520+0000] {standard_task_runner.py:63} INFO - Started process 114 to run task
+[2024-06-17T09:04:08.521+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp_219pu90']
+[2024-06-17T09:04:08.522+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask freePracticeDim_transform
+[2024-06-17T09:04:08.564+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host c4902b1065ce
+[2024-06-17T09:04:10.222+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-17T09:04:10.224+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T09:04:10.310+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-17T09:04:10.324+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T09:04:10.347+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240617T090408, end_date=20240617T090410
+[2024-06-17T09:04:10.428+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T09:04:10.447+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-17T09:04:10.449+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-17T09:25:49.768+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T09:25:49.789+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T09:25:49.796+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T09:25:49.796+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T09:25:49.806+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-17T09:25:49.812+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=106) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T09:25:49.814+0000] {standard_task_runner.py:63} INFO - Started process 127 to run task
+[2024-06-17T09:25:49.813+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmppzfk4ho1']
+[2024-06-17T09:25:49.815+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask freePracticeDim_transform
+[2024-06-17T09:25:49.858+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host dbef0fd3372f
+[2024-06-17T09:25:51.632+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-17T09:25:51.634+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T09:25:51.730+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-17T09:25:51.738+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T09:25:51.762+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240617T092549, end_date=20240617T092551
+[2024-06-17T09:25:51.821+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T09:25:51.828+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-17T10:24:05.830+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T10:24:05.851+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T10:24:05.859+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T10:24:05.860+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T10:24:05.870+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-17T10:24:05.876+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=715) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T10:24:05.877+0000] {standard_task_runner.py:63} INFO - Started process 732 to run task
+[2024-06-17T10:24:05.878+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpzkm3v9v8']
+[2024-06-17T10:24:05.879+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask freePracticeDim_transform
+[2024-06-17T10:24:05.921+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host f37b7fb66c71
+[2024-06-17T10:24:07.873+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-17T10:24:07.875+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T10:24:07.957+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-17T10:24:07.964+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T10:24:07.987+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240617T102405, end_date=20240617T102407
+[2024-06-17T10:24:08.049+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T10:24:08.067+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-17T10:24:08.068+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-17T10:39:17.362+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T10:39:17.380+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T10:39:17.387+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T10:39:17.388+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T10:39:17.398+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-17T10:39:17.403+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=105) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T10:39:17.404+0000] {standard_task_runner.py:63} INFO - Started process 122 to run task
+[2024-06-17T10:39:17.404+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpkiss6if9']
+[2024-06-17T10:39:17.406+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask freePracticeDim_transform
+[2024-06-17T10:39:17.448+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host 688ecc0cce5b
+[2024-06-17T10:39:19.063+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-17T10:39:19.065+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T10:39:19.139+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-17T10:39:19.147+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T10:39:19.169+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240617T103917, end_date=20240617T103919
+[2024-06-17T10:39:19.261+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T10:39:19.268+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-17T11:13:17.517+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T11:13:17.535+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T11:13:17.541+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T11:13:17.541+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T11:13:17.551+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-17T11:13:17.556+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=101) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T11:13:17.557+0000] {standard_task_runner.py:63} INFO - Started process 114 to run task
+[2024-06-17T11:13:17.557+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpq0bxrq6p']
+[2024-06-17T11:13:17.559+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask freePracticeDim_transform
+[2024-06-17T11:13:17.603+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host 3a133740bf3d
+[2024-06-17T11:13:19.337+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-17T11:13:19.340+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T11:13:19.422+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-17T11:13:19.429+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T11:13:19.465+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240617T111317, end_date=20240617T111319
+[2024-06-17T11:13:19.526+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T11:13:19.547+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-17T11:13:19.548+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-17T12:23:46.783+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T12:23:46.809+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T12:23:46.818+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T12:23:46.819+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T12:23:46.830+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-17T12:23:46.836+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=95) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T12:23:46.838+0000] {standard_task_runner.py:63} INFO - Started process 109 to run task
+[2024-06-17T12:23:46.838+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpr29284pu']
+[2024-06-17T12:23:46.840+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask freePracticeDim_transform
+[2024-06-17T12:23:46.894+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host 5ef985758484
+[2024-06-17T12:23:48.713+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-17T12:23:48.718+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T12:23:48.804+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-17T12:23:48.813+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T12:23:48.838+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240617T122346, end_date=20240617T122348
+[2024-06-17T12:23:48.931+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T12:23:48.941+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-17T12:41:52.961+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T12:41:52.980+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T12:41:52.986+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T12:41:52.986+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T12:41:52.999+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-17T12:41:53.004+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=103) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T12:41:53.005+0000] {standard_task_runner.py:63} INFO - Started process 117 to run task
+[2024-06-17T12:41:53.005+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpg9qanixd']
+[2024-06-17T12:41:53.006+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask freePracticeDim_transform
+[2024-06-17T12:41:53.050+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host c6f07e7c011e
+[2024-06-17T12:41:54.731+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-17T12:41:54.733+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T12:41:54.829+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-17T12:41:54.838+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T12:41:54.864+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240617T124152, end_date=20240617T124154
+[2024-06-17T12:41:54.941+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T12:41:54.962+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-17T12:41:54.963+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-17T12:47:15.970+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T12:47:15.992+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T12:47:16.001+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T12:47:16.002+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T12:47:16.018+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-17T12:47:16.026+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=101) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T12:47:16.028+0000] {standard_task_runner.py:63} INFO - Started process 119 to run task
+[2024-06-17T12:47:16.028+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp_s3v94tw']
+[2024-06-17T12:47:16.030+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask freePracticeDim_transform
+[2024-06-17T12:47:16.081+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host 7b9616fbccae
+[2024-06-17T12:47:17.787+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-17T12:47:17.789+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T12:47:17.886+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-17T12:47:17.901+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T12:47:17.922+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240617T124715, end_date=20240617T124717
+[2024-06-17T12:47:17.973+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T12:47:17.990+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-17T12:47:17.991+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-17T13:15:41.902+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T13:15:41.920+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T13:15:41.929+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T13:15:41.929+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T13:15:41.940+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-17T13:15:41.945+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=105) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T13:15:41.946+0000] {standard_task_runner.py:63} INFO - Started process 116 to run task
+[2024-06-17T13:15:41.946+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpycxwdxwd']
+[2024-06-17T13:15:41.948+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask freePracticeDim_transform
+[2024-06-17T13:15:41.994+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host 32e484e314f3
+[2024-06-17T13:15:43.804+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-17T13:15:43.808+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T13:15:43.896+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-17T13:15:43.909+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T13:15:43.934+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240617T131541, end_date=20240617T131543
+[2024-06-17T13:15:44.012+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T13:15:44.020+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-17T13:25:57.920+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T13:25:57.938+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T13:25:57.946+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T13:25:57.946+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T13:25:57.956+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-17T13:25:57.962+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=102) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T13:25:57.962+0000] {standard_task_runner.py:63} INFO - Started process 118 to run task
+[2024-06-17T13:25:57.963+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpkeg_t0os']
+[2024-06-17T13:25:57.965+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask freePracticeDim_transform
+[2024-06-17T13:25:58.010+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host 96c07605841c
+[2024-06-17T13:25:59.754+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-17T13:25:59.757+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T13:25:59.844+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-17T13:25:59.854+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T13:25:59.880+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240617T132557, end_date=20240617T132559
+[2024-06-17T13:25:59.920+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T13:25:59.932+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-17T13:55:23.117+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T13:55:23.136+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T13:55:23.142+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T13:55:23.143+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T13:55:23.154+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-17T13:55:23.159+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=112) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T13:55:23.160+0000] {standard_task_runner.py:63} INFO - Started process 127 to run task
+[2024-06-17T13:55:23.161+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpc23u_egh']
+[2024-06-17T13:55:23.162+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask freePracticeDim_transform
+[2024-06-17T13:55:23.203+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host b1cdb958cbe8
+[2024-06-17T13:55:24.972+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-17T13:55:24.974+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T13:55:25.061+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-17T13:55:25.071+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T13:55:25.092+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240617T135523, end_date=20240617T135525
+[2024-06-17T13:55:25.169+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T13:55:25.187+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-17T13:55:25.189+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-17T14:14:26.036+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T14:14:26.055+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T14:14:26.061+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-17T14:14:26.062+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T14:14:26.072+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-17T14:14:26.078+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=115) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T14:14:26.079+0000] {standard_task_runner.py:63} INFO - Started process 129 to run task
+[2024-06-17T14:14:26.079+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmplyy21wtw']
+[2024-06-17T14:14:26.081+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask freePracticeDim_transform
+[2024-06-17T14:14:26.121+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host ad2413a51065
+[2024-06-17T14:14:28.149+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-17T14:14:28.151+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T14:14:28.262+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-17T14:14:28.274+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T14:14:28.303+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240617T141426, end_date=20240617T141428
+[2024-06-17T14:14:28.364+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T14:14:28.394+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-17T14:14:28.396+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-24T07:21:43.082+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-24T07:21:43.103+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-24T07:21:43.111+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [queued]>
+[2024-06-24T07:21:43.111+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-24T07:21:43.122+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): freePracticeDim_transform> on 2024-06-16 00:00:00+00:00
+[2024-06-24T07:21:43.127+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=104) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-24T07:21:43.129+0000] {standard_task_runner.py:63} INFO - Started process 118 to run task
+[2024-06-24T07:21:43.129+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'freePracticeDim_transform', 'scheduled__2024-06-16T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpqvmjpvyy']
+[2024-06-24T07:21:43.131+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask freePracticeDim_transform
+[2024-06-24T07:21:43.184+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.freePracticeDim_transform scheduled__2024-06-16T00:00:00+00:00 [running]> on host 4fefe0a35f4a
+[2024-06-24T07:21:45.077+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='freePracticeDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-16T00:00:00+00:00'
+[2024-06-24T07:21:45.079+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-24T07:21:45.158+0000] {python.py:237} INFO - Done. Returned value was:         raceId fp1_date fp2_date fp3_date fp1_time fp2_time fp3_time
+0          860     None     None     None     None     None     None
+232        861     None     None     None     None     None     None
+680        862     None     None     None     None     None     None
+1016       863     None     None     None     None     None     None
+1187       864     None     None     None     None     None     None
+...        ...      ...      ...      ...      ...      ...      ...
+76080      938     None     None     None     None     None     None
+76430      940     None     None     None     None     None     None
+76916      944     None     None     None     None     None     None
+85494      990     None     None     None     None     None     None
+106841     951     None     None     None     None     None     None
+
+[232 rows x 7 columns]
+[2024-06-24T07:21:45.168+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-24T07:21:45.200+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=freePracticeDim_transform, run_id=scheduled__2024-06-16T00:00:00+00:00, execution_date=20240616T000000, start_date=20240624T072143, end_date=20240624T072145
+[2024-06-24T07:21:45.237+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-24T07:21:45.249+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

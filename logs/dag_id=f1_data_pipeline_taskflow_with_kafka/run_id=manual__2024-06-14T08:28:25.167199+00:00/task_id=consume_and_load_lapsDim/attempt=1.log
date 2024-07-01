@@ -1,0 +1,107 @@
+[2024-06-14T08:28:26.433+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T08:28:26.449+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.consume_and_load_lapsDim manual__2024-06-14T08:28:25.167199+00:00 [queued]>
+[2024-06-14T08:28:26.455+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.consume_and_load_lapsDim manual__2024-06-14T08:28:25.167199+00:00 [queued]>
+[2024-06-14T08:28:26.455+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T08:28:26.465+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): consume_and_load_lapsDim> on 2024-06-14 08:28:25.167199+00:00
+[2024-06-14T08:28:26.470+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1150) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T08:28:26.471+0000] {standard_task_runner.py:63} INFO - Started process 1161 to run task
+[2024-06-14T08:28:26.472+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow_with_kafka', 'consume_and_load_lapsDim', 'manual__2024-06-14T08:28:25.167199+00:00', '--job-id', '54', '--raw', '--subdir', 'DAGS_FOLDER/kafka_data_scrape.py', '--cfg-path', '/tmp/tmpwe18jc4z']
+[2024-06-14T08:28:26.474+0000] {standard_task_runner.py:91} INFO - Job 54: Subtask consume_and_load_lapsDim
+[2024-06-14T08:28:26.520+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow_with_kafka.consume_and_load_lapsDim manual__2024-06-14T08:28:25.167199+00:00 [running]> on host 75ebf4a056df
+[2024-06-14T08:28:26.598+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow_with_kafka' AIRFLOW_CTX_TASK_ID='consume_and_load_lapsDim' AIRFLOW_CTX_EXECUTION_DATE='2024-06-14T08:28:25.167199+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-14T08:28:25.167199+00:00'
+[2024-06-14T08:28:26.599+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T08:28:26.601+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.21.0.6', 9092)]>: connecting to kafka:9092 [('172.21.0.6', 9092) IPv4]
+[2024-06-14T08:28:26.601+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-14T08:28:26.602+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.21.0.6', 9092)]>: Connection complete.
+[2024-06-14T08:28:26.704+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-14T08:28:26.704+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-14T08:28:26.705+0000] {consumer.py:122} WARNING - group_id is None: disabling auto-commit.
+[2024-06-14T08:28:26.705+0000] {subscription_state.py:167} INFO - Updating subscribed topics to: ('f1_data_topic_laps',)
+[2024-06-14T08:28:26.706+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-14T08:28:26.706+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-14T08:28:26.740+0000] {subscription_state.py:253} INFO - Updated partition assignment: [('f1_data_topic_laps', 0)]
+[2024-06-14T08:28:26.741+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.21.0.6', 9092)]>: connecting to kafka:9092 [('172.21.0.6', 9092) IPv4]
+[2024-06-14T08:28:26.742+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.21.0.6', 9092)]>: Connection complete.
+[2024-06-14T08:28:26.742+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.21.0.6', 9092)]>: Closing connection. 
+[2024-06-14T08:28:26.853+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T08:28:26.853+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.DatatypeMismatch: column "milliseconds_laptimes" is of type time without time zone but expression is of type integer
+LINE 1: ...sition_laptimes) VALUES (1111, 830, 1, '1:37.284', 97284, 1)
+                                                              ^
+HINT:  You will need to rewrite or cast the expression.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/kafka_data_scrape.py", line 687, in consume_and_load_lapsDim
+    session.execute(insert_stmt)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1717, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.DatatypeMismatch) column "milliseconds_laptimes" is of type time without time zone but expression is of type integer
+LINE 1: ...sition_laptimes) VALUES (1111, 830, 1, '1:37.284', 97284, 1)
+                                                              ^
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO "lapsDim" ("raceId", "driverId", lap, time_laptimes, milliseconds_laptimes, position_laptimes) VALUES (%(raceId)s, %(driverId)s, %(lap)s, %(time_laptimes)s, %(milliseconds_laptimes)s, %(position_laptimes)s)]
+[parameters: {'raceId': 1111, 'driverId': 830, 'lap': 1, 'time_laptimes': '1:37.284', 'milliseconds_laptimes': 97284, 'position_laptimes': 1}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-06-14T08:28:26.864+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=f1_data_pipeline_taskflow_with_kafka, task_id=consume_and_load_lapsDim, run_id=manual__2024-06-14T08:28:25.167199+00:00, execution_date=20240614T082825, start_date=20240614T082826, end_date=20240614T082826
+[2024-06-14T08:28:26.871+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 54 for task consume_and_load_lapsDim ((psycopg2.errors.DatatypeMismatch) column "milliseconds_laptimes" is of type time without time zone but expression is of type integer
+LINE 1: ...sition_laptimes) VALUES (1111, 830, 1, '1:37.284', 97284, 1)
+                                                              ^
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO "lapsDim" ("raceId", "driverId", lap, time_laptimes, milliseconds_laptimes, position_laptimes) VALUES (%(raceId)s, %(driverId)s, %(lap)s, %(time_laptimes)s, %(milliseconds_laptimes)s, %(position_laptimes)s)]
+[parameters: {'raceId': 1111, 'driverId': 830, 'lap': 1, 'time_laptimes': '1:37.284', 'milliseconds_laptimes': 97284, 'position_laptimes': 1}]
+(Background on this error at: https://sqlalche.me/e/14/f405); 1161)
+[2024-06-14T08:28:26.885+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-14T08:28:26.891+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

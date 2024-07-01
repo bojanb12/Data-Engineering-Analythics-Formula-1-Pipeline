@@ -1,0 +1,15 @@
+[2024-06-03T09:34:27.929+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-03T09:34:27.955+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.pitStopsDim_transform manual__2024-06-03T09:33:56.254036+00:00 [queued]>
+[2024-06-03T09:34:27.963+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.pitStopsDim_transform manual__2024-06-03T09:33:56.254036+00:00 [queued]>
+[2024-06-03T09:34:27.964+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-03T09:34:27.977+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): pitStopsDim_transform> on 2024-06-03 09:33:56.254036+00:00
+[2024-06-03T09:34:27.985+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=123) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-03T09:34:27.986+0000] {standard_task_runner.py:63} INFO - Started process 146 to run task
+[2024-06-03T09:34:27.986+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'pitStopsDim_transform', 'manual__2024-06-03T09:33:56.254036+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp7i9nygiy']
+[2024-06-03T09:34:27.989+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask pitStopsDim_transform
+[2024-06-03T09:34:28.035+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.pitStopsDim_transform manual__2024-06-03T09:33:56.254036+00:00 [running]> on host acc449a1db53
+[2024-06-03T09:34:31.041+0000] {local_task_job_runner.py:240} INFO - Task exited with return code -9
+[2024-06-03T09:34:31.440+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-03T09:34:31.448+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

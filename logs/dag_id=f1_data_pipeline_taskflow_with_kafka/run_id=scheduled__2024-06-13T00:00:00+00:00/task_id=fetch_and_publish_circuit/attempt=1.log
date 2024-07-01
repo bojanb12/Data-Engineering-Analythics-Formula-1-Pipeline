@@ -1,0 +1,278 @@
+[2024-06-14T07:30:07.031+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T07:30:07.049+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T07:30:07.055+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T07:30:07.055+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T07:30:07.064+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_circuit> on 2024-06-13 00:00:00+00:00
+[2024-06-14T07:30:07.070+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=988) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T07:30:07.071+0000] {standard_task_runner.py:63} INFO - Started process 997 to run task
+[2024-06-14T07:30:07.071+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow_with_kafka', 'fetch_and_publish_circuit', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/kafka_data_scrape.py', '--cfg-path', '/tmp/tmpbbjfoe26']
+[2024-06-14T07:30:07.073+0000] {standard_task_runner.py:91} INFO - Job 32: Subtask fetch_and_publish_circuit
+[2024-06-14T07:30:07.107+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [running]> on host aece75d0a06d
+[2024-06-14T07:30:07.163+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow_with_kafka' AIRFLOW_CTX_TASK_ID='fetch_and_publish_circuit' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T07:30:07.164+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T07:30:13.172+0000] {logging_mixin.py:188} INFO - tried to find producer
+[2024-06-14T07:30:13.176+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.6', 9092)]>: connecting to kafka:9092 [('172.18.0.6', 9092) IPv4]
+[2024-06-14T07:30:13.177+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-14T07:30:13.177+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.6', 9092)]>: Connection complete.
+[2024-06-14T07:30:13.407+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-14T07:30:13.407+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-14T07:30:13.563+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.6', 9092)]>: connecting to kafka:9092 [('172.18.0.6', 9092) IPv4]
+[2024-06-14T07:30:13.563+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.6', 9092)]>: Connection complete.
+[2024-06-14T07:30:13.564+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.6', 9092)]>: Closing connection. 
+[2024-06-14T07:30:14.100+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-14T07:30:14.157+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.6', 9092)]>: Closing connection. 
+[2024-06-14T07:30:14.158+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-14T07:30:14.158+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T07:30:14.166+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow_with_kafka, task_id=fetch_and_publish_circuit, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T073007, end_date=20240614T073014
+[2024-06-14T07:30:14.182+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T07:30:14.197+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T07:30:14.198+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T07:56:40.821+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T07:56:40.841+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T07:56:40.847+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T07:56:40.848+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T07:56:40.856+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_circuit> on 2024-06-13 00:00:00+00:00
+[2024-06-14T07:56:40.862+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=595) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T07:56:40.863+0000] {standard_task_runner.py:63} INFO - Started process 601 to run task
+[2024-06-14T07:56:40.863+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow_with_kafka', 'fetch_and_publish_circuit', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '31', '--raw', '--subdir', 'DAGS_FOLDER/kafka_data_scrape.py', '--cfg-path', '/tmp/tmpksqg297a']
+[2024-06-14T07:56:40.865+0000] {standard_task_runner.py:91} INFO - Job 31: Subtask fetch_and_publish_circuit
+[2024-06-14T07:56:40.903+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [running]> on host 22673327f9c1
+[2024-06-14T07:56:40.967+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow_with_kafka' AIRFLOW_CTX_TASK_ID='fetch_and_publish_circuit' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T07:56:40.968+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T07:56:42.150+0000] {logging_mixin.py:188} INFO - tried to find producer
+[2024-06-14T07:56:42.152+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: connecting to kafka:9092 [('172.19.0.6', 9092) IPv4]
+[2024-06-14T07:56:42.152+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-14T07:56:42.153+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: Connection complete.
+[2024-06-14T07:56:42.258+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-14T07:56:42.258+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-14T07:56:42.413+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: connecting to kafka:9092 [('172.19.0.6', 9092) IPv4]
+[2024-06-14T07:56:42.414+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.19.0.6', 9092)]>: Connection complete.
+[2024-06-14T07:56:42.414+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Closing connection. 
+[2024-06-14T07:56:42.530+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-14T07:56:42.540+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('172.19.0.6', 9092)]>: Closing connection. 
+[2024-06-14T07:56:42.541+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-14T07:56:42.541+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T07:56:42.550+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow_with_kafka, task_id=fetch_and_publish_circuit, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T075640, end_date=20240614T075642
+[2024-06-14T07:56:42.601+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T07:56:42.617+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T07:56:42.618+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T08:02:31.383+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T08:02:31.400+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:02:31.407+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:02:31.408+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T08:02:31.422+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_circuit> on 2024-06-13 00:00:00+00:00
+[2024-06-14T08:02:31.428+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=72) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T08:02:31.429+0000] {standard_task_runner.py:63} INFO - Started process 91 to run task
+[2024-06-14T08:02:31.430+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow_with_kafka', 'fetch_and_publish_circuit', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/kafka_data_scrape.py', '--cfg-path', '/tmp/tmptvsm1esf']
+[2024-06-14T08:02:31.433+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask fetch_and_publish_circuit
+[2024-06-14T08:02:31.486+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [running]> on host 73204506bf77
+[2024-06-14T08:02:31.558+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow_with_kafka' AIRFLOW_CTX_TASK_ID='fetch_and_publish_circuit' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T08:02:31.560+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T08:02:32.584+0000] {logging_mixin.py:188} INFO - tried to find producer
+[2024-06-14T08:02:32.586+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.20.0.6', 9092)]>: connecting to kafka:9092 [('172.20.0.6', 9092) IPv4]
+[2024-06-14T08:02:32.587+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-14T08:02:32.587+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.20.0.6', 9092)]>: Connection complete.
+[2024-06-14T08:02:32.691+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-14T08:02:32.691+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-14T08:02:32.847+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.20.0.6', 9092)]>: connecting to kafka:9092 [('172.20.0.6', 9092) IPv4]
+[2024-06-14T08:02:32.847+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.20.0.6', 9092)]>: Connection complete.
+[2024-06-14T08:02:32.847+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.20.0.6', 9092)]>: Closing connection. 
+[2024-06-14T08:02:32.961+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-14T08:02:32.967+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('172.20.0.6', 9092)]>: Closing connection. 
+[2024-06-14T08:02:32.968+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-14T08:02:32.968+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T08:02:32.975+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow_with_kafka, task_id=fetch_and_publish_circuit, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T080231, end_date=20240614T080232
+[2024-06-14T08:02:33.007+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T08:02:33.023+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T08:02:33.025+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T08:05:47.225+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T08:05:47.242+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:05:47.248+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:05:47.248+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T08:05:47.260+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_circuit> on 2024-06-13 00:00:00+00:00
+[2024-06-14T08:05:47.266+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=592) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T08:05:47.268+0000] {standard_task_runner.py:63} INFO - Started process 606 to run task
+[2024-06-14T08:05:47.269+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow_with_kafka', 'fetch_and_publish_circuit', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/kafka_data_scrape.py', '--cfg-path', '/tmp/tmppaip27cr']
+[2024-06-14T08:05:47.271+0000] {standard_task_runner.py:91} INFO - Job 34: Subtask fetch_and_publish_circuit
+[2024-06-14T08:05:47.312+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [running]> on host 75ebf4a056df
+[2024-06-14T08:05:47.377+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow_with_kafka' AIRFLOW_CTX_TASK_ID='fetch_and_publish_circuit' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T08:05:47.378+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T08:05:47.469+0000] {logging_mixin.py:188} INFO - tried to find producer
+[2024-06-14T08:05:47.470+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.21.0.6', 9092)]>: connecting to kafka:9092 [('172.21.0.6', 9092) IPv4]
+[2024-06-14T08:05:47.471+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-14T08:05:47.471+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.21.0.6', 9092)]>: Connection complete.
+[2024-06-14T08:05:47.864+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-14T08:05:47.864+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-14T08:05:48.033+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.21.0.6', 9092)]>: connecting to kafka:9092 [('172.21.0.6', 9092) IPv4]
+[2024-06-14T08:05:48.034+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.21.0.6', 9092)]>: Connection complete.
+[2024-06-14T08:05:48.034+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.21.0.6', 9092)]>: Closing connection. 
+[2024-06-14T08:05:48.771+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-14T08:05:48.840+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('172.21.0.6', 9092)]>: Closing connection. 
+[2024-06-14T08:05:48.841+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-14T08:05:48.842+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T08:05:48.851+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow_with_kafka, task_id=fetch_and_publish_circuit, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T080547, end_date=20240614T080548
+[2024-06-14T08:05:48.886+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T08:05:48.895+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T08:34:16.293+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T08:34:16.310+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:34:16.316+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:34:16.316+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T08:34:16.325+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_circuit> on 2024-06-13 00:00:00+00:00
+[2024-06-14T08:34:16.331+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=613) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T08:34:16.332+0000] {standard_task_runner.py:63} INFO - Started process 624 to run task
+[2024-06-14T08:34:16.332+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow_with_kafka', 'fetch_and_publish_circuit', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/kafka_data_scrape.py', '--cfg-path', '/tmp/tmpr752jt0k']
+[2024-06-14T08:34:16.334+0000] {standard_task_runner.py:91} INFO - Job 32: Subtask fetch_and_publish_circuit
+[2024-06-14T08:34:16.377+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [running]> on host 02396e2d7ca5
+[2024-06-14T08:34:16.442+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow_with_kafka' AIRFLOW_CTX_TASK_ID='fetch_and_publish_circuit' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T08:34:16.443+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T08:34:17.915+0000] {logging_mixin.py:188} INFO - tried to find producer
+[2024-06-14T08:34:17.917+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.22.0.6', 9092)]>: connecting to kafka:9092 [('172.22.0.6', 9092) IPv4]
+[2024-06-14T08:34:17.917+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-14T08:34:17.918+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.22.0.6', 9092)]>: Connection complete.
+[2024-06-14T08:34:18.022+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-14T08:34:18.022+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-14T08:34:18.177+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.22.0.6', 9092)]>: connecting to kafka:9092 [('172.22.0.6', 9092) IPv4]
+[2024-06-14T08:34:18.177+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.22.0.6', 9092)]>: Connection complete.
+[2024-06-14T08:34:18.177+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.22.0.6', 9092)]>: Closing connection. 
+[2024-06-14T08:34:18.292+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-14T08:34:18.298+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('172.22.0.6', 9092)]>: Closing connection. 
+[2024-06-14T08:34:18.299+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-14T08:34:18.299+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T08:34:18.308+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow_with_kafka, task_id=fetch_and_publish_circuit, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T083416, end_date=20240614T083418
+[2024-06-14T08:34:18.351+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T08:34:18.368+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T08:34:18.369+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T08:57:05.254+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T08:57:05.271+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:57:05.276+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T08:57:05.277+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T08:57:05.286+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_circuit> on 2024-06-13 00:00:00+00:00
+[2024-06-14T08:57:05.291+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=683) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T08:57:05.292+0000] {standard_task_runner.py:63} INFO - Started process 697 to run task
+[2024-06-14T08:57:05.294+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow_with_kafka', 'fetch_and_publish_circuit', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/kafka_data_scrape.py', '--cfg-path', '/tmp/tmptytt8dyn']
+[2024-06-14T08:57:05.296+0000] {standard_task_runner.py:91} INFO - Job 32: Subtask fetch_and_publish_circuit
+[2024-06-14T08:57:05.338+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [running]> on host 78c0b56418d0
+[2024-06-14T08:57:05.403+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow_with_kafka' AIRFLOW_CTX_TASK_ID='fetch_and_publish_circuit' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T08:57:05.404+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T08:57:07.314+0000] {logging_mixin.py:188} INFO - tried to find producer
+[2024-06-14T08:57:07.316+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.23.0.6', 9092)]>: connecting to kafka:9092 [('172.23.0.6', 9092) IPv4]
+[2024-06-14T08:57:07.316+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-14T08:57:07.317+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.23.0.6', 9092)]>: Connection complete.
+[2024-06-14T08:57:07.422+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-14T08:57:07.422+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-14T08:57:07.576+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.23.0.6', 9092)]>: connecting to kafka:9092 [('172.23.0.6', 9092) IPv4]
+[2024-06-14T08:57:07.577+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.23.0.6', 9092)]>: Connection complete.
+[2024-06-14T08:57:07.577+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.23.0.6', 9092)]>: Closing connection. 
+[2024-06-14T08:57:07.692+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-14T08:57:07.701+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('172.23.0.6', 9092)]>: Closing connection. 
+[2024-06-14T08:57:07.702+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-14T08:57:07.703+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T08:57:07.710+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow_with_kafka, task_id=fetch_and_publish_circuit, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T085705, end_date=20240614T085707
+[2024-06-14T08:57:07.753+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T08:57:07.771+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T08:57:07.773+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T09:07:31.888+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T09:07:31.903+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T09:07:31.908+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T09:07:31.909+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T09:07:31.916+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_circuit> on 2024-06-13 00:00:00+00:00
+[2024-06-14T09:07:31.921+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=653) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T09:07:31.922+0000] {standard_task_runner.py:63} INFO - Started process 673 to run task
+[2024-06-14T09:07:31.922+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow_with_kafka', 'fetch_and_publish_circuit', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '36', '--raw', '--subdir', 'DAGS_FOLDER/kafka_data_scrape.py', '--cfg-path', '/tmp/tmp7ja8qo2y']
+[2024-06-14T09:07:31.924+0000] {standard_task_runner.py:91} INFO - Job 36: Subtask fetch_and_publish_circuit
+[2024-06-14T09:07:31.957+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [running]> on host 2998375d03a6
+[2024-06-14T09:07:32.013+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow_with_kafka' AIRFLOW_CTX_TASK_ID='fetch_and_publish_circuit' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T09:07:32.013+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T09:07:32.409+0000] {logging_mixin.py:188} INFO - tried to find producer
+[2024-06-14T09:07:32.411+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-06-14T09:07:32.411+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-14T09:07:32.411+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-06-14T09:07:32.515+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-14T09:07:32.515+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-14T09:07:32.670+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-06-14T09:07:32.671+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-06-14T09:07:32.671+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.24.0.6', 9092)]>: Closing connection. 
+[2024-06-14T09:07:32.788+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-14T09:07:32.795+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('172.24.0.6', 9092)]>: Closing connection. 
+[2024-06-14T09:07:32.796+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-14T09:07:32.796+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T09:07:32.805+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow_with_kafka, task_id=fetch_and_publish_circuit, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T090731, end_date=20240614T090732
+[2024-06-14T09:07:32.818+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T09:07:32.835+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T09:07:32.837+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T09:29:49.832+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T09:29:49.850+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T09:29:49.857+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T09:29:49.857+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T09:29:49.869+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_circuit> on 2024-06-13 00:00:00+00:00
+[2024-06-14T09:29:49.875+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=640) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T09:29:49.877+0000] {standard_task_runner.py:63} INFO - Started process 658 to run task
+[2024-06-14T09:29:49.878+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow_with_kafka', 'fetch_and_publish_circuit', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/kafka_data_scrape.py', '--cfg-path', '/tmp/tmpp5ujq5ua']
+[2024-06-14T09:29:49.879+0000] {standard_task_runner.py:91} INFO - Job 35: Subtask fetch_and_publish_circuit
+[2024-06-14T09:29:49.924+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [running]> on host 05f8e2de7bcc
+[2024-06-14T09:29:49.991+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow_with_kafka' AIRFLOW_CTX_TASK_ID='fetch_and_publish_circuit' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T09:29:49.992+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T09:29:51.425+0000] {logging_mixin.py:188} INFO - tried to find producer
+[2024-06-14T09:29:51.426+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.25.0.6', 9092)]>: connecting to kafka:9092 [('172.25.0.6', 9092) IPv4]
+[2024-06-14T09:29:51.427+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-14T09:29:51.428+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.25.0.6', 9092)]>: Connection complete.
+[2024-06-14T09:29:51.533+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-14T09:29:51.533+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-14T09:29:51.689+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.25.0.6', 9092)]>: connecting to kafka:9092 [('172.25.0.6', 9092) IPv4]
+[2024-06-14T09:29:51.689+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.25.0.6', 9092)]>: Connection complete.
+[2024-06-14T09:29:51.690+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.25.0.6', 9092)]>: Closing connection. 
+[2024-06-14T09:29:51.806+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-14T09:29:51.811+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('172.25.0.6', 9092)]>: Closing connection. 
+[2024-06-14T09:29:51.812+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-14T09:29:51.812+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T09:29:51.819+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow_with_kafka, task_id=fetch_and_publish_circuit, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T092949, end_date=20240614T092951
+[2024-06-14T09:29:51.856+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T09:29:51.873+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T09:29:51.875+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-14T09:33:53.291+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T09:33:53.306+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T09:33:53.311+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [queued]>
+[2024-06-14T09:33:53.311+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-14T09:33:53.321+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_circuit> on 2024-06-13 00:00:00+00:00
+[2024-06-14T09:33:53.326+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=991) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T09:33:53.327+0000] {standard_task_runner.py:63} INFO - Started process 1002 to run task
+[2024-06-14T09:33:53.328+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow_with_kafka', 'fetch_and_publish_circuit', 'scheduled__2024-06-13T00:00:00+00:00', '--job-id', '54', '--raw', '--subdir', 'DAGS_FOLDER/kafka_data_scrape.py', '--cfg-path', '/tmp/tmpe606auud']
+[2024-06-14T09:33:53.329+0000] {standard_task_runner.py:91} INFO - Job 54: Subtask fetch_and_publish_circuit
+[2024-06-14T09:33:53.366+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow_with_kafka.fetch_and_publish_circuit scheduled__2024-06-13T00:00:00+00:00 [running]> on host 05f8e2de7bcc
+[2024-06-14T09:33:53.427+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow_with_kafka' AIRFLOW_CTX_TASK_ID='fetch_and_publish_circuit' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-13T00:00:00+00:00'
+[2024-06-14T09:33:53.428+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T09:33:53.518+0000] {logging_mixin.py:188} INFO - tried to find producer
+[2024-06-14T09:33:53.520+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.25.0.6', 9092)]>: connecting to kafka:9092 [('172.25.0.6', 9092) IPv4]
+[2024-06-14T09:33:53.520+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-14T09:33:53.520+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.25.0.6', 9092)]>: Connection complete.
+[2024-06-14T09:33:53.622+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-14T09:33:53.622+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-14T09:33:53.625+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-14T09:33:53.626+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.25.0.6', 9092)]>: connecting to kafka:9092 [('172.25.0.6', 9092) IPv4]
+[2024-06-14T09:33:53.626+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.25.0.6', 9092)]>: Connection complete.
+[2024-06-14T09:33:53.626+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.25.0.6', 9092)]>: Closing connection. 
+[2024-06-14T09:33:53.629+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('172.25.0.6', 9092)]>: Closing connection. 
+[2024-06-14T09:33:53.629+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-14T09:33:53.630+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T09:33:53.637+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow_with_kafka, task_id=fetch_and_publish_circuit, run_id=scheduled__2024-06-13T00:00:00+00:00, execution_date=20240613T000000, start_date=20240614T093353, end_date=20240614T093353
+[2024-06-14T09:33:53.661+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T09:33:53.677+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T09:33:53.679+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

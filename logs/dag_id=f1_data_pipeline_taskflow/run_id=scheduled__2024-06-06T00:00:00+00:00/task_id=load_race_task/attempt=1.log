@@ -1,0 +1,242 @@
+[2024-06-07T08:42:56.552+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T08:42:56.567+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T08:42:56.573+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T08:42:56.573+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T08:42:56.581+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_race_task> on 2024-06-06 00:00:00+00:00
+[2024-06-07T08:42:56.588+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=489) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T08:42:56.589+0000] {standard_task_runner.py:63} INFO - Started process 494 to run task
+[2024-06-07T08:42:56.589+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_race_task', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '63', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp4e35c3qi']
+[2024-06-07T08:42:56.591+0000] {standard_task_runner.py:91} INFO - Job 63: Subtask load_race_task
+[2024-06-07T08:42:56.625+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [running]> on host 9459748fcbed
+[2024-06-07T08:42:56.743+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_race_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T08:42:56.744+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T08:42:56.745+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-07T08:42:56.745+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-07T08:42:56.768+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-07T08:42:56.768+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T08:42:56.777+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_race_task, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T084256, end_date=20240607T084256
+[2024-06-07T08:42:56.803+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T08:42:56.851+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T08:42:56.854+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T10:22:49.296+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T10:22:49.312+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T10:22:49.318+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T10:22:49.318+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T10:22:49.327+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_race_task> on 2024-06-06 00:00:00+00:00
+[2024-06-07T10:22:49.333+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=486) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T10:22:49.334+0000] {standard_task_runner.py:63} INFO - Started process 489 to run task
+[2024-06-07T10:22:49.335+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_race_task', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmprcxpe6v9']
+[2024-06-07T10:22:49.336+0000] {standard_task_runner.py:91} INFO - Job 25: Subtask load_race_task
+[2024-06-07T10:22:49.370+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [running]> on host c52e0424619c
+[2024-06-07T10:22:49.473+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_race_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T10:22:49.474+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T10:22:49.475+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-07T10:22:49.476+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-07T10:22:49.498+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-07T10:22:49.499+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T10:22:49.511+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_race_task, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T102249, end_date=20240607T102249
+[2024-06-07T10:22:49.547+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T10:22:49.573+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T10:22:49.575+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T10:29:19.351+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T10:29:19.368+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T10:29:19.374+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T10:29:19.374+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T10:29:19.382+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_race_task> on 2024-06-06 00:00:00+00:00
+[2024-06-07T10:29:19.389+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=456) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T10:29:19.390+0000] {standard_task_runner.py:63} INFO - Started process 459 to run task
+[2024-06-07T10:29:19.391+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_race_task', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpyyzcvzcn']
+[2024-06-07T10:29:19.392+0000] {standard_task_runner.py:91} INFO - Job 24: Subtask load_race_task
+[2024-06-07T10:29:19.427+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [running]> on host 560daa7ebc6f
+[2024-06-07T10:29:19.538+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_race_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T10:29:19.539+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T10:29:19.539+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-07T10:29:19.540+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-07T10:29:19.560+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-07T10:29:19.561+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T10:29:19.568+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_race_task, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T102919, end_date=20240607T102919
+[2024-06-07T10:29:19.603+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T10:29:19.623+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T10:29:19.624+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T10:54:56.283+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T10:54:56.299+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T10:54:56.305+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T10:54:56.305+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T10:54:56.314+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_race_task> on 2024-06-06 00:00:00+00:00
+[2024-06-07T10:54:56.321+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=589) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T10:54:56.322+0000] {standard_task_runner.py:63} INFO - Started process 593 to run task
+[2024-06-07T10:54:56.322+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_race_task', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpy0z8oaet']
+[2024-06-07T10:54:56.324+0000] {standard_task_runner.py:91} INFO - Job 23: Subtask load_race_task
+[2024-06-07T10:54:56.361+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [running]> on host 511ae3a85ee7
+[2024-06-07T10:54:56.474+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_race_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T10:54:56.475+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T10:54:56.477+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-07T10:54:56.477+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-07T10:54:56.498+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-07T10:54:56.499+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T10:54:56.506+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_race_task, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T105456, end_date=20240607T105456
+[2024-06-07T10:54:56.536+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T10:54:56.570+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T10:54:56.576+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T11:04:23.324+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T11:04:23.341+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T11:04:23.346+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T11:04:23.346+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T11:04:23.356+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_race_task> on 2024-06-06 00:00:00+00:00
+[2024-06-07T11:04:23.363+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=437) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T11:04:23.364+0000] {standard_task_runner.py:63} INFO - Started process 469 to run task
+[2024-06-07T11:04:23.364+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_race_task', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpxtwazrh_']
+[2024-06-07T11:04:23.366+0000] {standard_task_runner.py:91} INFO - Job 23: Subtask load_race_task
+[2024-06-07T11:04:23.400+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [running]> on host 56deb138ba11
+[2024-06-07T11:04:23.511+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_race_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T11:04:23.512+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T11:04:23.513+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-07T11:04:23.513+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-07T11:04:23.535+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-07T11:04:23.536+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T11:04:23.544+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_race_task, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T110423, end_date=20240607T110423
+[2024-06-07T11:04:23.577+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T11:04:23.597+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T11:04:23.599+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T11:15:08.837+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T11:15:08.854+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T11:15:08.859+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T11:15:08.860+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T11:15:08.869+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_race_task> on 2024-06-06 00:00:00+00:00
+[2024-06-07T11:15:08.875+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=496) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T11:15:08.876+0000] {standard_task_runner.py:63} INFO - Started process 500 to run task
+[2024-06-07T11:15:08.877+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_race_task', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpczyjqn6v']
+[2024-06-07T11:15:08.878+0000] {standard_task_runner.py:91} INFO - Job 25: Subtask load_race_task
+[2024-06-07T11:15:08.913+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [running]> on host bdba731e3ece
+[2024-06-07T11:15:09.034+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_race_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T11:15:09.036+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T11:15:09.037+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-07T11:15:09.038+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-07T11:15:09.065+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-07T11:15:09.065+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T11:15:09.077+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_race_task, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T111508, end_date=20240607T111509
+[2024-06-07T11:15:09.130+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T11:15:09.177+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T11:15:09.178+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T12:31:00.035+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T12:31:00.054+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T12:31:00.062+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T12:31:00.062+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T12:31:00.073+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_race_task> on 2024-06-06 00:00:00+00:00
+[2024-06-07T12:31:00.080+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=415) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T12:31:00.081+0000] {standard_task_runner.py:63} INFO - Started process 448 to run task
+[2024-06-07T12:31:00.081+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_race_task', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpdtk69u53']
+[2024-06-07T12:31:00.083+0000] {standard_task_runner.py:91} INFO - Job 23: Subtask load_race_task
+[2024-06-07T12:31:00.122+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [running]> on host 5a6477355f45
+[2024-06-07T12:31:00.234+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_race_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T12:31:00.235+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T12:31:00.236+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-07T12:31:00.236+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-07T12:31:00.259+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-07T12:31:00.260+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T12:31:00.267+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_race_task, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T123100, end_date=20240607T123100
+[2024-06-07T12:31:00.295+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T12:31:00.314+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T12:31:00.316+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T13:02:18.735+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T13:02:18.751+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T13:02:18.756+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T13:02:18.757+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T13:02:18.766+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_race_task> on 2024-06-06 00:00:00+00:00
+[2024-06-07T13:02:18.772+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=463) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T13:02:18.773+0000] {standard_task_runner.py:63} INFO - Started process 467 to run task
+[2024-06-07T13:02:18.774+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_race_task', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp0kcf96kn']
+[2024-06-07T13:02:18.775+0000] {standard_task_runner.py:91} INFO - Job 25: Subtask load_race_task
+[2024-06-07T13:02:18.843+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [running]> on host f698bc001b17
+[2024-06-07T13:02:18.962+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_race_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T13:02:18.963+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T13:02:18.964+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-07T13:02:18.964+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-07T13:02:18.992+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-07T13:02:18.993+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T13:02:19.004+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_race_task, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T130218, end_date=20240607T130219
+[2024-06-07T13:02:19.067+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T13:02:19.087+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T13:02:19.088+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T13:10:45.756+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T13:10:45.771+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T13:10:45.778+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T13:10:45.778+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T13:10:45.785+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_race_task> on 2024-06-06 00:00:00+00:00
+[2024-06-07T13:10:45.792+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=479) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T13:10:45.793+0000] {standard_task_runner.py:63} INFO - Started process 482 to run task
+[2024-06-07T13:10:45.793+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_race_task', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp6hhi0ad0']
+[2024-06-07T13:10:45.795+0000] {standard_task_runner.py:91} INFO - Job 25: Subtask load_race_task
+[2024-06-07T13:10:45.829+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [running]> on host 5220b11abc3b
+[2024-06-07T13:10:45.937+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_race_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T13:10:45.938+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T13:10:45.939+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-07T13:10:45.939+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-07T13:10:45.961+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-07T13:10:45.961+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T13:10:45.968+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_race_task, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T131045, end_date=20240607T131045
+[2024-06-07T13:10:46.007+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T13:10:46.026+0000] {taskinstance.py:3498} INFO - 5 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T13:10:46.027+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T14:13:56.566+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T14:13:56.584+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T14:13:56.591+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T14:13:56.591+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T14:13:56.601+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_race_task> on 2024-06-06 00:00:00+00:00
+[2024-06-07T14:13:56.607+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=445) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T14:13:56.608+0000] {standard_task_runner.py:63} INFO - Started process 468 to run task
+[2024-06-07T14:13:56.608+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_race_task', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp7u21v94n']
+[2024-06-07T14:13:56.610+0000] {standard_task_runner.py:91} INFO - Job 25: Subtask load_race_task
+[2024-06-07T14:13:56.645+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [running]> on host 21a09bc8bac4
+[2024-06-07T14:13:56.765+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_race_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T14:13:56.766+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T14:13:56.767+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-07T14:13:56.768+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-07T14:13:56.794+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-07T14:13:56.795+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T14:13:56.805+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_race_task, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T141356, end_date=20240607T141356
+[2024-06-07T14:13:56.862+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T14:13:56.891+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T14:13:56.892+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T14:41:50.372+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T14:41:50.387+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T14:41:50.393+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T14:41:50.393+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T14:41:50.401+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_race_task> on 2024-06-06 00:00:00+00:00
+[2024-06-07T14:41:50.407+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=464) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T14:41:50.408+0000] {standard_task_runner.py:63} INFO - Started process 468 to run task
+[2024-06-07T14:41:50.409+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_race_task', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpd9tvt1ee']
+[2024-06-07T14:41:50.411+0000] {standard_task_runner.py:91} INFO - Job 24: Subtask load_race_task
+[2024-06-07T14:41:50.443+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_race_task scheduled__2024-06-06T00:00:00+00:00 [running]> on host 5b44fb81e12c
+[2024-06-07T14:41:50.552+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_race_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T14:41:50.553+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T14:41:50.555+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-07T14:41:50.555+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-07T14:41:50.589+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-07T14:41:50.591+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T14:41:50.606+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_race_task, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T144150, end_date=20240607T144150
+[2024-06-07T14:41:50.662+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T14:41:50.695+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T14:41:50.703+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

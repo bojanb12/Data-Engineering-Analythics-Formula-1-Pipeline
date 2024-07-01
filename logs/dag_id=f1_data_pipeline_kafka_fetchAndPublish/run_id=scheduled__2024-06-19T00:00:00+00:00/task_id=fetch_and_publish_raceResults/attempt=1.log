@@ -1,0 +1,763 @@
+[2024-06-20T07:35:19.954+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-20T07:35:19.976+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_raceResults scheduled__2024-06-19T00:00:00+00:00 [queued]>
+[2024-06-20T07:35:19.985+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_raceResults scheduled__2024-06-19T00:00:00+00:00 [queued]>
+[2024-06-20T07:35:19.986+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-20T07:35:19.996+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_raceResults> on 2024-06-19 00:00:00+00:00
+[2024-06-20T07:35:20.003+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=695) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-20T07:35:20.005+0000] {standard_task_runner.py:63} INFO - Started process 710 to run task
+[2024-06-20T07:35:20.006+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_fetchAndPublish', 'fetch_and_publish_raceResults', 'scheduled__2024-06-19T00:00:00+00:00', '--job-id', '36', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_fetch_and_publish.py', '--cfg-path', '/tmp/tmpo_gpnxvw']
+[2024-06-20T07:35:20.008+0000] {standard_task_runner.py:91} INFO - Job 36: Subtask fetch_and_publish_raceResults
+[2024-06-20T07:35:20.051+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_raceResults scheduled__2024-06-19T00:00:00+00:00 [running]> on host 5c5ee06f6e02
+[2024-06-20T07:35:20.127+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_fetchAndPublish' AIRFLOW_CTX_TASK_ID='fetch_and_publish_raceResults' AIRFLOW_CTX_EXECUTION_DATE='2024-06-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-19T00:00:00+00:00'
+[2024-06-20T07:35:20.129+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-20T07:35:33.450+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:33.450+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:33.451+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:33.553+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:33.553+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:33.707+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:33.707+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:33.707+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:33.818+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-20T07:35:33.820+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:33.922+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:33.922+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:33.923+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:34.025+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:34.026+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:34.032+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:34.032+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:34.033+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:34.035+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:34.137+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:34.137+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:34.138+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:34.239+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:34.240+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:34.243+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:34.244+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:34.244+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:34.246+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:34.347+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:34.347+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:34.348+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:34.450+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:34.451+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:34.455+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:34.456+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:34.456+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:34.458+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:34.559+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:34.559+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:34.560+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:34.662+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:34.662+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:34.666+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:34.667+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:34.667+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:34.669+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:34.770+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:34.771+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:34.771+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:34.875+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:34.875+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:34.880+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:34.880+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:34.881+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:34.884+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:34.986+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:34.986+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:34.987+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:35.090+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:35.090+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:35.093+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:35.094+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:35.094+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:35.096+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:35.197+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:35.198+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:35.199+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:35.301+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:35.301+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:35.303+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:35.304+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:35.304+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:35.305+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:35.406+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:35.407+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:35.407+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:35.510+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:35.511+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:35.516+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:35.517+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:35.517+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:35.519+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:35.621+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:35.621+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:35.621+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:35.723+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:35.724+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:35.726+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:35.726+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:35.727+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:35.728+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:35.829+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:35.829+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:35.830+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:35.932+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:35.932+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:35.935+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:35.935+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:35.935+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:35.937+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:36.038+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:36.039+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:36.039+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:36.141+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:36.141+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:36.144+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:36.144+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:36.145+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:36.147+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:36.248+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:36.249+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:36.249+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:36.351+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:36.351+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:36.354+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:36.354+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:36.355+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:36.356+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:36.457+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:36.458+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:36.459+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:36.561+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:36.562+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:36.566+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:36.566+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:36.567+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:36.568+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:36.669+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:36.670+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:36.670+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:36.773+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:36.774+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:36.778+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:36.778+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:36.778+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:36.780+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:36.881+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:36.882+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:36.883+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:36.986+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:36.986+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:36.990+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:36.990+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:36.991+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:36.993+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:37.094+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:37.094+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:37.095+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:37.197+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:37.197+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:37.200+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:37.201+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:37.201+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:37.202+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:37.304+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:37.304+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:37.304+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:37.408+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:37.408+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:37.412+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:37.412+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:37.412+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:37.413+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:37.515+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:37.515+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:37.515+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:37.618+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:37.618+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:37.622+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:37.622+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:37.623+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:37.625+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:37.727+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:37.727+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:37.728+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:37.830+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:37.830+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:37.833+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:37.833+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:37.833+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:37.834+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:38.027+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:38.028+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:38.028+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:38.130+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:38.131+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:38.134+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:38.134+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:38.134+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:38.135+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:38.236+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:38.237+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:38.237+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:38.339+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:38.339+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:38.342+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:38.342+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:38.342+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:38.343+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:38.445+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:38.445+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:38.446+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:38.547+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:38.547+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:38.550+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:38.550+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:38.551+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:38.553+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:38.654+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:38.654+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:38.655+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:38.757+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:38.757+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:38.761+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:38.762+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:38.762+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:38.764+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:38.866+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:38.867+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:38.868+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:38.970+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:38.970+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:38.973+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:38.973+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:38.973+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:38.975+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:39.076+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:39.077+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:39.077+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:39.179+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:39.180+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:39.184+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:39.185+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:39.185+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:39.188+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:39.289+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:39.289+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:39.290+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:39.392+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:39.392+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:39.396+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:39.397+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:39.397+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:39.400+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:39.501+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:39.501+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:39.502+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:39.604+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:39.604+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:39.606+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:39.607+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:39.607+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:39.608+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:39.709+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:39.710+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:39.710+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:39.812+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:39.812+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:39.814+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:39.815+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:39.815+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:39.817+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:39.918+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:39.918+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:39.919+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:40.020+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:40.021+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:40.024+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:40.024+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:40.024+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:40.026+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:40.127+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:40.128+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:40.129+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:40.230+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:40.231+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:40.233+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:40.233+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:40.234+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:40.235+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:40.337+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:40.337+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:40.338+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:40.440+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:40.440+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:40.444+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:40.445+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:40.445+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:40.447+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:40.549+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:40.549+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:40.550+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:40.652+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:40.652+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:40.656+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:40.656+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:40.657+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:40.659+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:40.761+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:40.762+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:40.762+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:40.865+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:40.865+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:40.870+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:40.870+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:40.871+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:40.873+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:40.974+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:40.975+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:40.975+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:41.077+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:41.078+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:41.082+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:41.082+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:41.083+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:41.085+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:41.187+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:41.188+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:41.188+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:41.290+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:41.290+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:41.293+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:41.293+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:41.293+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:41.295+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:41.396+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:41.396+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:41.397+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:41.499+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:41.499+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:41.502+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:41.503+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:41.503+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:41.504+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:41.606+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:41.607+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:41.608+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:41.710+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:41.710+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:41.714+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:41.715+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:41.715+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:41.717+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:41.819+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:41.820+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:41.821+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:41.924+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:41.924+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:41.927+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:41.927+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:41.928+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:41.930+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:42.032+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:42.033+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:42.033+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:42.137+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:42.137+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:42.143+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:42.143+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:42.143+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:42.147+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:42.248+0000] {logging_mixin.py:188} INFO - Total number of race results fetched: 40
+[2024-06-20T07:35:42.249+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-20T07:35:42.249+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-20T07:35:42.258+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_fetchAndPublish, task_id=fetch_and_publish_raceResults, run_id=scheduled__2024-06-19T00:00:00+00:00, execution_date=20240619T000000, start_date=20240620T073519, end_date=20240620T073542
+[2024-06-20T07:35:42.300+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-20T07:35:42.308+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-20T08:39:15.775+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-20T08:39:15.793+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_raceResults scheduled__2024-06-19T00:00:00+00:00 [queued]>
+[2024-06-20T08:39:15.798+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_raceResults scheduled__2024-06-19T00:00:00+00:00 [queued]>
+[2024-06-20T08:39:15.798+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-20T08:39:15.806+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_raceResults> on 2024-06-19 00:00:00+00:00
+[2024-06-20T08:39:15.811+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=644) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-20T08:39:15.812+0000] {standard_task_runner.py:63} INFO - Started process 664 to run task
+[2024-06-20T08:39:15.812+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_fetchAndPublish', 'fetch_and_publish_raceResults', 'scheduled__2024-06-19T00:00:00+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_fetch_and_publish.py', '--cfg-path', '/tmp/tmp6wgh_57z']
+[2024-06-20T08:39:15.813+0000] {standard_task_runner.py:91} INFO - Job 42: Subtask fetch_and_publish_raceResults
+[2024-06-20T08:39:15.845+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_raceResults scheduled__2024-06-19T00:00:00+00:00 [running]> on host c74b9f5f384d
+[2024-06-20T08:39:15.903+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_fetchAndPublish' AIRFLOW_CTX_TASK_ID='fetch_and_publish_raceResults' AIRFLOW_CTX_EXECUTION_DATE='2024-06-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-19T00:00:00+00:00'
+[2024-06-20T08:39:15.904+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-20T08:39:19.476+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:19.477+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:19.478+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:19.581+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:19.581+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:19.735+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:19.736+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:19.736+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:19.853+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-20T08:39:19.858+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:19.959+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:19.960+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:19.960+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:20.063+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:20.063+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:20.068+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:20.069+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:20.069+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:20.071+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:20.173+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:20.173+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:20.174+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:20.276+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:20.277+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:20.280+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:20.280+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:20.280+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:20.282+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:20.383+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:20.383+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:20.384+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:20.486+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:20.486+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:20.489+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:20.489+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:20.490+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:20.491+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:20.592+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:20.593+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:20.593+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:20.695+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:20.695+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:20.698+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:20.698+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:20.698+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:20.700+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:20.801+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:20.801+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:20.802+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:20.904+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:20.905+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:20.907+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:20.907+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:20.908+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:20.909+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:21.010+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:21.010+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:21.011+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:21.113+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:21.113+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:21.117+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:21.118+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:21.118+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:21.120+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:21.222+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:21.222+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:21.223+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:21.326+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:21.326+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:21.330+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:21.331+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:21.331+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:21.332+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:21.433+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:21.434+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:21.435+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:21.538+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:21.539+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:21.542+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:21.543+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:21.543+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:21.545+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:21.646+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:21.647+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:21.648+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:21.751+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:21.752+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:21.757+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:21.757+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:21.757+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:21.759+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:21.861+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:21.862+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:21.863+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:21.965+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:21.965+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:21.968+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:21.968+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:21.968+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:21.970+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:22.071+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:22.072+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:22.072+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:22.173+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:22.174+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:22.176+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:22.176+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:22.176+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:22.177+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:22.279+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:22.279+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:22.280+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:22.381+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:22.382+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:22.386+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:22.386+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:22.386+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:22.388+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:22.491+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:22.491+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:22.492+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:22.593+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:22.594+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:22.598+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:22.599+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:22.599+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:22.601+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:22.703+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:22.704+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:22.704+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:22.806+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:22.806+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:22.809+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:22.809+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:22.809+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:22.811+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:22.913+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:22.913+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:22.914+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:23.016+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:23.016+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:23.019+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:23.020+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:23.020+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:23.022+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:23.123+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:23.123+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:23.124+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:23.227+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:23.227+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:23.231+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:23.232+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:23.232+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:23.234+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:23.336+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:23.336+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:23.337+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:23.439+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:23.439+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:23.443+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:23.444+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:23.444+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:23.445+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:23.547+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:23.547+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:23.548+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:23.650+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:23.651+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:23.654+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:23.655+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:23.655+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:23.657+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:23.758+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:23.758+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:23.759+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:23.861+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:23.861+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:23.865+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:23.865+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:23.865+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:23.867+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:24.081+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:24.082+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:24.082+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:24.184+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:24.185+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:24.189+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:24.189+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:24.189+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:24.192+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:24.294+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:24.294+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:24.295+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:24.397+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:24.397+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:24.400+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:24.400+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:24.400+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:24.401+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:24.503+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:24.503+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:24.504+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:24.605+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:24.605+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:24.608+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:24.608+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:24.608+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:24.610+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:24.711+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:24.712+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:24.713+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:24.815+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:24.815+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:24.817+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:24.818+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:24.818+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:24.819+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:24.921+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:24.922+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:24.923+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:25.025+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:25.025+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:25.029+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:25.029+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:25.030+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:25.032+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:25.133+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:25.134+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:25.134+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:25.236+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:25.236+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:25.240+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:25.240+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:25.240+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:25.242+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:25.343+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:25.344+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:25.345+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:25.447+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:25.447+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:25.451+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:25.452+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:25.452+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:25.454+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:25.556+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:25.556+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:25.557+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:25.659+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:25.660+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:25.664+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:25.664+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:25.664+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:25.671+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:25.772+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:25.772+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:25.773+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:25.875+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:25.875+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:25.879+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:25.880+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:25.880+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:25.882+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:25.984+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:25.984+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:25.985+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:26.087+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:26.087+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:26.091+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:26.092+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:26.092+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:26.094+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:26.196+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:26.197+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:26.198+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:26.299+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:26.300+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:26.303+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:26.304+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:26.304+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:26.305+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:26.407+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:26.408+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:26.409+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:26.511+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:26.511+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:26.514+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:26.514+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:26.514+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:26.516+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:26.619+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:26.620+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:26.620+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:26.722+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:26.723+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:26.725+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:26.726+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:26.726+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:26.727+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:26.829+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:26.829+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:26.829+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:26.931+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:26.932+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:26.936+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:26.937+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:26.937+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:26.939+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:27.041+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:27.041+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:27.042+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:27.143+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:27.144+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:27.147+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:27.147+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:27.148+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:27.149+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:27.251+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:27.251+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:27.252+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:27.354+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:27.354+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:27.357+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:27.357+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:27.357+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:27.358+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:27.460+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:27.460+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:27.461+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:27.563+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:27.563+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:27.567+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:27.567+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:27.568+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:27.570+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:27.672+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:27.672+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:27.673+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:27.774+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:27.775+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:27.779+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:27.779+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:27.780+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:27.781+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:27.883+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:27.884+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:27.884+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:27.986+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:27.987+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:27.990+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:27.991+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:27.991+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:27.993+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:28.095+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:28.095+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:28.096+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:28.198+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:28.198+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:28.202+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:28.203+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:28.203+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:28.205+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:28.306+0000] {logging_mixin.py:188} INFO - Total number of race results fetched: 40
+[2024-06-20T08:39:28.307+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-20T08:39:28.308+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-20T08:39:28.319+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_fetchAndPublish, task_id=fetch_and_publish_raceResults, run_id=scheduled__2024-06-19T00:00:00+00:00, execution_date=20240619T000000, start_date=20240620T083915, end_date=20240620T083928
+[2024-06-20T08:39:28.369+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-20T08:39:28.379+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-20T08:39:28.380+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

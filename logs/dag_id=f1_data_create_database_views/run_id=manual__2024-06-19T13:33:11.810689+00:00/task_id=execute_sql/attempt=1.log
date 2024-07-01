@@ -1,0 +1,491 @@
+[2024-06-19T13:33:41.734+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-19T13:33:41.750+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_create_database_views.execute_sql manual__2024-06-19T13:33:11.810689+00:00 [queued]>
+[2024-06-19T13:33:41.755+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_create_database_views.execute_sql manual__2024-06-19T13:33:11.810689+00:00 [queued]>
+[2024-06-19T13:33:41.755+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-19T13:33:41.763+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): execute_sql> on 2024-06-19 13:33:11.810689+00:00
+[2024-06-19T13:33:41.766+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1276) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-19T13:33:41.767+0000] {standard_task_runner.py:63} INFO - Started process 1277 to run task
+[2024-06-19T13:33:41.768+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_create_database_views', 'execute_sql', 'manual__2024-06-19T13:33:11.810689+00:00', '--job-id', '57', '--raw', '--subdir', 'DAGS_FOLDER/database_create_views_task.py', '--cfg-path', '/tmp/tmp_m8bjgpa']
+[2024-06-19T13:33:41.769+0000] {standard_task_runner.py:91} INFO - Job 57: Subtask execute_sql
+[2024-06-19T13:33:41.809+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_create_database_views.execute_sql manual__2024-06-19T13:33:11.810689+00:00 [running]> on host fc0cf0aa1225
+[2024-06-19T13:33:41.876+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_create_database_views' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-06-19T13:33:11.810689+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-19T13:33:11.810689+00:00'
+[2024-06-19T13:33:41.877+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-19T13:33:41.877+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-19T13:33:41.878+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-19T13:33:41.881+0000] {sql.py:470} INFO - Running statement: ----------------- Drivers by wins in the 2___ year --------------
+
+
+CREATE OR REPLACE VIEW "DriverWins2024View" AS
+WITH DriverWinsRanked AS (
+    SELECT
+        "dd"."driverRef" AS "driver_reference",
+        "dd"."forename" AS "driver_forename",
+        "dd"."surname" AS "driver_surname",
+        "dd"."dob" AS "driver_dob",
+        "dd"."nationality" AS "driver_nationality",
+        "dd"."code" AS "driver_code",
+        "ds"."wins" AS "wins_in_2024",
+        ROW_NUMBER() OVER(PARTITION BY "dd"."driverRef" ORDER BY "ds"."wins" DESC) AS "win_rank"
+    FROM
+        "driverDim" "dd"
+    JOIN
+        "driverStandingsDim" "ds" ON "dd"."driverId" = "ds"."driverId"
+    JOIN
+        "raceResultsFact" "rf" ON "ds"."driverStandingsId" = "rf"."driverStandingsId"
+    JOIN
+        "raceDim" "rd" ON "rf"."raceId" = "rd"."raceId"
+    WHERE
+        EXTRACT(YEAR FROM "rd"."date") = 2024  -- Filter for races in year ____
+)
+SELECT
+    "driver_reference",
+    "driver_forename",
+    "driver_surname",
+    "driver_dob",
+    "driver_nationality",
+    "driver_code",
+    "wins_in_2024"
+FROM
+    DriverWinsRanked
+WHERE
+    "win_rank" = 1  -- Select only the top-ranked rows (maximum wins for each driver)
+ORDER BY
+    "wins_in_2024" DESC;  -- Order by wins in descending order
+
+
+----------------------- Constructor wins by year ----------------------------------------------------------------------
+
+
+CREATE OR REPLACE VIEW "ConstructorWins2024View" AS
+WITH ConstructorWinsRanked AS (
+    SELECT
+        "cd"."constructorRef" AS "constructor_reference",
+        "cd"."name" AS "constructor_name",
+        "cd"."nationality_constructors" AS "constructor_nationality",
+        "cs"."wins_constructorstandings" AS "wins_in_2024",
+        ROW_NUMBER() OVER(PARTITION BY "cd"."constructorRef" ORDER BY "cs"."wins_constructorstandings" DESC) AS "win_rank"
+    FROM
+        "constructorDim" "cd"
+    JOIN
+        "constructorStandingsDim" "cs" ON "cd"."constructorId" = "cs"."constructorId"
+    JOIN
+        "raceResultsFact" "rf" ON "cs"."constructorStandingsId" = "rf"."constructorStandingsId"
+    JOIN
+        "raceDim" "rd" ON "rf"."raceId" = "rd"."raceId"
+    WHERE
+        EXTRACT(YEAR FROM "rd"."date") = 2024  -- Filter for races in the year 2024
+)
+SELECT
+    "constructor_reference",
+    "constructor_name",
+    "constructor_nationality",
+    "wins_in_2024"
+FROM
+    ConstructorWinsRanked
+WHERE
+    "win_rank" = 1  -- Select only the top-ranked rows (maximum wins for each constructor)
+ORDER BY
+    "wins_in_2024" DESC;  -- Order by wins in descending order
+
+
+
+----------------------- Driver performance by circuit ----------------------------------------------------------------------
+
+	
+	
+CREATE OR REPLACE VIEW "DriverPerformanceByCircuitView" AS
+SELECT
+    "dd"."driverRef" AS "driver_reference",
+    "dd"."forename" AS "driver_forename",
+    "dd"."surname" AS "driver_surname",
+    "cd"."name_y" AS "circuit_name",
+    AVG("rf"."positionOrder") AS "avg_finish_position",
+    COUNT("rf"."resultId") AS "races_count",
+    SUM("rf"."points") AS "total_points",
+    MAX("rf"."positionOrder") AS "best_finish_position",
+    MIN("rf"."positionOrder") AS "worst_finish_position"
+FROM
+    "driverDim" "dd"
+JOIN
+    "raceResultsFact" "rf" ON "dd"."driverId" = "rf"."driverId"
+JOIN
+    "raceDim" "rd" ON "rf"."raceId" = "rd"."raceId"
+JOIN
+    "circuitDim" "cd" ON "rd"."circuitId" = "cd"."circuitId"
+GROUP BY
+    "dd"."driverRef", "dd"."forename", "dd"."surname", "cd"."name_y"
+ORDER BY
+    "dd"."driverRef", "cd"."name_y";
+
+
+
+
+----------------------- Construtor perfomance by season ----------------------------------------------------------------------
+
+
+CREATE OR REPLACE VIEW "ConstructorPerformanceOverSeasonsView" AS
+SELECT
+    "cd"."constructorRef" AS "constructor_reference",
+    "cd"."name" AS "constructor_name",
+    "rd"."year" AS "season_year",
+    SUM("rf"."points") AS "total_points",
+    COUNT("rf"."resultId") AS "races_count",
+    COUNT(DISTINCT "rd"."raceId") AS "races_entered",
+    SUM(CASE WHEN "rf"."positionOrder" = 1 THEN 1 ELSE 0 END) AS "wins",
+    SUM(CASE WHEN "rf"."positionOrder" <= 3 THEN 1 ELSE 0 END) AS "podiums"
+FROM
+    "constructorDim" "cd"
+JOIN
+    "raceResultsFact" "rf" ON "cd"."constructorId" = "rf"."constructorId"
+JOIN
+    "raceDim" "rd" ON "rf"."raceId" = "rd"."raceId"
+GROUP BY
+    "cd"."constructorRef", "cd"."name", "rd"."year"
+ORDER BY
+    "cd"."constructorRef", "rd"."year";
+	
+	
+----------------------- Driver perfomance trends ----------------------------------------------------------------------
+
+
+CREATE OR REPLACE VIEW "DriverPerformanceTrendsView" AS
+SELECT
+    "dd"."driverRef" AS "driver_reference",
+    "dd"."forename" AS "driver_forename",
+    "dd"."surname" AS "driver_surname",
+    "rd"."year" AS "season_year",
+    AVG("rf"."positionOrder") AS "avg_finish_position",
+    SUM("rf"."points") AS "total_points",
+    COUNT("rf"."resultId") AS "races_count",
+    SUM(CASE WHEN "rf"."positionOrder" = 1 THEN 1 ELSE 0 END) AS "wins",
+    SUM(CASE WHEN "rf"."positionOrder" <= 3 THEN 1 ELSE 0 END) AS "podiums"
+FROM
+    "driverDim" "dd"
+JOIN
+    "raceResultsFact" "rf" ON "dd"."driverId" = "rf"."driverId"
+JOIN
+    "raceDim" "rd" ON "rf"."raceId" = "rd"."raceId"
+GROUP BY
+    "dd"."driverRef", "dd"."forename", "dd"."surname", "rd"."year"
+ORDER BY
+    "dd"."driverRef", "rd"."year";
+
+
+
+----------------------- Circuit records ----------------------------------------------------------------------
+
+
+CREATE OR REPLACE VIEW "CircuitRecordsView" AS
+SELECT
+    "cd"."name_y" AS "circuit_name",
+    "rd"."year" AS "season_year",
+    "dd"."driverRef" AS "driver_reference",
+    "dd"."forename" AS "driver_forename",
+    "dd"."surname" AS "driver_surname",
+    "rf"."fastestLapTime" AS "fastest_lap_time",
+    "rf"."fastestLapSpeed" AS "fastest_lap_speed"
+FROM
+    "raceResultsFact" "rf"
+JOIN
+    "raceDim" "rd" ON "rf"."raceId" = "rd"."raceId"
+JOIN
+    "circuitDim" "cd" ON "rd"."circuitId" = "cd"."circuitId"
+JOIN
+    "driverDim" "dd" ON "rf"."driverId" = "dd"."driverId"
+WHERE
+    "rf"."fastestLapTime" IS NOT NULL
+ORDER BY
+    "cd"."name_y", "rd"."year", "rf"."fastestLapTime";
+	
+
+
+----------------------- Pit stop effectivness ----------------------------------------------------------------------
+
+
+
+CREATE OR REPLACE VIEW "PitStopEffectivenessView" AS
+SELECT
+    "rd"."year" AS "season_year",
+    "cd"."name" AS "constructor_name",
+    "dd"."driverRef" AS "driver_reference",
+    "dd"."forename" AS "driver_forename",
+    "dd"."surname" AS "driver_surname",
+    "rf"."positionOrder" AS "finish_position",
+    COUNT("ps"."stop") AS "pit_stops_count",
+    AVG("ps"."duration") AS "avg_pit_stop_duration"
+FROM
+    "pitStopsDim" "ps"
+JOIN
+    "raceResultsFact" "rf" ON "ps"."raceId" = "rf"."raceId" AND "ps"."driverId" = "rf"."driverId"
+JOIN
+    "driverDim" "dd" ON "ps"."driverId" = "dd"."driverId"
+JOIN
+    "constructorDim" "cd" ON "rf"."constructorId" = "cd"."constructorId"
+JOIN
+    "raceDim" "rd" ON "rf"."raceId" = "rd"."raceId"
+GROUP BY
+    "rd"."year", "cd"."name", "dd"."driverRef", "dd"."forename", "dd"."surname", "rf"."positionOrder"
+ORDER BY
+    "rd"."year", "cd"."name", "dd"."driverRef";
+
+
+----------------------- Driver winning and podium streaks ----------------------------------------------------------------------
+
+
+CREATE OR REPLACE VIEW "DriverWinningPodiumStreaksView" AS
+WITH RankedResults AS (
+    SELECT
+        "dd"."driverRef" AS "driver_reference",
+        "dd"."forename" AS "driver_forename",
+        "dd"."surname" AS "driver_surname",
+        "rd"."year" AS "season_year",
+        "rd"."date" AS "race_date",
+        "rf"."positionOrder" AS "finish_position",
+        ROW_NUMBER() OVER (PARTITION BY "dd"."driverRef" ORDER BY "rd"."date") - 
+        ROW_NUMBER() OVER (PARTITION BY "dd"."driverRef", "rf"."positionOrder" <= 3 ORDER BY "rd"."date") AS "podium_streak",
+        ROW_NUMBER() OVER (PARTITION BY "dd"."driverRef" ORDER BY "rd"."date") - 
+        ROW_NUMBER() OVER (PARTITION BY "dd"."driverRef", "rf"."positionOrder" = 1 ORDER BY "rd"."date") AS "win_streak"
+    FROM
+        "driverDim" "dd"
+    JOIN
+        "raceResultsFact" "rf" ON "dd"."driverId" = "rf"."driverId"
+    JOIN
+        "raceDim" "rd" ON "rf"."raceId" = "rd"."raceId"
+),
+PodiumStreaks AS (
+    SELECT
+        "driver_reference",
+        "driver_forename",
+        "driver_surname",
+        COUNT(*) AS "streak_length",
+        "podium_streak"
+    FROM
+        RankedResults
+    WHERE
+        "finish_position" <= 3
+    GROUP BY
+        "driver_reference", "driver_forename", "driver_surname", "podium_streak"
+),
+WinningStreaks AS (
+    SELECT
+        "driver_reference",
+        "driver_forename",
+        "driver_surname",
+        COUNT(*) AS "streak_length",
+        "win_streak"
+    FROM
+        RankedResults
+    WHERE
+        "finish_position" = 1
+    GROUP BY
+        "driver_reference", "driver_forename", "driver_surname", "win_streak"
+)
+SELECT
+    "ps"."driver_reference",
+    "ps"."driver_forename",
+    "ps"."driver_surname",
+    MAX("ps"."streak_length") AS "longest_podium_streak",
+    COALESCE(MAX("ws"."streak_length"), 0) AS "longest_winning_streak"
+FROM
+    PodiumStreaks ps
+LEFT JOIN
+    WinningStreaks ws ON ps."driver_reference" = ws."driver_reference" AND ps."driver_forename" = ws."driver_forename" AND ps."driver_surname" = ws."driver_surname"
+GROUP BY
+    ps."driver_reference", ps."driver_forename", ps."driver_surname"
+ORDER BY
+    "longest_podium_streak" DESC, "longest_winning_streak" DESC;
+
+
+
+----------------------- Constructor winning and podium streaks ----------------------------------------------------------------------
+
+
+CREATE OR REPLACE VIEW "ConstructorWinningPodiumStreaksView" AS
+WITH RankedResults AS (
+    SELECT
+        "cd"."constructorRef" AS "constructor_reference",
+        "cd"."name" AS "constructor_name",
+        "rd"."year" AS "season_year",
+        "rd"."date" AS "race_date",
+        "rf"."positionOrder" AS "finish_position",
+        ROW_NUMBER() OVER (PARTITION BY "cd"."constructorRef" ORDER BY "rd"."date") - 
+        ROW_NUMBER() OVER (PARTITION BY "cd"."constructorRef", "rf"."positionOrder" <= 3 ORDER BY "rd"."date") AS "podium_streak",
+        ROW_NUMBER() OVER (PARTITION BY "cd"."constructorRef" ORDER BY "rd"."date") - 
+        ROW_NUMBER() OVER (PARTITION BY "cd"."constructorRef", "rf"."positionOrder" = 1 ORDER BY "rd"."date") AS "win_streak"
+    FROM
+        "constructorDim" "cd"
+    JOIN
+        "raceResultsFact" "rf" ON "cd"."constructorId" = "rf"."constructorId"
+    JOIN
+        "raceDim" "rd" ON "rf"."raceId" = "rd"."raceId"
+),
+PodiumStreaks AS (
+    SELECT
+        "constructor_reference",
+        "constructor_name",
+        COUNT(*) AS "streak_length",
+        "podium_streak"
+    FROM
+        RankedResults
+    WHERE
+        "finish_position" <= 3
+    GROUP BY
+        "constructor_reference", "constructor_name", "podium_streak"
+),
+WinningStreaks AS (
+    SELECT
+        "constructor_reference",
+        "constructor_name",
+        COUNT(*) AS "streak_length",
+        "win_streak"
+    FROM
+        RankedResults
+    WHERE
+        "finish_position" = 1
+    GROUP BY
+        "constructor_reference", "constructor_name", "win_streak"
+)
+SELECT
+    "ps"."constructor_reference",
+    "ps"."constructor_name",
+    MAX("ps"."streak_length") AS "longest_podium_streak",
+    COALESCE(MAX("ws"."streak_length"), 0) AS "longest_winning_streak"
+FROM
+    PodiumStreaks ps
+LEFT JOIN
+    WinningStreaks ws ON ps."constructor_reference" = ws."constructor_reference" AND ps."constructor_name" = ws."constructor_name"
+GROUP BY
+    ps."constructor_reference", ps."constructor_name"
+ORDER BY
+    "longest_podium_streak" DESC, "longest_winning_streak" DESC;
+
+
+----------------------- Constructor seasonal comparison ----------------------------------------------------------------------
+
+
+CREATE OR REPLACE VIEW "ConstructorSeasonalComparisonsView" AS
+SELECT
+    "cd"."constructorRef" AS "constructor_reference",
+    "cd"."name" AS "constructor_name",
+    "rd"."year" AS "season_year",
+    AVG("rf"."positionOrder") AS "avg_finish_position",
+    SUM("rf"."points") AS "total_points",
+    COUNT("rf"."resultId") AS "races_count",
+    SUM(CASE WHEN "rf"."positionOrder" = 1 THEN 1 ELSE 0 END) AS "wins",
+    SUM(CASE WHEN "rf"."positionOrder" <= 3 THEN 1 ELSE 0 END) AS "podiums"
+FROM
+    "constructorDim" "cd"
+JOIN
+    "raceResultsFact" "rf" ON "cd"."constructorId" = "rf"."constructorId"
+JOIN
+    "raceDim" "rd" ON "rf"."raceId" = "rd"."raceId"
+GROUP BY
+    "cd"."constructorRef", "cd"."name", "rd"."year"
+ORDER BY
+    "cd"."constructorRef", "rd"."year";
+	
+
+----------------------- Driver seasonal comparison ----------------------------------------------------------------------
+
+
+CREATE OR REPLACE VIEW "DriverSeasonalComparisonsView" AS
+SELECT
+    "dd"."driverRef" AS "driver_reference",
+    "dd"."forename" AS "driver_forename",
+    "dd"."surname" AS "driver_surname",
+    "rd"."year" AS "season_year",
+    AVG("rf"."positionOrder") AS "avg_finish_position",
+    SUM("rf"."points") AS "total_points",
+    COUNT("rf"."resultId") AS "races_count",
+    SUM(CASE WHEN "rf"."positionOrder" = 1 THEN 1 ELSE 0 END) AS "wins",
+    SUM(CASE WHEN "rf"."positionOrder" <= 3 THEN 1 ELSE 0 END) AS "podiums"
+FROM
+    "driverDim" "dd"
+JOIN
+    "raceResultsFact" "rf" ON "dd"."driverId" = "rf"."driverId"
+JOIN
+    "raceDim" "rd" ON "rf"."raceId" = "rd"."raceId"
+GROUP BY
+    "dd"."driverRef", "dd"."forename", "dd"."surname", "rd"."year"
+ORDER BY
+    "dd"."driverRef", "rd"."year";
+	
+	
+----------------------- Qualifications performance ----------------------------------------------------------------------
+
+	
+
+CREATE OR REPLACE VIEW "DriverQualificationPerformanceView" AS
+SELECT
+    "dd"."driverRef" AS "driver_reference",
+    "dd"."forename" AS "driver_forename",
+    "dd"."surname" AS "driver_surname",
+    AVG("qd"."quali_time") AS "avg_qualifying_time",
+    COUNT(CASE WHEN "qd"."quali_time" IS NOT NULL AND "qd"."quali_time" = '00:00:00' THEN 1 ELSE NULL END) AS "pole_positions"
+FROM
+    "driverDim" "dd"
+JOIN
+    "qualificationsDim" "qd" ON "dd"."driverId" = "qd"."driverId"
+GROUP BY
+    "dd"."driverRef", "dd"."forename", "dd"."surname"
+ORDER BY
+    "avg_qualifying_time";
+
+
+----------------------- Driver seasonal performance ----------------------------------------------------------------------
+
+
+
+CREATE OR REPLACE VIEW "DriverSeasonalPerformanceView" AS
+SELECT
+    "dd"."driverRef" AS "driver_reference",
+    "dd"."forename" AS "driver_forename",
+    "dd"."surname" AS "driver_surname",
+    "rd"."year" AS "season_year",
+    SUM("rf"."points") AS "total_points",
+    SUM(CASE WHEN "rf"."positionOrder" = 1 THEN 1 ELSE 0 END) AS "wins",
+    AVG("rf"."positionOrder") AS "avg_finish_position"
+FROM
+    "driverDim" "dd"
+JOIN
+    "raceResultsFact" "rf" ON "dd"."driverId" = "rf"."driverId"
+JOIN
+    "raceDim" "rd" ON "rf"."raceId" = "rd"."raceId"
+GROUP BY
+    "dd"."driverRef", "dd"."forename", "dd"."surname", "rd"."year"
+ORDER BY
+    "dd"."driverRef", "season_year";
+
+
+
+----------------------- Constructor seasonal performance ----------------------------------------------------------------------
+
+
+CREATE OR REPLACE VIEW "ConstructorSeasonalPerformanceView" AS
+SELECT
+    "cd"."constructorRef" AS "constructor_reference",
+    "cd"."name" AS "constructor_name",
+    "rd"."year" AS "season_year",
+    SUM("rf"."points") AS "total_points",
+    SUM(CASE WHEN "rf"."positionOrder" = 1 THEN 1 ELSE 0 END) AS "wins",
+    AVG("rf"."positionOrder") AS "avg_finish_position"
+FROM
+    "constructorDim" "cd"
+JOIN
+    "raceResultsFact" "rf" ON "cd"."constructorId" = "rf"."constructorId"
+JOIN
+    "raceDim" "rd" ON "rf"."raceId" = "rd"."raceId"
+GROUP BY
+    "cd"."constructorRef", "cd"."name", "rd"."year"
+ORDER BY
+    "cd"."constructorRef", "season_year";
+
+, parameters: None
+[2024-06-19T13:33:41.894+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-19T13:33:41.895+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-19T13:33:41.902+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_create_database_views, task_id=execute_sql, run_id=manual__2024-06-19T13:33:11.810689+00:00, execution_date=20240619T133311, start_date=20240619T133341, end_date=20240619T133341
+[2024-06-19T13:33:41.941+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-19T13:33:41.953+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-19T13:33:41.955+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

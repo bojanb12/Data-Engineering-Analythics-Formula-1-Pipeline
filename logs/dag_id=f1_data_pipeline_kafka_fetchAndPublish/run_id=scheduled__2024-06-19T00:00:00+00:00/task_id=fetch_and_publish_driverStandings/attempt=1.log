@@ -1,0 +1,734 @@
+[2024-06-20T07:35:19.946+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-20T07:35:19.971+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_driverStandings scheduled__2024-06-19T00:00:00+00:00 [queued]>
+[2024-06-20T07:35:19.983+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_driverStandings scheduled__2024-06-19T00:00:00+00:00 [queued]>
+[2024-06-20T07:35:19.983+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-20T07:35:19.995+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_driverStandings> on 2024-06-19 00:00:00+00:00
+[2024-06-20T07:35:20.003+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=696) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-20T07:35:20.005+0000] {standard_task_runner.py:63} INFO - Started process 712 to run task
+[2024-06-20T07:35:20.005+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_fetchAndPublish', 'fetch_and_publish_driverStandings', 'scheduled__2024-06-19T00:00:00+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_fetch_and_publish.py', '--cfg-path', '/tmp/tmpr9d5ldxm']
+[2024-06-20T07:35:20.007+0000] {standard_task_runner.py:91} INFO - Job 34: Subtask fetch_and_publish_driverStandings
+[2024-06-20T07:35:20.053+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_driverStandings scheduled__2024-06-19T00:00:00+00:00 [running]> on host 5c5ee06f6e02
+[2024-06-20T07:35:20.127+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_fetchAndPublish' AIRFLOW_CTX_TASK_ID='fetch_and_publish_driverStandings' AIRFLOW_CTX_EXECUTION_DATE='2024-06-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-19T00:00:00+00:00'
+[2024-06-20T07:35:20.128+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-20T07:35:20.285+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 1
+[2024-06-20T07:35:44.505+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:44.506+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:44.507+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:44.609+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:44.610+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:44.765+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:44.765+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:44.766+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:44.877+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-20T07:35:44.881+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:44.882+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 2
+[2024-06-20T07:35:50.868+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:50.868+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:50.869+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:50.971+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:50.971+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:50.974+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:50.974+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:50.974+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:50.977+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:50.977+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 3
+[2024-06-20T07:35:54.943+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:54.943+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:54.944+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:55.046+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:55.047+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:55.051+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:55.052+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:55.052+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:55.055+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:55.055+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 4
+[2024-06-20T07:35:58.937+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:58.938+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:35:58.939+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:59.041+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:35:59.041+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:35:59.045+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:35:59.045+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:35:59.046+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:59.050+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:35:59.051+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 5
+[2024-06-20T07:36:04.223+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:36:04.223+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:36:04.224+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:36:04.326+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:36:04.326+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:36:04.329+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:36:04.329+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:36:04.329+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:36:04.332+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:36:04.333+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 6
+[2024-06-20T07:36:10.620+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:36:10.620+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:36:10.621+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:36:10.722+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:36:10.723+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:36:10.725+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:36:10.725+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:36:10.726+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:36:10.728+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:36:10.729+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 7
+[2024-06-20T07:36:14.730+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:36:14.730+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:36:14.731+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:36:14.833+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:36:14.833+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:36:14.836+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:36:14.836+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:36:14.836+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:36:14.839+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:36:14.839+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 8
+[2024-06-20T07:36:18.066+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:36:18.066+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:36:18.067+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:36:18.168+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:36:18.169+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:36:18.171+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:36:18.172+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:36:18.172+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:36:18.174+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:36:18.175+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 9
+[2024-06-20T07:36:23.052+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:36:23.053+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T07:36:23.054+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:36:23.155+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T07:36:23.156+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T07:36:23.158+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: connecting to kafka:9092 [('192.168.48.6', 9092) IPv4]
+[2024-06-20T07:36:23.159+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.48.6', 9092)]>: Connection complete.
+[2024-06-20T07:36:23.159+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:36:23.162+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.48.6', 9092)]>: Closing connection. 
+[2024-06-20T07:36:23.162+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 10
+[2024-06-20T07:36:23.724+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 10. Full response content:
+[2024-06-20T07:36:23.724+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/10/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "10",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:23.725+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 11
+[2024-06-20T07:36:24.438+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 11. Full response content:
+[2024-06-20T07:36:24.438+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/11/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "11",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:24.438+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 12
+[2024-06-20T07:36:25.104+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 12. Full response content:
+[2024-06-20T07:36:25.104+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/12/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "12",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:25.104+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 13
+[2024-06-20T07:36:25.850+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 13. Full response content:
+[2024-06-20T07:36:25.850+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/13/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "13",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:25.850+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 14
+[2024-06-20T07:36:27.437+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 14. Full response content:
+[2024-06-20T07:36:27.437+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/14/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "14",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:27.437+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 15
+[2024-06-20T07:36:28.235+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 15. Full response content:
+[2024-06-20T07:36:28.235+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/15/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "15",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:28.236+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 16
+[2024-06-20T07:36:28.720+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 16. Full response content:
+[2024-06-20T07:36:28.720+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/16/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "16",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:28.720+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 17
+[2024-06-20T07:36:29.475+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 17. Full response content:
+[2024-06-20T07:36:29.476+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/17/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "17",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:29.476+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 18
+[2024-06-20T07:36:29.984+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 18. Full response content:
+[2024-06-20T07:36:29.985+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/18/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "18",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:29.985+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 19
+[2024-06-20T07:36:30.495+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 19. Full response content:
+[2024-06-20T07:36:30.495+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/19/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "19",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:30.495+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 20
+[2024-06-20T07:36:32.200+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 20. Full response content:
+[2024-06-20T07:36:32.200+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/20/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "20",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:32.200+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 21
+[2024-06-20T07:36:34.833+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 21. Full response content:
+[2024-06-20T07:36:34.833+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/21/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "21",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:34.834+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 22
+[2024-06-20T07:36:36.992+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 22. Full response content:
+[2024-06-20T07:36:36.992+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/22/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "22",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:36.992+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 23
+[2024-06-20T07:36:39.340+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 23. Full response content:
+[2024-06-20T07:36:39.340+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/23/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "23",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:39.340+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 24
+[2024-06-20T07:36:42.100+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 24. Full response content:
+[2024-06-20T07:36:42.100+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/24/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "24",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T07:36:42.101+0000] {logging_mixin.py:188} INFO - Total number of driver standings fetched: 188
+[2024-06-20T07:36:42.101+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-20T07:36:42.101+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-20T07:36:42.109+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_fetchAndPublish, task_id=fetch_and_publish_driverStandings, run_id=scheduled__2024-06-19T00:00:00+00:00, execution_date=20240619T000000, start_date=20240620T073519, end_date=20240620T073642
+[2024-06-20T07:36:42.149+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-20T07:36:42.159+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-20T07:36:42.160+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-20T08:39:13.885+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-20T08:39:13.908+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_driverStandings scheduled__2024-06-19T00:00:00+00:00 [queued]>
+[2024-06-20T08:39:13.917+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_driverStandings scheduled__2024-06-19T00:00:00+00:00 [queued]>
+[2024-06-20T08:39:13.917+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-20T08:39:13.928+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_driverStandings> on 2024-06-19 00:00:00+00:00
+[2024-06-20T08:39:13.934+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=632) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-20T08:39:13.935+0000] {standard_task_runner.py:63} INFO - Started process 649 to run task
+[2024-06-20T08:39:13.936+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_fetchAndPublish', 'fetch_and_publish_driverStandings', 'scheduled__2024-06-19T00:00:00+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_fetch_and_publish.py', '--cfg-path', '/tmp/tmpwh3ww3bn']
+[2024-06-20T08:39:13.938+0000] {standard_task_runner.py:91} INFO - Job 37: Subtask fetch_and_publish_driverStandings
+[2024-06-20T08:39:13.979+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_driverStandings scheduled__2024-06-19T00:00:00+00:00 [running]> on host c74b9f5f384d
+[2024-06-20T08:39:14.051+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_fetchAndPublish' AIRFLOW_CTX_TASK_ID='fetch_and_publish_driverStandings' AIRFLOW_CTX_EXECUTION_DATE='2024-06-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-19T00:00:00+00:00'
+[2024-06-20T08:39:14.052+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-20T08:39:14.270+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 1
+[2024-06-20T08:39:20.471+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:20.471+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:20.472+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:20.574+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:20.574+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:20.728+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:20.728+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:20.729+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:20.841+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-20T08:39:20.845+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:20.846+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 2
+[2024-06-20T08:39:26.706+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:26.707+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:26.707+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:26.809+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:26.809+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:26.812+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:26.813+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:26.813+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:26.816+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:26.816+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 3
+[2024-06-20T08:39:31.390+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:31.390+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:31.391+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:31.493+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:31.493+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:31.497+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:31.498+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:31.498+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:31.501+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:31.501+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 4
+[2024-06-20T08:39:35.111+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:35.111+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:35.112+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:35.213+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:35.214+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:35.216+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:35.216+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:35.216+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:35.219+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:35.220+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 5
+[2024-06-20T08:39:39.210+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:39.210+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:39.211+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:39.312+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:39.313+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:39.316+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:39.317+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:39.317+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:39.321+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:39.322+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 6
+[2024-06-20T08:39:42.547+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:42.547+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:42.548+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:42.649+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:42.649+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:42.652+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:42.652+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:42.652+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:42.655+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:42.656+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 7
+[2024-06-20T08:39:46.415+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:46.416+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:46.417+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:46.518+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:46.518+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:46.522+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:46.522+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:46.522+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:46.525+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:46.525+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 8
+[2024-06-20T08:39:46.614+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:46.615+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:46.615+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:46.717+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:46.717+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:46.720+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:46.720+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:46.721+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:46.723+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:46.724+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 9
+[2024-06-20T08:39:46.833+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:46.833+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-20T08:39:46.834+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:46.936+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-20T08:39:46.936+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-20T08:39:46.939+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: connecting to kafka:9092 [('192.168.64.6', 9092) IPv4]
+[2024-06-20T08:39:46.940+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.64.6', 9092)]>: Connection complete.
+[2024-06-20T08:39:46.940+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:46.942+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.64.6', 9092)]>: Closing connection. 
+[2024-06-20T08:39:46.943+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 10
+[2024-06-20T08:39:47.477+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 10. Full response content:
+[2024-06-20T08:39:47.477+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/10/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "10",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:47.478+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 11
+[2024-06-20T08:39:47.984+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 11. Full response content:
+[2024-06-20T08:39:47.985+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/11/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "11",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:47.985+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 12
+[2024-06-20T08:39:48.500+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 12. Full response content:
+[2024-06-20T08:39:48.501+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/12/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "12",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:48.501+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 13
+[2024-06-20T08:39:48.993+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 13. Full response content:
+[2024-06-20T08:39:48.993+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/13/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "13",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:48.993+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 14
+[2024-06-20T08:39:49.489+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 14. Full response content:
+[2024-06-20T08:39:49.490+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/14/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "14",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:49.490+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 15
+[2024-06-20T08:39:50.007+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 15. Full response content:
+[2024-06-20T08:39:50.008+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/15/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "15",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:50.008+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 16
+[2024-06-20T08:39:50.856+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 16. Full response content:
+[2024-06-20T08:39:50.856+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/16/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "16",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:50.857+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 17
+[2024-06-20T08:39:51.350+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 17. Full response content:
+[2024-06-20T08:39:51.350+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/17/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "17",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:51.350+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 18
+[2024-06-20T08:39:51.847+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 18. Full response content:
+[2024-06-20T08:39:51.848+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/18/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "18",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:51.848+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 19
+[2024-06-20T08:39:52.351+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 19. Full response content:
+[2024-06-20T08:39:52.352+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/19/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "19",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:52.352+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 20
+[2024-06-20T08:39:53.159+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 20. Full response content:
+[2024-06-20T08:39:53.159+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/20/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "20",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:53.159+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 21
+[2024-06-20T08:39:53.669+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 21. Full response content:
+[2024-06-20T08:39:53.670+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/21/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "21",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:53.670+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 22
+[2024-06-20T08:39:54.193+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 22. Full response content:
+[2024-06-20T08:39:54.193+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/22/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "22",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:54.194+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 23
+[2024-06-20T08:39:55.019+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 23. Full response content:
+[2024-06-20T08:39:55.019+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/23/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "23",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:55.020+0000] {logging_mixin.py:188} INFO - Fetching driver standings for round 24
+[2024-06-20T08:39:55.516+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 24. Full response content:
+[2024-06-20T08:39:55.516+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/24/driverstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "24",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-20T08:39:55.517+0000] {logging_mixin.py:188} INFO - Total number of driver standings fetched: 188
+[2024-06-20T08:39:55.517+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-20T08:39:55.517+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-20T08:39:55.524+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_fetchAndPublish, task_id=fetch_and_publish_driverStandings, run_id=scheduled__2024-06-19T00:00:00+00:00, execution_date=20240619T000000, start_date=20240620T083913, end_date=20240620T083955
+[2024-06-20T08:39:55.573+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-20T08:39:55.583+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-20T08:39:55.584+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

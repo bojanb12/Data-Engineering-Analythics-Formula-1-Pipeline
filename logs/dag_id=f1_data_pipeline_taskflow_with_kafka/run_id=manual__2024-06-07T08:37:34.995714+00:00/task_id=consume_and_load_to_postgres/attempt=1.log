@@ -1,0 +1,131 @@
+[2024-06-07T08:37:37.101+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T08:37:37.116+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.consume_and_load_to_postgres manual__2024-06-07T08:37:34.995714+00:00 [queued]>
+[2024-06-07T08:37:37.121+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.consume_and_load_to_postgres manual__2024-06-07T08:37:34.995714+00:00 [queued]>
+[2024-06-07T08:37:37.121+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T08:37:37.129+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): consume_and_load_to_postgres> on 2024-06-07 08:37:34.995714+00:00
+[2024-06-07T08:37:37.134+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=113) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T08:37:37.136+0000] {standard_task_runner.py:63} INFO - Started process 115 to run task
+[2024-06-07T08:37:37.136+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow_with_kafka', 'consume_and_load_to_postgres', 'manual__2024-06-07T08:37:34.995714+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/kafkaProduce.py', '--cfg-path', '/tmp/tmp_37xbqf6']
+[2024-06-07T08:37:37.137+0000] {standard_task_runner.py:91} INFO - Job 38: Subtask consume_and_load_to_postgres
+[2024-06-07T08:37:37.169+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow_with_kafka.consume_and_load_to_postgres manual__2024-06-07T08:37:34.995714+00:00 [running]> on host 9459748fcbed
+[2024-06-07T08:37:37.223+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow_with_kafka' AIRFLOW_CTX_TASK_ID='consume_and_load_to_postgres' AIRFLOW_CTX_EXECUTION_DATE='2024-06-07T08:37:34.995714+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-07T08:37:34.995714+00:00'
+[2024-06-07T08:37:37.224+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T08:37:37.226+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.6', 9092)]>: connecting to kafka:9092 [('172.18.0.6', 9092) IPv4]
+[2024-06-07T08:37:37.226+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-07T08:37:37.226+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.6', 9092)]>: Connection complete.
+[2024-06-07T08:37:37.329+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-07T08:37:37.329+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-07T08:37:37.330+0000] {consumer.py:122} WARNING - group_id is None: disabling auto-commit.
+[2024-06-07T08:37:37.330+0000] {subscription_state.py:167} INFO - Updating subscribed topics to: ('f1_data_topic',)
+[2024-06-07T08:37:37.333+0000] {subscription_state.py:253} INFO - Updated partition assignment: [('f1_data_topic', 0)]
+[2024-06-07T08:37:37.334+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.6', 9092)]>: connecting to kafka:9092 [('172.18.0.6', 9092) IPv4]
+[2024-06-07T08:37:37.335+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.6', 9092)]>: Connection complete.
+[2024-06-07T08:37:37.335+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.6', 9092)]>: Closing connection. 
+[2024-06-07T08:37:37.471+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-07T08:37:37.472+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-07T08:37:37.487+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T08:37:37.488+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+    self.dialect.do_executemany(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.UndefinedColumn: column "givenName" of relation "driverDim" does not exist
+LINE 1: INSERT INTO "driverDim" ("driverId", "givenName", "familyNam...
+                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/kafkaProduce.py", line 69, in consume_and_load_to_postgres
+    driverDim.to_sql(table_name, engine, if_exists='append', index=False)
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 3008, in to_sql
+    return sql.to_sql(
+           ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 788, in to_sql
+    return pandas_sql.to_sql(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1958, in to_sql
+    total_inserted = sql_engine.insert_records(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1507, in insert_records
+    raise err
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1498, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1059, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 951, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1385, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+    self.dialect.do_executemany(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "givenName" of relation "driverDim" does not exist
+LINE 1: INSERT INTO "driverDim" ("driverId", "givenName", "familyNam...
+                                             ^
+
+[SQL: INSERT INTO "driverDim" ("driverId", "givenName", "familyName", dob, nationality, code, "permanentNumber", url) VALUES (%(driverId)s, %(givenName)s, %(familyName)s, %(dob)s, %(nationality)s, %(code)s, %(permanentNumber)s, %(url)s)]
+[parameters: ({'driverId': 'albon', 'givenName': 'Alexander', 'familyName': 'Albon', 'dob': datetime.date(1996, 3, 23), 'nationality': 'Thai', 'code': 'ALB', 'permanentNumber': '23', 'url': 'http://en.wikipedia.org/wiki/Alexander_Albon'}, {'driverId': 'alonso', 'givenName': 'Fernando', 'familyName': 'Alonso', 'dob': datetime.date(1981, 7, 29), 'nationality': 'Spanish', 'code': 'ALO', 'permanentNumber': '14', 'url': 'http://en.wikipedia.org/wiki/Fernando_Alonso'}, {'driverId': 'bearman', 'givenName': 'Oliver', 'familyName': 'Bearman', 'dob': datetime.date(2005, 5, 8), 'nationality': 'British', 'code': 'BEA', 'permanentNumber': '38', 'url': 'http://en.wikipedia.org/wiki/Oliver_Bearman'}, {'driverId': 'bottas', 'givenName': 'Valtteri', 'familyName': 'Bottas', 'dob': datetime.date(1989, 8, 28), 'nationality': 'Finnish', 'code': 'BOT', 'permanentNumber': '77', 'url': 'http://en.wikipedia.org/wiki/Valtteri_Bottas'}, {'driverId': 'gasly', 'givenName': 'Pierre', 'familyName': 'Gasly', 'dob': datetime.date(1996, 2, 7), 'nationality': 'French', 'code': 'GAS', 'permanentNumber': '10', 'url': 'http://en.wikipedia.org/wiki/Pierre_Gasly'}, {'driverId': 'hamilton', 'givenName': 'Lewis', 'familyName': 'Hamilton', 'dob': datetime.date(1985, 1, 7), 'nationality': 'British', 'code': 'HAM', 'permanentNumber': '44', 'url': 'http://en.wikipedia.org/wiki/Lewis_Hamilton'}, {'driverId': 'hulkenberg', 'givenName': 'Nico', 'familyName': 'Hülkenberg', 'dob': datetime.date(1987, 8, 19), 'nationality': 'German', 'code': 'HUL', 'permanentNumber': '27', 'url': 'http://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg'}, {'driverId': 'leclerc', 'givenName': 'Charles', 'familyName': 'Leclerc', 'dob': datetime.date(1997, 10, 16), 'nationality': 'Monegasque', 'code': 'LEC', 'permanentNumber': '16', 'url': 'http://en.wikipedia.org/wiki/Charles_Leclerc'}  ... displaying 10 of 21 total bound parameter sets ...  {'driverId': 'max_verstappen', 'givenName': 'Max', 'familyName': 'Verstappen', 'dob': datetime.date(1997, 9, 30), 'nationality': 'Dutch', 'code': 'VER', 'permanentNumber': '33', 'url': 'http://en.wikipedia.org/wiki/Max_Verstappen'}, {'driverId': 'zhou', 'givenName': 'Guanyu', 'familyName': 'Zhou', 'dob': datetime.date(1999, 5, 30), 'nationality': 'Chinese', 'code': 'ZHO', 'permanentNumber': '24', 'url': 'http://en.wikipedia.org/wiki/Zhou_Guanyu'})]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-06-07T08:37:37.498+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=f1_data_pipeline_taskflow_with_kafka, task_id=consume_and_load_to_postgres, run_id=manual__2024-06-07T08:37:34.995714+00:00, execution_date=20240607T083734, start_date=20240607T083737, end_date=20240607T083737
+[2024-06-07T08:37:37.507+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 38 for task consume_and_load_to_postgres ((psycopg2.errors.UndefinedColumn) column "givenName" of relation "driverDim" does not exist
+LINE 1: INSERT INTO "driverDim" ("driverId", "givenName", "familyNam...
+                                             ^
+
+[SQL: INSERT INTO "driverDim" ("driverId", "givenName", "familyName", dob, nationality, code, "permanentNumber", url) VALUES (%(driverId)s, %(givenName)s, %(familyName)s, %(dob)s, %(nationality)s, %(code)s, %(permanentNumber)s, %(url)s)]
+[parameters: ({'driverId': 'albon', 'givenName': 'Alexander', 'familyName': 'Albon', 'dob': datetime.date(1996, 3, 23), 'nationality': 'Thai', 'code': 'ALB', 'permanentNumber': '23', 'url': 'http://en.wikipedia.org/wiki/Alexander_Albon'}, {'driverId': 'alonso', 'givenName': 'Fernando', 'familyName': 'Alonso', 'dob': datetime.date(1981, 7, 29), 'nationality': 'Spanish', 'code': 'ALO', 'permanentNumber': '14', 'url': 'http://en.wikipedia.org/wiki/Fernando_Alonso'}, {'driverId': 'bearman', 'givenName': 'Oliver', 'familyName': 'Bearman', 'dob': datetime.date(2005, 5, 8), 'nationality': 'British', 'code': 'BEA', 'permanentNumber': '38', 'url': 'http://en.wikipedia.org/wiki/Oliver_Bearman'}, {'driverId': 'bottas', 'givenName': 'Valtteri', 'familyName': 'Bottas', 'dob': datetime.date(1989, 8, 28), 'nationality': 'Finnish', 'code': 'BOT', 'permanentNumber': '77', 'url': 'http://en.wikipedia.org/wiki/Valtteri_Bottas'}, {'driverId': 'gasly', 'givenName': 'Pierre', 'familyName': 'Gasly', 'dob': datetime.date(1996, 2, 7), 'nationality': 'French', 'code': 'GAS', 'permanentNumber': '10', 'url': 'http://en.wikipedia.org/wiki/Pierre_Gasly'}, {'driverId': 'hamilton', 'givenName': 'Lewis', 'familyName': 'Hamilton', 'dob': datetime.date(1985, 1, 7), 'nationality': 'British', 'code': 'HAM', 'permanentNumber': '44', 'url': 'http://en.wikipedia.org/wiki/Lewis_Hamilton'}, {'driverId': 'hulkenberg', 'givenName': 'Nico', 'familyName': 'Hülkenberg', 'dob': datetime.date(1987, 8, 19), 'nationality': 'German', 'code': 'HUL', 'permanentNumber': '27', 'url': 'http://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg'}, {'driverId': 'leclerc', 'givenName': 'Charles', 'familyName': 'Leclerc', 'dob': datetime.date(1997, 10, 16), 'nationality': 'Monegasque', 'code': 'LEC', 'permanentNumber': '16', 'url': 'http://en.wikipedia.org/wiki/Charles_Leclerc'}  ... displaying 10 of 21 total bound parameter sets ...  {'driverId': 'max_verstappen', 'givenName': 'Max', 'familyName': 'Verstappen', 'dob': datetime.date(1997, 9, 30), 'nationality': 'Dutch', 'code': 'VER', 'permanentNumber': '33', 'url': 'http://en.wikipedia.org/wiki/Max_Verstappen'}, {'driverId': 'zhou', 'givenName': 'Guanyu', 'familyName': 'Zhou', 'dob': datetime.date(1999, 5, 30), 'nationality': 'Chinese', 'code': 'ZHO', 'permanentNumber': '24', 'url': 'http://en.wikipedia.org/wiki/Zhou_Guanyu'})]
+(Background on this error at: https://sqlalche.me/e/14/f405); 115)
+[2024-06-07T08:37:37.551+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-07T08:37:37.562+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T08:37:37.564+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

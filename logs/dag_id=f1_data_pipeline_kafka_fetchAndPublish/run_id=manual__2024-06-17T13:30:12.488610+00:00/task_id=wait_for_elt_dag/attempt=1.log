@@ -1,0 +1,56 @@
+[2024-06-17T13:30:13.716+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T13:30:13.735+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.wait_for_elt_dag manual__2024-06-17T13:30:12.488610+00:00 [queued]>
+[2024-06-17T13:30:13.743+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.wait_for_elt_dag manual__2024-06-17T13:30:12.488610+00:00 [queued]>
+[2024-06-17T13:30:13.744+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-17T13:30:13.755+0000] {taskinstance.py:2330} INFO - Executing <Task(ExternalTaskSensor): wait_for_elt_dag> on 2024-06-17 13:30:12.488610+00:00
+[2024-06-17T13:30:13.761+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1158) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-17T13:30:13.763+0000] {standard_task_runner.py:63} INFO - Started process 1176 to run task
+[2024-06-17T13:30:13.763+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_fetchAndPublish', 'wait_for_elt_dag', 'manual__2024-06-17T13:30:12.488610+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_fetch_and_publish.py', '--cfg-path', '/tmp/tmpi6xmztlm']
+[2024-06-17T13:30:13.766+0000] {standard_task_runner.py:91} INFO - Job 40: Subtask wait_for_elt_dag
+[2024-06-17T13:30:13.818+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.wait_for_elt_dag manual__2024-06-17T13:30:12.488610+00:00 [running]> on host 96c07605841c
+[2024-06-17T13:30:13.898+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_fetchAndPublish' AIRFLOW_CTX_TASK_ID='wait_for_elt_dag' AIRFLOW_CTX_EXECUTION_DATE='2024-06-17T13:30:12.488610+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-17T13:30:12.488610+00:00'
+[2024-06-17T13:30:13.900+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T13:30:13.901+0000] {baseoperator.py:399} WARNING - ExternalTaskSensor.execute cannot be called outside TaskInstance!
+[2024-06-17T13:30:13.901+0000] {external_task.py:258} INFO - Poking for tasks ['load_raceResults_task'] in dag f1_data_pipeline_taskflow on 2024-06-17T13:30:12.488610+00:00 ... 
+[2024-06-17T13:30:13.902+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/session.py:79: DeprecationWarning: This method is deprecated and will be removed in future.
+  return func(*args, session=session, **kwargs)
+
+[2024-06-17T13:31:13.912+0000] {external_task.py:258} INFO - Poking for tasks ['load_raceResults_task'] in dag f1_data_pipeline_taskflow on 2024-06-17T13:30:12.488610+00:00 ... 
+[2024-06-17T13:32:13.919+0000] {external_task.py:258} INFO - Poking for tasks ['load_raceResults_task'] in dag f1_data_pipeline_taskflow on 2024-06-17T13:30:12.488610+00:00 ... 
+[2024-06-17T13:33:05.382+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2024-06-17T13:33:05.383+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-17T13:33:05.385+0000] {process_utils.py:132} INFO - Sending 15 to group 1176. PIDs of all processes in the group: [1176]
+[2024-06-17T13:33:05.385+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 1176
+[2024-06-17T13:33:05.385+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-06-17T13:33:05.386+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T13:33:05.394+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/sensors/external_task.py", line 348, in execute
+    super().execute(context)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/sensors/base.py", line 292, in execute
+    time.sleep(self._get_next_poke_interval(started_at, run_duration, try_number))
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2613, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2024-06-17T13:33:05.398+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=f1_data_pipeline_kafka_fetchAndPublish, task_id=wait_for_elt_dag, run_id=manual__2024-06-17T13:30:12.488610+00:00, execution_date=20240617T133012, start_date=20240617T133013, end_date=20240617T133305
+[2024-06-17T13:33:05.407+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 40 for task wait_for_elt_dag ((psycopg2.errors.ForeignKeyViolation) insert or update on table "task_fail" violates foreign key constraint "task_fail_ti_fkey"
+DETAIL:  Key (dag_id, task_id, run_id, map_index)=(f1_data_pipeline_kafka_fetchAndPublish, wait_for_elt_dag, manual__2024-06-17T13:30:12.488610+00:00, -1) is not present in table "task_instance".
+
+[SQL: INSERT INTO task_fail (task_id, dag_id, run_id, map_index, start_date, end_date, duration) VALUES (%(task_id)s, %(dag_id)s, %(run_id)s, %(map_index)s, %(start_date)s, %(end_date)s, %(duration)s) RETURNING task_fail.id]
+[parameters: {'task_id': 'wait_for_elt_dag', 'dag_id': 'f1_data_pipeline_kafka_fetchAndPublish', 'run_id': 'manual__2024-06-17T13:30:12.488610+00:00', 'map_index': -1, 'start_date': datetime.datetime(2024, 6, 17, 13, 30, 13, 736065, tzinfo=Timezone('UTC')), 'end_date': datetime.datetime(2024, 6, 17, 13, 33, 5, 397911, tzinfo=Timezone('UTC')), 'duration': 171}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 1176)
+[2024-06-17T13:33:05.437+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1176, status='terminated', exitcode=1, started='13:30:13') (1176) terminated with exit code 1

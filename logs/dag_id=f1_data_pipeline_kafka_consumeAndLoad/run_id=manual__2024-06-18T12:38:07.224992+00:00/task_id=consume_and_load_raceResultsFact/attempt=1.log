@@ -1,0 +1,91 @@
+[2024-06-18T12:38:39.720+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-18T12:38:39.734+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.consume_and_load_raceResultsFact manual__2024-06-18T12:38:07.224992+00:00 [queued]>
+[2024-06-18T12:38:39.740+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.consume_and_load_raceResultsFact manual__2024-06-18T12:38:07.224992+00:00 [queued]>
+[2024-06-18T12:38:39.740+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-18T12:38:39.749+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): consume_and_load_raceResultsFact> on 2024-06-18 12:38:07.224992+00:00
+[2024-06-18T12:38:39.753+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1793) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-18T12:38:39.755+0000] {standard_task_runner.py:63} INFO - Started process 1803 to run task
+[2024-06-18T12:38:39.755+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_consumeAndLoad', 'consume_and_load_raceResultsFact', 'manual__2024-06-18T12:38:07.224992+00:00', '--job-id', '63', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_consume_and_load.py', '--cfg-path', '/tmp/tmpzp6j06yq']
+[2024-06-18T12:38:39.757+0000] {standard_task_runner.py:91} INFO - Job 63: Subtask consume_and_load_raceResultsFact
+[2024-06-18T12:38:39.799+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_consumeAndLoad.consume_and_load_raceResultsFact manual__2024-06-18T12:38:07.224992+00:00 [running]> on host 21d7efd887f9
+[2024-06-18T12:38:39.864+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_consumeAndLoad' AIRFLOW_CTX_TASK_ID='consume_and_load_raceResultsFact' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T12:38:07.224992+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-18T12:38:07.224992+00:00'
+[2024-06-18T12:38:39.865+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-18T12:38:39.867+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-06-18T12:38:39.867+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-18T12:38:39.867+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-06-18T12:38:39.969+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-18T12:38:39.970+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-18T12:38:39.970+0000] {consumer.py:122} WARNING - group_id is None: disabling auto-commit.
+[2024-06-18T12:38:39.971+0000] {subscription_state.py:167} INFO - Updating subscribed topics to: ('your_kafka_topic_raceResults',)
+[2024-06-18T12:38:39.971+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-18T12:38:39.972+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-18T12:38:40.027+0000] {subscription_state.py:253} INFO - Updated partition assignment: [('your_kafka_topic_raceResults', 0)]
+[2024-06-18T12:38:40.028+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: connecting to kafka:9092 [('172.24.0.6', 9092) IPv4]
+[2024-06-18T12:38:40.028+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.24.0.6', 9092)]>: Connection complete.
+[2024-06-18T12:38:40.028+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.24.0.6', 9092)]>: Closing connection. 
+[2024-06-18T12:44:02.941+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2024-06-18T12:44:02.942+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-18T12:44:02.943+0000] {process_utils.py:132} INFO - Sending 15 to group 1803. PIDs of all processes in the group: [1803]
+[2024-06-18T12:44:02.943+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 1803
+[2024-06-18T12:44:02.943+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-06-18T12:44:02.944+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-18T12:44:02.955+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/ergast_kafka_consume_and_load.py", line 954, in consume_and_load_raceResultsFact
+    for message in consumer:
+  File "/home/airflow/.local/lib/python3.12/site-packages/kafka/consumer/group.py", line 1203, in __next__
+    return self.next_v2()
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/kafka/consumer/group.py", line 1211, in next_v2
+    return next(self._iterator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/kafka/consumer/group.py", line 1126, in _message_generator_v2
+    record_map = self.poll(timeout_ms=timeout_ms, update_offsets=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/kafka/consumer/group.py", line 663, in poll
+    records = self._poll_once(remaining, max_records, update_offsets=update_offsets)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/kafka/consumer/group.py", line 712, in _poll_once
+    self._client.poll(timeout_ms=timeout_ms)
+  File "/home/airflow/.local/lib/python3.12/site-packages/kafka/client_async.py", line 601, in poll
+    self._poll(timeout / 1000)
+  File "/home/airflow/.local/lib/python3.12/site-packages/kafka/client_async.py", line 633, in _poll
+    ready = self._selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/selectors.py", line 468, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2613, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2024-06-18T12:44:02.966+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=f1_data_pipeline_kafka_consumeAndLoad, task_id=consume_and_load_raceResultsFact, run_id=manual__2024-06-18T12:38:07.224992+00:00, execution_date=20240618T123807, start_date=20240618T123839, end_date=20240618T124402
+[2024-06-18T12:44:02.977+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 63 for task consume_and_load_raceResultsFact ((psycopg2.errors.ForeignKeyViolation) insert or update on table "task_fail" violates foreign key constraint "task_fail_ti_fkey"
+DETAIL:  Key (dag_id, task_id, run_id, map_index)=(f1_data_pipeline_kafka_consumeAndLoad, consume_and_load_raceResultsFact, manual__2024-06-18T12:38:07.224992+00:00, -1) is not present in table "task_instance".
+
+[SQL: INSERT INTO task_fail (task_id, dag_id, run_id, map_index, start_date, end_date, duration) VALUES (%(task_id)s, %(dag_id)s, %(run_id)s, %(map_index)s, %(start_date)s, %(end_date)s, %(duration)s) RETURNING task_fail.id]
+[parameters: {'task_id': 'consume_and_load_raceResultsFact', 'dag_id': 'f1_data_pipeline_kafka_consumeAndLoad', 'run_id': 'manual__2024-06-18T12:38:07.224992+00:00', 'map_index': -1, 'start_date': datetime.datetime(2024, 6, 18, 12, 38, 39, 734350, tzinfo=Timezone('UTC')), 'end_date': datetime.datetime(2024, 6, 18, 12, 44, 2, 965572, tzinfo=Timezone('UTC')), 'duration': 323}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 1803)
+[2024-06-18T12:44:02.995+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1803, status='terminated', exitcode=1, started='12:38:38') (1803) terminated with exit code 1

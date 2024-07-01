@@ -1,0 +1,80 @@
+[2024-06-10T08:36:10.663+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-10T08:36:10.678+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.consume_and_load_constructorDim manual__2024-06-10T08:36:08.512647+00:00 [queued]>
+[2024-06-10T08:36:10.683+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow_with_kafka.consume_and_load_constructorDim manual__2024-06-10T08:36:08.512647+00:00 [queued]>
+[2024-06-10T08:36:10.683+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-10T08:36:10.691+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): consume_and_load_constructorDim> on 2024-06-10 08:36:08.512647+00:00
+[2024-06-10T08:36:10.696+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=711) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-10T08:36:10.697+0000] {standard_task_runner.py:63} INFO - Started process 718 to run task
+[2024-06-10T08:36:10.698+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow_with_kafka', 'consume_and_load_constructorDim', 'manual__2024-06-10T08:36:08.512647+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/kafkaProduce.py', '--cfg-path', '/tmp/tmp0atd9w1f']
+[2024-06-10T08:36:10.699+0000] {standard_task_runner.py:91} INFO - Job 51: Subtask consume_and_load_constructorDim
+[2024-06-10T08:36:10.731+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow_with_kafka.consume_and_load_constructorDim manual__2024-06-10T08:36:08.512647+00:00 [running]> on host c0d58a373fda
+[2024-06-10T08:36:10.791+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow_with_kafka' AIRFLOW_CTX_TASK_ID='consume_and_load_constructorDim' AIRFLOW_CTX_EXECUTION_DATE='2024-06-10T08:36:08.512647+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-10T08:36:08.512647+00:00'
+[2024-06-10T08:36:10.792+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-10T08:36:10.793+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.21.0.6', 9092)]>: connecting to kafka:9092 [('172.21.0.6', 9092) IPv4]
+[2024-06-10T08:36:10.794+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-10T08:36:10.794+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.21.0.6', 9092)]>: Connection complete.
+[2024-06-10T08:36:10.897+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-10T08:36:10.897+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-10T08:36:10.898+0000] {consumer.py:122} WARNING - group_id is None: disabling auto-commit.
+[2024-06-10T08:36:10.898+0000] {subscription_state.py:167} INFO - Updating subscribed topics to: ('f1_data_topic_constructor',)
+[2024-06-10T08:36:10.899+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-10T08:36:10.899+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-10T08:36:10.902+0000] {subscription_state.py:253} INFO - Updated partition assignment: [('f1_data_topic_constructor', 0)]
+[2024-06-10T08:36:10.903+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.21.0.6', 9092)]>: connecting to kafka:9092 [('172.21.0.6', 9092) IPv4]
+[2024-06-10T08:36:10.904+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.21.0.6', 9092)]>: Connection complete.
+[2024-06-10T08:36:10.904+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.21.0.6', 9092)]>: Closing connection. 
+[2024-06-10T08:36:11.018+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-10T08:36:11.019+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'nationality'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/kafkaProduce.py", line 337, in consume_and_load_constructorDim
+    """, (row['constructorId'], row['constructorRef'], row['name'], row['nationality_constructors'], row['url_constructors'], row['nationality'], row['code'], row['number'], row['url']))
+                                                                                                                              ~~~^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/series.py", line 1040, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+    raise KeyError(key) from err
+KeyError: 'nationality'
+[2024-06-10T08:36:11.030+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=f1_data_pipeline_taskflow_with_kafka, task_id=consume_and_load_constructorDim, run_id=manual__2024-06-10T08:36:08.512647+00:00, execution_date=20240610T083608, start_date=20240610T083610, end_date=20240610T083611
+[2024-06-10T08:36:11.038+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 51 for task consume_and_load_constructorDim ('nationality'; 718)
+[2024-06-10T08:36:11.071+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-10T08:36:11.082+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-10T08:36:11.084+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

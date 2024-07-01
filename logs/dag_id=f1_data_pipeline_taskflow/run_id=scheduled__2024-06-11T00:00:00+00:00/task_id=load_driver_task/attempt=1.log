@@ -1,0 +1,357 @@
+[2024-06-12T10:40:36.956+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T10:40:36.971+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T10:40:36.977+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T10:40:36.977+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T10:40:36.985+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_driver_task> on 2024-06-11 00:00:00+00:00
+[2024-06-12T10:40:36.992+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=684) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T10:40:36.993+0000] {standard_task_runner.py:63} INFO - Started process 692 to run task
+[2024-06-12T10:40:36.994+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_driver_task', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpec2gv92z']
+[2024-06-12T10:40:36.996+0000] {standard_task_runner.py:91} INFO - Job 17: Subtask load_driver_task
+[2024-06-12T10:40:37.040+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [running]> on host 52285cb34a44
+[2024-06-12T10:40:37.181+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_driver_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T10:40:37.182+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T10:40:37.185+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-12T10:40:37.186+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-12T10:40:37.250+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-12T10:40:37.251+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T10:40:37.257+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_driver_task, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T104036, end_date=20240612T104037
+[2024-06-12T10:40:37.287+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T10:40:37.300+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T10:40:37.301+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T11:05:09.212+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T11:05:09.232+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:05:09.238+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:05:09.238+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T11:05:09.247+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_driver_task> on 2024-06-11 00:00:00+00:00
+[2024-06-12T11:05:09.255+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_driver_task', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp9y8ce7nq']
+[2024-06-12T11:05:09.258+0000] {standard_task_runner.py:91} INFO - Job 16: Subtask load_driver_task
+[2024-06-12T11:05:09.260+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=401) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T11:05:09.260+0000] {standard_task_runner.py:63} INFO - Started process 414 to run task
+[2024-06-12T11:05:09.295+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [running]> on host a8d8326d12bd
+[2024-06-12T11:05:09.445+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_driver_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T11:05:09.446+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T11:05:09.448+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-12T11:05:09.449+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-12T11:05:09.482+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-12T11:05:09.483+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T11:05:09.490+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_driver_task, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T110509, end_date=20240612T110509
+[2024-06-12T11:05:09.514+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T11:05:09.524+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T11:18:03.212+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T11:18:03.230+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:18:03.237+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:18:03.237+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T11:18:03.247+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_driver_task> on 2024-06-11 00:00:00+00:00
+[2024-06-12T11:18:03.254+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=313) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T11:18:03.256+0000] {standard_task_runner.py:63} INFO - Started process 343 to run task
+[2024-06-12T11:18:03.255+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_driver_task', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpym4n20gm']
+[2024-06-12T11:18:03.257+0000] {standard_task_runner.py:91} INFO - Job 18: Subtask load_driver_task
+[2024-06-12T11:18:03.302+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [running]> on host e07cec2adf81
+[2024-06-12T11:18:03.476+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_driver_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T11:18:03.477+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T11:18:03.478+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-12T11:18:03.479+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-12T11:18:03.496+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-12T11:18:03.496+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T11:18:03.504+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_driver_task, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T111803, end_date=20240612T111803
+[2024-06-12T11:18:03.550+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T11:18:03.569+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T11:18:03.570+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T11:34:01.695+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T11:34:01.712+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:34:01.718+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:34:01.718+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T11:34:01.726+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_driver_task> on 2024-06-11 00:00:00+00:00
+[2024-06-12T11:34:01.733+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=481) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T11:34:01.734+0000] {standard_task_runner.py:63} INFO - Started process 491 to run task
+[2024-06-12T11:34:01.734+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_driver_task', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpcmof81fe']
+[2024-06-12T11:34:01.736+0000] {standard_task_runner.py:91} INFO - Job 33: Subtask load_driver_task
+[2024-06-12T11:34:01.771+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [running]> on host 16e46b42a87a
+[2024-06-12T11:34:01.929+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_driver_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T11:34:01.933+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T11:34:01.936+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-12T11:34:01.938+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-12T11:34:01.969+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T11:34:01.970+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+    self.dialect.do_executemany(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "driverDim_pkey"
+DETAIL:  Key ("driverId")=(18) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/etl_dag.py", line 182, in load_data
+    df.to_sql(table_name, engine, if_exists='append', index=False)
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 3008, in to_sql
+    return sql.to_sql(
+           ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 788, in to_sql
+    return pandas_sql.to_sql(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1958, in to_sql
+    total_inserted = sql_engine.insert_records(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1507, in insert_records
+    raise err
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1498, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1059, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 951, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1385, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+    self.dialect.do_executemany(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "driverDim_pkey"
+DETAIL:  Key ("driverId")=(18) already exists.
+
+[SQL: INSERT INTO "driverDim" ("driverId", "driverRef", forename, surname, dob, nationality, code, number, url) VALUES (%(driverId)s, %(driverRef)s, %(forename)s, %(surname)s, %(dob)s, %(nationality)s, %(code)s, %(number)s, %(url)s)]
+[parameters: ({'driverId': 18, 'driverRef': 'button', 'forename': 'Jenson', 'surname': 'Button', 'dob': datetime.date(1980, 1, 19), 'nationality': 'British', 'code': 'BUT', 'number': 3, 'url': 'http://en.wikipedia.org/wiki/Jenson_Button'}, {'driverId': 1, 'driverRef': 'hamilton', 'forename': 'Lewis', 'surname': 'Hamilton', 'dob': datetime.date(1985, 1, 7), 'nationality': 'British', 'code': 'HAM', 'number': 4, 'url': 'http://en.wikipedia.org/wiki/Lewis_Hamilton'}, {'driverId': 815, 'driverRef': 'perez', 'forename': 'Sergio', 'surname': 'Pérez', 'dob': datetime.date(1990, 1, 26), 'nationality': 'Mexican', 'code': 'PER', 'number': 6, 'url': 'http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez'}, {'driverId': 825, 'driverRef': 'kevin_magnussen', 'forename': 'Kevin', 'surname': 'Magnussen', 'dob': datetime.date(1992, 10, 5), 'nationality': 'Danish', 'code': 'MAG', 'number': 20, 'url': 'http://en.wikipedia.org/wiki/Kevin_Magnussen'}, {'driverId': 4, 'driverRef': 'alonso', 'forename': 'Fernando', 'surname': 'Alonso', 'dob': datetime.date(1981, 7, 29), 'nationality': 'Spanish', 'code': 'ALO', 'number': 14, 'url': 'http://en.wikipedia.org/wiki/Fernando_Alonso'}, {'driverId': 838, 'driverRef': 'vandoorne', 'forename': 'Stoffel', 'surname': 'Vandoorne', 'dob': datetime.date(1992, 3, 26), 'nationality': 'Belgian', 'code': 'VAN', 'number': 2, 'url': 'http://en.wikipedia.org/wiki/Stoffel_Vandoorne'}, {'driverId': 817, 'driverRef': 'ricciardo', 'forename': 'Daniel', 'surname': 'Ricciardo', 'dob': datetime.date(1989, 7, 1), 'nationality': 'Australian', 'code': 'RIC', 'number': 3, 'url': 'http://en.wikipedia.org/wiki/Daniel_Ricciardo'}, {'driverId': 846, 'driverRef': 'norris', 'forename': 'Lando', 'surname': 'Norris', 'dob': datetime.date(1999, 11, 13), 'nationality': 'British', 'code': 'NOR', 'number': 4, 'url': 'http://en.wikipedia.org/wiki/Lando_Norris'}  ... displaying 10 of 65 total bound parameter sets ...  {'driverId': 833, 'driverRef': 'merhi', 'forename': 'Roberto', 'surname': 'Merhi', 'dob': datetime.date(1991, 3, 22), 'nationality': 'Spanish', 'code': 'MER', 'number': 98, 'url': 'http://en.wikipedia.org/wiki/Roberto_Merhi'}, {'driverId': 837, 'driverRef': 'haryanto', 'forename': 'Rio', 'surname': 'Haryanto', 'dob': datetime.date(1993, 1, 22), 'nationality': 'Indonesian', 'code': 'HAR', 'number': 88, 'url': 'http://en.wikipedia.org/wiki/Rio_Haryanto'})]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2024-06-12T11:34:01.982+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=f1_data_pipeline_taskflow, task_id=load_driver_task, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T113401, end_date=20240612T113401
+[2024-06-12T11:34:01.991+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 33 for task load_driver_task ((psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "driverDim_pkey"
+DETAIL:  Key ("driverId")=(18) already exists.
+
+[SQL: INSERT INTO "driverDim" ("driverId", "driverRef", forename, surname, dob, nationality, code, number, url) VALUES (%(driverId)s, %(driverRef)s, %(forename)s, %(surname)s, %(dob)s, %(nationality)s, %(code)s, %(number)s, %(url)s)]
+[parameters: ({'driverId': 18, 'driverRef': 'button', 'forename': 'Jenson', 'surname': 'Button', 'dob': datetime.date(1980, 1, 19), 'nationality': 'British', 'code': 'BUT', 'number': 3, 'url': 'http://en.wikipedia.org/wiki/Jenson_Button'}, {'driverId': 1, 'driverRef': 'hamilton', 'forename': 'Lewis', 'surname': 'Hamilton', 'dob': datetime.date(1985, 1, 7), 'nationality': 'British', 'code': 'HAM', 'number': 4, 'url': 'http://en.wikipedia.org/wiki/Lewis_Hamilton'}, {'driverId': 815, 'driverRef': 'perez', 'forename': 'Sergio', 'surname': 'Pérez', 'dob': datetime.date(1990, 1, 26), 'nationality': 'Mexican', 'code': 'PER', 'number': 6, 'url': 'http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez'}, {'driverId': 825, 'driverRef': 'kevin_magnussen', 'forename': 'Kevin', 'surname': 'Magnussen', 'dob': datetime.date(1992, 10, 5), 'nationality': 'Danish', 'code': 'MAG', 'number': 20, 'url': 'http://en.wikipedia.org/wiki/Kevin_Magnussen'}, {'driverId': 4, 'driverRef': 'alonso', 'forename': 'Fernando', 'surname': 'Alonso', 'dob': datetime.date(1981, 7, 29), 'nationality': 'Spanish', 'code': 'ALO', 'number': 14, 'url': 'http://en.wikipedia.org/wiki/Fernando_Alonso'}, {'driverId': 838, 'driverRef': 'vandoorne', 'forename': 'Stoffel', 'surname': 'Vandoorne', 'dob': datetime.date(1992, 3, 26), 'nationality': 'Belgian', 'code': 'VAN', 'number': 2, 'url': 'http://en.wikipedia.org/wiki/Stoffel_Vandoorne'}, {'driverId': 817, 'driverRef': 'ricciardo', 'forename': 'Daniel', 'surname': 'Ricciardo', 'dob': datetime.date(1989, 7, 1), 'nationality': 'Australian', 'code': 'RIC', 'number': 3, 'url': 'http://en.wikipedia.org/wiki/Daniel_Ricciardo'}, {'driverId': 846, 'driverRef': 'norris', 'forename': 'Lando', 'surname': 'Norris', 'dob': datetime.date(1999, 11, 13), 'nationality': 'British', 'code': 'NOR', 'number': 4, 'url': 'http://en.wikipedia.org/wiki/Lando_Norris'}  ... displaying 10 of 65 total bound parameter sets ...  {'driverId': 833, 'driverRef': 'merhi', 'forename': 'Roberto', 'surname': 'Merhi', 'dob': datetime.date(1991, 3, 22), 'nationality': 'Spanish', 'code': 'MER', 'number': 98, 'url': 'http://en.wikipedia.org/wiki/Roberto_Merhi'}, {'driverId': 837, 'driverRef': 'haryanto', 'forename': 'Rio', 'surname': 'Haryanto', 'dob': datetime.date(1993, 1, 22), 'nationality': 'Indonesian', 'code': 'HAR', 'number': 88, 'url': 'http://en.wikipedia.org/wiki/Rio_Haryanto'})]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 491)
+[2024-06-12T11:34:02.028+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-12T11:34:02.045+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T11:34:02.047+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T11:38:04.690+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T11:38:04.705+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:38:04.711+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:38:04.711+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T11:38:04.719+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_driver_task> on 2024-06-11 00:00:00+00:00
+[2024-06-12T11:38:04.726+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=312) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T11:38:04.727+0000] {standard_task_runner.py:63} INFO - Started process 341 to run task
+[2024-06-12T11:38:04.727+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_driver_task', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpsmq66ppq']
+[2024-06-12T11:38:04.729+0000] {standard_task_runner.py:91} INFO - Job 17: Subtask load_driver_task
+[2024-06-12T11:38:04.763+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [running]> on host 33197dc676ae
+[2024-06-12T11:38:04.875+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_driver_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T11:38:04.876+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T11:38:04.877+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-12T11:38:04.877+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-12T11:38:04.921+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-12T11:38:04.922+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T11:38:04.928+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_driver_task, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T113804, end_date=20240612T113804
+[2024-06-12T11:38:04.980+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T11:38:04.987+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T11:56:04.393+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T11:56:04.409+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:56:04.414+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T11:56:04.415+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T11:56:04.423+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_driver_task> on 2024-06-11 00:00:00+00:00
+[2024-06-12T11:56:04.430+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=310) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T11:56:04.431+0000] {standard_task_runner.py:63} INFO - Started process 331 to run task
+[2024-06-12T11:56:04.431+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_driver_task', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpkq80bmcg']
+[2024-06-12T11:56:04.433+0000] {standard_task_runner.py:91} INFO - Job 16: Subtask load_driver_task
+[2024-06-12T11:56:04.465+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [running]> on host e699387b7fc9
+[2024-06-12T11:56:04.588+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_driver_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T11:56:04.589+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T11:56:04.590+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-12T11:56:04.590+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-12T11:56:04.612+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-12T11:56:04.612+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T11:56:04.622+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_driver_task, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T115604, end_date=20240612T115604
+[2024-06-12T11:56:04.645+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T11:56:04.664+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T11:56:04.666+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T12:08:28.553+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T12:08:28.571+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T12:08:28.577+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T12:08:28.577+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T12:08:28.586+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_driver_task> on 2024-06-11 00:00:00+00:00
+[2024-06-12T12:08:28.593+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=361) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T12:08:28.594+0000] {standard_task_runner.py:63} INFO - Started process 372 to run task
+[2024-06-12T12:08:28.594+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_driver_task', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmptgxp30f7']
+[2024-06-12T12:08:28.596+0000] {standard_task_runner.py:91} INFO - Job 16: Subtask load_driver_task
+[2024-06-12T12:08:28.640+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [running]> on host 7c9178d6b02a
+[2024-06-12T12:08:28.780+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_driver_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T12:08:28.781+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T12:08:28.782+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-12T12:08:28.783+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-12T12:08:28.802+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-12T12:08:28.802+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T12:08:28.812+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_driver_task, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T120828, end_date=20240612T120828
+[2024-06-12T12:08:28.849+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T12:08:28.887+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T12:08:28.889+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T12:32:03.658+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T12:32:03.680+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T12:32:03.686+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T12:32:03.686+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T12:32:03.696+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_driver_task> on 2024-06-11 00:00:00+00:00
+[2024-06-12T12:32:03.703+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=358) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T12:32:03.704+0000] {standard_task_runner.py:63} INFO - Started process 366 to run task
+[2024-06-12T12:32:03.704+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_driver_task', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmprmuv01ea']
+[2024-06-12T12:32:03.705+0000] {standard_task_runner.py:91} INFO - Job 13: Subtask load_driver_task
+[2024-06-12T12:32:03.740+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [running]> on host 79a7d5bd11df
+[2024-06-12T12:32:03.879+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_driver_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T12:32:03.880+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T12:32:03.881+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-12T12:32:03.881+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-12T12:32:03.910+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-12T12:32:03.911+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T12:32:03.917+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_driver_task, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T123203, end_date=20240612T123203
+[2024-06-12T12:32:03.957+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T12:32:03.972+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T12:32:03.974+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T12:56:53.893+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T12:56:53.910+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T12:56:53.916+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T12:56:53.917+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T12:56:53.927+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_driver_task> on 2024-06-11 00:00:00+00:00
+[2024-06-12T12:56:53.934+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=346) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T12:56:53.935+0000] {standard_task_runner.py:63} INFO - Started process 376 to run task
+[2024-06-12T12:56:53.935+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_driver_task', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp36v8o40x']
+[2024-06-12T12:56:53.937+0000] {standard_task_runner.py:91} INFO - Job 15: Subtask load_driver_task
+[2024-06-12T12:56:53.975+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [running]> on host ce972f89b6ce
+[2024-06-12T12:56:54.085+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_driver_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T12:56:54.086+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T12:56:54.088+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-12T12:56:54.088+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-12T12:56:54.104+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-12T12:56:54.105+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T12:56:54.112+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_driver_task, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T125653, end_date=20240612T125654
+[2024-06-12T12:56:54.149+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T12:56:54.165+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T12:56:54.167+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T13:11:19.526+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T13:11:19.545+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T13:11:19.551+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T13:11:19.551+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T13:11:19.561+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_driver_task> on 2024-06-11 00:00:00+00:00
+[2024-06-12T13:11:19.569+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=325) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T13:11:19.570+0000] {standard_task_runner.py:63} INFO - Started process 331 to run task
+[2024-06-12T13:11:19.569+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_driver_task', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp0e2mcmyy']
+[2024-06-12T13:11:19.571+0000] {standard_task_runner.py:91} INFO - Job 17: Subtask load_driver_task
+[2024-06-12T13:11:19.609+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [running]> on host 75496fb8ac8a
+[2024-06-12T13:11:19.764+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_driver_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T13:11:19.765+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T13:11:19.766+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-12T13:11:19.766+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-12T13:11:19.807+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-12T13:11:19.808+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T13:11:19.820+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_driver_task, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T131119, end_date=20240612T131119
+[2024-06-12T13:11:19.905+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T13:11:19.921+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T13:11:19.923+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T13:24:16.673+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T13:24:16.689+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T13:24:16.694+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T13:24:16.695+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T13:24:16.703+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_driver_task> on 2024-06-11 00:00:00+00:00
+[2024-06-12T13:24:16.710+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=326) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T13:24:16.711+0000] {standard_task_runner.py:63} INFO - Started process 344 to run task
+[2024-06-12T13:24:16.711+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_driver_task', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp1hp3rs86']
+[2024-06-12T13:24:16.713+0000] {standard_task_runner.py:91} INFO - Job 17: Subtask load_driver_task
+[2024-06-12T13:24:16.749+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [running]> on host 7ad193764747
+[2024-06-12T13:24:16.858+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_driver_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T13:24:16.859+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T13:24:16.861+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-12T13:24:16.861+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-12T13:24:16.878+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-12T13:24:16.879+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T13:24:16.886+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_driver_task, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T132416, end_date=20240612T132416
+[2024-06-12T13:24:16.924+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T13:24:16.940+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T13:24:16.942+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-12T13:31:24.083+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T13:31:24.101+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T13:31:24.107+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [queued]>
+[2024-06-12T13:31:24.108+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-12T13:31:24.118+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_driver_task> on 2024-06-11 00:00:00+00:00
+[2024-06-12T13:31:24.125+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=311) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T13:31:24.126+0000] {standard_task_runner.py:63} INFO - Started process 327 to run task
+[2024-06-12T13:31:24.126+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_driver_task', 'scheduled__2024-06-11T00:00:00+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpgkgdeoc3']
+[2024-06-12T13:31:24.128+0000] {standard_task_runner.py:91} INFO - Job 18: Subtask load_driver_task
+[2024-06-12T13:31:24.174+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_driver_task scheduled__2024-06-11T00:00:00+00:00 [running]> on host c05e5b3efdbc
+[2024-06-12T13:31:24.322+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_driver_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-11T00:00:00+00:00'
+[2024-06-12T13:31:24.325+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T13:31:24.330+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-12T13:31:24.332+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-12T13:31:24.362+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-12T13:31:24.363+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T13:31:24.372+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=load_driver_task, run_id=scheduled__2024-06-11T00:00:00+00:00, execution_date=20240611T000000, start_date=20240612T133124, end_date=20240612T133124
+[2024-06-12T13:31:24.420+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T13:31:24.435+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T13:31:24.437+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

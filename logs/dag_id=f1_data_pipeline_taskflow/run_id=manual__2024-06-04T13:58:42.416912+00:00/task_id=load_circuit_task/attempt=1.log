@@ -1,0 +1,117 @@
+[2024-06-04T13:59:19.663+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-04T13:59:19.678+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_circuit_task manual__2024-06-04T13:58:42.416912+00:00 [queued]>
+[2024-06-04T13:59:19.684+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.load_circuit_task manual__2024-06-04T13:58:42.416912+00:00 [queued]>
+[2024-06-04T13:59:19.685+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-04T13:59:19.693+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load_circuit_task> on 2024-06-04 13:58:42.416912+00:00
+[2024-06-04T13:59:19.700+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=330) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-04T13:59:19.701+0000] {standard_task_runner.py:63} INFO - Started process 377 to run task
+[2024-06-04T13:59:19.701+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'load_circuit_task', 'manual__2024-06-04T13:58:42.416912+00:00', '--job-id', '46', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpl2c7dvnr']
+[2024-06-04T13:59:19.703+0000] {standard_task_runner.py:91} INFO - Job 46: Subtask load_circuit_task
+[2024-06-04T13:59:19.737+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.load_circuit_task manual__2024-06-04T13:58:42.416912+00:00 [running]> on host 43686a6526ed
+[2024-06-04T13:59:19.860+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='load_circuit_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-04T13:58:42.416912+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-04T13:58:42.416912+00:00'
+[2024-06-04T13:59:19.861+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-04T13:59:19.862+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-04T13:59:19.863+0000] {base.py:84} INFO - Using connection ID 'sourcedb_connection' for task execution.
+[2024-06-04T13:59:19.878+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-04T13:59:19.878+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+    self.dialect.do_executemany(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "circuitDim_pkey"
+DETAIL:  Key ("circuitId")=(1) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/etl_dag.py", line 191, in load_data
+    df.to_sql(table_name, engine, if_exists='append', index=False)
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 3008, in to_sql
+    return sql.to_sql(
+           ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 788, in to_sql
+    return pandas_sql.to_sql(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1958, in to_sql
+    total_inserted = sql_engine.insert_records(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1507, in insert_records
+    raise err
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1498, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1059, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 951, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1385, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+    self.dialect.do_executemany(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "circuitDim_pkey"
+DETAIL:  Key ("circuitId")=(1) already exists.
+
+[SQL: INSERT INTO "circuitDim" ("circuitId", name_y, "circuitRef", location, country, lat, lng, alt, url_y) VALUES (%(circuitId)s, %(name_y)s, %(circuitRef)s, %(location)s, %(country)s, %(lat)s, %(lng)s, %(alt)s, %(url_y)s)]
+[parameters: ({'circuitId': 1.0, 'name_y': 'Albert Park Grand Prix Circuit', 'circuitRef': 'albert_park', 'location': 'Melbourne', 'country': 'Australia', 'lat': -37.8497, 'lng': 144.968, 'alt': 10.0, 'url_y': 'http://en.wikipedia.org/wiki/Melbourne_Grand_Prix_Circuit'}, {'circuitId': 2.0, 'name_y': 'Sepang International Circuit', 'circuitRef': 'sepang', 'location': 'Kuala Lumpur', 'country': 'Malaysia', 'lat': 2.76083, 'lng': 101.738, 'alt': 18.0, 'url_y': 'http://en.wikipedia.org/wiki/Sepang_International_Circuit'}, {'circuitId': 17.0, 'name_y': 'Shanghai International Circuit', 'circuitRef': 'shanghai', 'location': 'Shanghai', 'country': 'China', 'lat': 31.3389, 'lng': 121.22, 'alt': 5.0, 'url_y': 'http://en.wikipedia.org/wiki/Shanghai_International_Circuit'}, {'circuitId': 3.0, 'name_y': 'Bahrain International Circuit', 'circuitRef': 'bahrain', 'location': 'Sakhir', 'country': 'Bahrain', 'lat': 26.0325, 'lng': 50.5106, 'alt': 7.0, 'url_y': 'http://en.wikipedia.org/wiki/Bahrain_International_Circuit'}, {'circuitId': 4.0, 'name_y': 'Circuit de Barcelona-Catalunya', 'circuitRef': 'catalunya', 'location': 'Montmeló', 'country': 'Spain', 'lat': 41.57, 'lng': 2.26111, 'alt': 109.0, 'url_y': 'http://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya'}, {'circuitId': 6.0, 'name_y': 'Circuit de Monaco', 'circuitRef': 'monaco', 'location': 'Monte-Carlo', 'country': 'Monaco', 'lat': 43.7347, 'lng': 7.42056, 'alt': 7.0, 'url_y': 'http://en.wikipedia.org/wiki/Circuit_de_Monaco'}, {'circuitId': 7.0, 'name_y': 'Circuit Gilles Villeneuve', 'circuitRef': 'villeneuve', 'location': 'Montreal', 'country': 'Canada', 'lat': 45.5, 'lng': -73.5228, 'alt': 13.0, 'url_y': 'http://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve'}, {'circuitId': 12.0, 'name_y': 'Valencia Street Circuit', 'circuitRef': 'valencia', 'location': 'Valencia', 'country': 'Spain', 'lat': 39.4589, 'lng': -0.331667, 'alt': 4.0, 'url_y': 'http://en.wikipedia.org/wiki/Valencia_Street_Circuit'}  ... displaying 10 of 34 total bound parameter sets ...  {'circuitId': 76.0, 'name_y': 'Autodromo Internazionale del Mugello', 'circuitRef': 'mugello', 'location': 'Mugello', 'country': 'Italy', 'lat': 43.9975, 'lng': 11.3719, 'alt': 255.0, 'url_y': 'http://en.wikipedia.org/wiki/Mugello_Circuit'}, {'circuitId': 78.0, 'name_y': 'Losail International Circuit', 'circuitRef': 'losail', 'location': 'Al Daayen', 'country': 'Qatar', 'lat': 25.49, 'lng': 51.4542, 'alt': None, 'url_y': 'http://en.wikipedia.org/wiki/Losail_International_Circuit'})]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2024-06-04T13:59:19.888+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=f1_data_pipeline_taskflow, task_id=load_circuit_task, run_id=manual__2024-06-04T13:58:42.416912+00:00, execution_date=20240604T135842, start_date=20240604T135919, end_date=20240604T135919
+[2024-06-04T13:59:19.901+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 46 for task load_circuit_task ((psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "circuitDim_pkey"
+DETAIL:  Key ("circuitId")=(1) already exists.
+
+[SQL: INSERT INTO "circuitDim" ("circuitId", name_y, "circuitRef", location, country, lat, lng, alt, url_y) VALUES (%(circuitId)s, %(name_y)s, %(circuitRef)s, %(location)s, %(country)s, %(lat)s, %(lng)s, %(alt)s, %(url_y)s)]
+[parameters: ({'circuitId': 1.0, 'name_y': 'Albert Park Grand Prix Circuit', 'circuitRef': 'albert_park', 'location': 'Melbourne', 'country': 'Australia', 'lat': -37.8497, 'lng': 144.968, 'alt': 10.0, 'url_y': 'http://en.wikipedia.org/wiki/Melbourne_Grand_Prix_Circuit'}, {'circuitId': 2.0, 'name_y': 'Sepang International Circuit', 'circuitRef': 'sepang', 'location': 'Kuala Lumpur', 'country': 'Malaysia', 'lat': 2.76083, 'lng': 101.738, 'alt': 18.0, 'url_y': 'http://en.wikipedia.org/wiki/Sepang_International_Circuit'}, {'circuitId': 17.0, 'name_y': 'Shanghai International Circuit', 'circuitRef': 'shanghai', 'location': 'Shanghai', 'country': 'China', 'lat': 31.3389, 'lng': 121.22, 'alt': 5.0, 'url_y': 'http://en.wikipedia.org/wiki/Shanghai_International_Circuit'}, {'circuitId': 3.0, 'name_y': 'Bahrain International Circuit', 'circuitRef': 'bahrain', 'location': 'Sakhir', 'country': 'Bahrain', 'lat': 26.0325, 'lng': 50.5106, 'alt': 7.0, 'url_y': 'http://en.wikipedia.org/wiki/Bahrain_International_Circuit'}, {'circuitId': 4.0, 'name_y': 'Circuit de Barcelona-Catalunya', 'circuitRef': 'catalunya', 'location': 'Montmeló', 'country': 'Spain', 'lat': 41.57, 'lng': 2.26111, 'alt': 109.0, 'url_y': 'http://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya'}, {'circuitId': 6.0, 'name_y': 'Circuit de Monaco', 'circuitRef': 'monaco', 'location': 'Monte-Carlo', 'country': 'Monaco', 'lat': 43.7347, 'lng': 7.42056, 'alt': 7.0, 'url_y': 'http://en.wikipedia.org/wiki/Circuit_de_Monaco'}, {'circuitId': 7.0, 'name_y': 'Circuit Gilles Villeneuve', 'circuitRef': 'villeneuve', 'location': 'Montreal', 'country': 'Canada', 'lat': 45.5, 'lng': -73.5228, 'alt': 13.0, 'url_y': 'http://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve'}, {'circuitId': 12.0, 'name_y': 'Valencia Street Circuit', 'circuitRef': 'valencia', 'location': 'Valencia', 'country': 'Spain', 'lat': 39.4589, 'lng': -0.331667, 'alt': 4.0, 'url_y': 'http://en.wikipedia.org/wiki/Valencia_Street_Circuit'}  ... displaying 10 of 34 total bound parameter sets ...  {'circuitId': 76.0, 'name_y': 'Autodromo Internazionale del Mugello', 'circuitRef': 'mugello', 'location': 'Mugello', 'country': 'Italy', 'lat': 43.9975, 'lng': 11.3719, 'alt': 255.0, 'url_y': 'http://en.wikipedia.org/wiki/Mugello_Circuit'}, {'circuitId': 78.0, 'name_y': 'Losail International Circuit', 'circuitRef': 'losail', 'location': 'Al Daayen', 'country': 'Qatar', 'lat': 25.49, 'lng': 51.4542, 'alt': None, 'url_y': 'http://en.wikipedia.org/wiki/Losail_International_Circuit'})]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 377)
+[2024-06-04T13:59:19.915+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-04T13:59:19.933+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-04T13:59:19.937+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

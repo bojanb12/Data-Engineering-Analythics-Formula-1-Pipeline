@@ -1,0 +1,361 @@
+[2024-06-07T08:42:54.373+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T08:42:54.388+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T08:42:54.394+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T08:42:54.394+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T08:42:54.402+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): qualificationsDim_transform> on 2024-06-06 00:00:00+00:00
+[2024-06-07T08:42:54.409+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=420) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T08:42:54.410+0000] {standard_task_runner.py:63} INFO - Started process 428 to run task
+[2024-06-07T08:42:54.410+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'qualificationsDim_transform', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '61', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp_ysm0rf2']
+[2024-06-07T08:42:54.412+0000] {standard_task_runner.py:91} INFO - Job 61: Subtask qualificationsDim_transform
+[2024-06-07T08:42:54.446+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [running]> on host 9459748fcbed
+[2024-06-07T08:42:55.125+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='qualificationsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T08:42:55.126+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T08:42:55.156+0000] {python.py:237} INFO - Done. Returned value was:         raceId  driverId quali_time quali_date
+0          860        18       None       None
+116        860         1       None       None
+232        861        18       None       None
+512        861         1       None       None
+680        862        18       None       None
+...        ...       ...        ...        ...
+517536     932       829       None       None
+517602     936       829       None       None
+517927     944       829       None       None
+518061     944       834       None       None
+518195     953       837       None       None
+
+[4502 rows x 4 columns]
+[2024-06-07T08:42:55.162+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T08:42:55.187+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=qualificationsDim_transform, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T084254, end_date=20240607T084255
+[2024-06-07T08:42:55.227+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T08:42:55.234+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T10:22:48.205+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T10:22:48.221+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T10:22:48.226+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T10:22:48.226+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T10:22:48.234+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): qualificationsDim_transform> on 2024-06-06 00:00:00+00:00
+[2024-06-07T10:22:48.240+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=462) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T10:22:48.241+0000] {standard_task_runner.py:63} INFO - Started process 464 to run task
+[2024-06-07T10:22:48.241+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'qualificationsDim_transform', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpbfj600p_']
+[2024-06-07T10:22:48.243+0000] {standard_task_runner.py:91} INFO - Job 24: Subtask qualificationsDim_transform
+[2024-06-07T10:22:48.279+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [running]> on host c52e0424619c
+[2024-06-07T10:22:48.823+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='qualificationsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T10:22:48.824+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T10:22:48.851+0000] {python.py:237} INFO - Done. Returned value was:         raceId  driverId quali_time quali_date
+0          860        18       None       None
+116        860         1       None       None
+232        861        18       None       None
+512        861         1       None       None
+680        862        18       None       None
+...        ...       ...        ...        ...
+517536     932       829       None       None
+517602     936       829       None       None
+517927     944       829       None       None
+518061     944       834       None       None
+518195     953       837       None       None
+
+[4502 rows x 4 columns]
+[2024-06-07T10:22:48.857+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T10:22:48.881+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=qualificationsDim_transform, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T102248, end_date=20240607T102248
+[2024-06-07T10:22:48.937+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T10:22:48.957+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T10:22:48.958+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T10:29:18.219+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T10:29:18.234+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T10:29:18.239+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T10:29:18.240+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T10:29:18.247+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): qualificationsDim_transform> on 2024-06-06 00:00:00+00:00
+[2024-06-07T10:29:18.253+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=432) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T10:29:18.254+0000] {standard_task_runner.py:63} INFO - Started process 434 to run task
+[2024-06-07T10:29:18.254+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'qualificationsDim_transform', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpzwgmbyvc']
+[2024-06-07T10:29:18.256+0000] {standard_task_runner.py:91} INFO - Job 23: Subtask qualificationsDim_transform
+[2024-06-07T10:29:18.292+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [running]> on host 560daa7ebc6f
+[2024-06-07T10:29:18.831+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='qualificationsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T10:29:18.832+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T10:29:18.859+0000] {python.py:237} INFO - Done. Returned value was:         raceId  driverId quali_time quali_date
+0          860        18       None       None
+116        860         1       None       None
+232        861        18       None       None
+512        861         1       None       None
+680        862        18       None       None
+...        ...       ...        ...        ...
+517536     932       829       None       None
+517602     936       829       None       None
+517927     944       829       None       None
+518061     944       834       None       None
+518195     953       837       None       None
+
+[4502 rows x 4 columns]
+[2024-06-07T10:29:18.866+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T10:29:18.889+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=qualificationsDim_transform, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T102918, end_date=20240607T102918
+[2024-06-07T10:29:18.909+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T10:29:18.929+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T10:29:18.930+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T10:54:54.086+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T10:54:54.101+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T10:54:54.106+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T10:54:54.106+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T10:54:54.114+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): qualificationsDim_transform> on 2024-06-06 00:00:00+00:00
+[2024-06-07T10:54:54.120+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=541) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T10:54:54.121+0000] {standard_task_runner.py:63} INFO - Started process 544 to run task
+[2024-06-07T10:54:54.121+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'qualificationsDim_transform', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmphprksltg']
+[2024-06-07T10:54:54.123+0000] {standard_task_runner.py:91} INFO - Job 21: Subtask qualificationsDim_transform
+[2024-06-07T10:54:54.157+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [running]> on host 511ae3a85ee7
+[2024-06-07T10:54:54.807+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='qualificationsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T10:54:54.808+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T10:54:54.835+0000] {python.py:237} INFO - Done. Returned value was:         raceId  driverId quali_time quali_date
+0          860        18       None       None
+116        860         1       None       None
+232        861        18       None       None
+512        861         1       None       None
+680        862        18       None       None
+...        ...       ...        ...        ...
+517536     932       829       None       None
+517602     936       829       None       None
+517927     944       829       None       None
+518061     944       834       None       None
+518195     953       837       None       None
+
+[4502 rows x 4 columns]
+[2024-06-07T10:54:54.842+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T10:54:54.866+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=qualificationsDim_transform, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T105454, end_date=20240607T105454
+[2024-06-07T10:54:54.897+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T10:54:54.916+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T10:54:54.917+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T11:04:22.662+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T11:04:22.677+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T11:04:22.683+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T11:04:22.683+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T11:04:22.691+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): qualificationsDim_transform> on 2024-06-06 00:00:00+00:00
+[2024-06-07T11:04:22.698+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=431) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T11:04:22.699+0000] {standard_task_runner.py:63} INFO - Started process 435 to run task
+[2024-06-07T11:04:22.699+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'qualificationsDim_transform', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmprm8jjqgi']
+[2024-06-07T11:04:22.701+0000] {standard_task_runner.py:91} INFO - Job 21: Subtask qualificationsDim_transform
+[2024-06-07T11:04:22.736+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [running]> on host 56deb138ba11
+[2024-06-07T11:04:23.328+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='qualificationsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T11:04:23.329+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T11:04:23.358+0000] {python.py:237} INFO - Done. Returned value was:         raceId  driverId quali_time quali_date
+0          860        18       None       None
+116        860         1       None       None
+232        861        18       None       None
+512        861         1       None       None
+680        862        18       None       None
+...        ...       ...        ...        ...
+517536     932       829       None       None
+517602     936       829       None       None
+517927     944       829       None       None
+518061     944       834       None       None
+518195     953       837       None       None
+
+[4502 rows x 4 columns]
+[2024-06-07T11:04:23.365+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T11:04:23.391+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=qualificationsDim_transform, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T110422, end_date=20240607T110423
+[2024-06-07T11:04:23.434+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T11:04:23.454+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T11:04:23.455+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T11:15:07.041+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T11:15:07.058+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T11:15:07.064+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T11:15:07.064+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T11:15:07.076+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): qualificationsDim_transform> on 2024-06-06 00:00:00+00:00
+[2024-06-07T11:15:07.083+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=426) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T11:15:07.084+0000] {standard_task_runner.py:63} INFO - Started process 435 to run task
+[2024-06-07T11:15:07.085+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'qualificationsDim_transform', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp78d9sb9u']
+[2024-06-07T11:15:07.086+0000] {standard_task_runner.py:91} INFO - Job 23: Subtask qualificationsDim_transform
+[2024-06-07T11:15:07.122+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [running]> on host bdba731e3ece
+[2024-06-07T11:15:07.764+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='qualificationsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T11:15:07.765+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T11:15:07.793+0000] {python.py:237} INFO - Done. Returned value was:         raceId  driverId quali_time quali_date
+0          860        18       None       None
+116        860         1       None       None
+232        861        18       None       None
+512        861         1       None       None
+680        862        18       None       None
+...        ...       ...        ...        ...
+517536     932       829       None       None
+517602     936       829       None       None
+517927     944       829       None       None
+518061     944       834       None       None
+518195     953       837       None       None
+
+[4502 rows x 4 columns]
+[2024-06-07T11:15:07.800+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T11:15:07.825+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=qualificationsDim_transform, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T111507, end_date=20240607T111507
+[2024-06-07T11:15:07.861+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T11:15:07.882+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T11:15:07.883+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T12:30:59.368+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T12:30:59.385+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T12:30:59.392+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T12:30:59.392+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T12:30:59.402+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): qualificationsDim_transform> on 2024-06-06 00:00:00+00:00
+[2024-06-07T12:30:59.409+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=413) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T12:30:59.410+0000] {standard_task_runner.py:63} INFO - Started process 416 to run task
+[2024-06-07T12:30:59.410+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'qualificationsDim_transform', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp2keoh_gf']
+[2024-06-07T12:30:59.412+0000] {standard_task_runner.py:91} INFO - Job 21: Subtask qualificationsDim_transform
+[2024-06-07T12:30:59.462+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [running]> on host 5a6477355f45
+[2024-06-07T12:31:00.075+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='qualificationsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T12:31:00.076+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T12:31:00.107+0000] {python.py:237} INFO - Done. Returned value was:         raceId  driverId quali_time quali_date
+0          860        18       None       None
+116        860         1       None       None
+232        861        18       None       None
+512        861         1       None       None
+680        862        18       None       None
+...        ...       ...        ...        ...
+517536     932       829       None       None
+517602     936       829       None       None
+517927     944       829       None       None
+518061     944       834       None       None
+518195     953       837       None       None
+
+[4502 rows x 4 columns]
+[2024-06-07T12:31:00.115+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T12:31:00.141+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=qualificationsDim_transform, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T123059, end_date=20240607T123100
+[2024-06-07T12:31:00.186+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T12:31:00.206+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T12:31:00.212+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T13:02:17.200+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T13:02:17.215+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T13:02:17.220+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T13:02:17.221+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T13:02:17.229+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): qualificationsDim_transform> on 2024-06-06 00:00:00+00:00
+[2024-06-07T13:02:17.236+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=394) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T13:02:17.237+0000] {standard_task_runner.py:63} INFO - Started process 400 to run task
+[2024-06-07T13:02:17.237+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'qualificationsDim_transform', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpanapyf_m']
+[2024-06-07T13:02:17.239+0000] {standard_task_runner.py:91} INFO - Job 22: Subtask qualificationsDim_transform
+[2024-06-07T13:02:17.274+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [running]> on host f698bc001b17
+[2024-06-07T13:02:17.944+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='qualificationsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T13:02:17.945+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T13:02:17.975+0000] {python.py:237} INFO - Done. Returned value was:         raceId  driverId quali_time quali_date
+0          860        18       None       None
+116        860         1       None       None
+232        861        18       None       None
+512        861         1       None       None
+680        862        18       None       None
+...        ...       ...        ...        ...
+517536     932       829       None       None
+517602     936       829       None       None
+517927     944       829       None       None
+518061     944       834       None       None
+518195     953       837       None       None
+
+[4502 rows x 4 columns]
+[2024-06-07T13:02:17.981+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T13:02:18.005+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=qualificationsDim_transform, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T130217, end_date=20240607T130218
+[2024-06-07T13:02:18.052+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T13:02:18.059+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T13:10:42.942+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T13:10:42.961+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T13:10:42.968+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T13:10:42.968+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T13:10:42.979+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): qualificationsDim_transform> on 2024-06-06 00:00:00+00:00
+[2024-06-07T13:10:42.986+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=344) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T13:10:42.987+0000] {standard_task_runner.py:63} INFO - Started process 381 to run task
+[2024-06-07T13:10:42.987+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'qualificationsDim_transform', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpwf9awnjq']
+[2024-06-07T13:10:42.989+0000] {standard_task_runner.py:91} INFO - Job 20: Subtask qualificationsDim_transform
+[2024-06-07T13:10:43.025+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [running]> on host 5220b11abc3b
+[2024-06-07T13:10:43.656+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='qualificationsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T13:10:43.657+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T13:10:43.686+0000] {python.py:237} INFO - Done. Returned value was:         raceId  driverId quali_time quali_date
+0          860        18       None       None
+116        860         1       None       None
+232        861        18       None       None
+512        861         1       None       None
+680        862        18       None       None
+...        ...       ...        ...        ...
+517536     932       829       None       None
+517602     936       829       None       None
+517927     944       829       None       None
+518061     944       834       None       None
+518195     953       837       None       None
+
+[4502 rows x 4 columns]
+[2024-06-07T13:10:43.695+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T13:10:43.722+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=qualificationsDim_transform, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T131042, end_date=20240607T131043
+[2024-06-07T13:10:43.762+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T13:10:43.784+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T13:10:43.786+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T14:13:54.655+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T14:13:54.670+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T14:13:54.676+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T14:13:54.676+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T14:13:54.684+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): qualificationsDim_transform> on 2024-06-06 00:00:00+00:00
+[2024-06-07T14:13:54.691+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=392) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T14:13:54.692+0000] {standard_task_runner.py:63} INFO - Started process 398 to run task
+[2024-06-07T14:13:54.692+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'qualificationsDim_transform', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp3kohp37f']
+[2024-06-07T14:13:54.693+0000] {standard_task_runner.py:91} INFO - Job 20: Subtask qualificationsDim_transform
+[2024-06-07T14:13:54.727+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [running]> on host 21a09bc8bac4
+[2024-06-07T14:13:55.347+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='qualificationsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T14:13:55.348+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T14:13:55.376+0000] {python.py:237} INFO - Done. Returned value was:         raceId  driverId quali_time quali_date
+0          860        18       None       None
+116        860         1       None       None
+232        861        18       None       None
+512        861         1       None       None
+680        862        18       None       None
+...        ...       ...        ...        ...
+517536     932       829       None       None
+517602     936       829       None       None
+517927     944       829       None       None
+518061     944       834       None       None
+518195     953       837       None       None
+
+[4502 rows x 4 columns]
+[2024-06-07T14:13:55.383+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T14:13:55.409+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=qualificationsDim_transform, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T141354, end_date=20240607T141355
+[2024-06-07T14:13:55.467+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T14:13:55.487+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T14:13:55.488+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-07T14:41:47.977+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-07T14:41:47.995+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T14:41:48.001+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [queued]>
+[2024-06-07T14:41:48.001+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-07T14:41:48.011+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): qualificationsDim_transform> on 2024-06-06 00:00:00+00:00
+[2024-06-07T14:41:48.018+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=391) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-07T14:41:48.019+0000] {standard_task_runner.py:63} INFO - Started process 399 to run task
+[2024-06-07T14:41:48.020+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'qualificationsDim_transform', 'scheduled__2024-06-06T00:00:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpgaqcsw1z']
+[2024-06-07T14:41:48.021+0000] {standard_task_runner.py:91} INFO - Job 20: Subtask qualificationsDim_transform
+[2024-06-07T14:41:48.057+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.qualificationsDim_transform scheduled__2024-06-06T00:00:00+00:00 [running]> on host 5b44fb81e12c
+[2024-06-07T14:41:48.695+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='qualificationsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-06T00:00:00+00:00'
+[2024-06-07T14:41:48.696+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-07T14:41:48.728+0000] {python.py:237} INFO - Done. Returned value was:         raceId  driverId quali_time quali_date
+0          860        18       None       None
+116        860         1       None       None
+232        861        18       None       None
+512        861         1       None       None
+680        862        18       None       None
+...        ...       ...        ...        ...
+517536     932       829       None       None
+517602     936       829       None       None
+517927     944       829       None       None
+518061     944       834       None       None
+518195     953       837       None       None
+
+[4502 rows x 4 columns]
+[2024-06-07T14:41:48.734+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-07T14:41:48.764+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=qualificationsDim_transform, run_id=scheduled__2024-06-06T00:00:00+00:00, execution_date=20240606T000000, start_date=20240607T144147, end_date=20240607T144148
+[2024-06-07T14:41:48.795+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-07T14:41:48.817+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-07T14:41:48.818+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

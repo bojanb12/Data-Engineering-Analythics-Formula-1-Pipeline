@@ -1,0 +1,65 @@
+[2024-06-20T07:34:50.681+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-20T07:34:50.701+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverStandingsDim_transform scheduled__2024-06-19T00:00:00+00:00 [queued]>
+[2024-06-20T07:34:50.710+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverStandingsDim_transform scheduled__2024-06-19T00:00:00+00:00 [queued]>
+[2024-06-20T07:34:50.710+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-20T07:34:50.724+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverStandingsDim_transform> on 2024-06-19 00:00:00+00:00
+[2024-06-20T07:34:50.729+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=203) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-20T07:34:50.731+0000] {standard_task_runner.py:63} INFO - Started process 216 to run task
+[2024-06-20T07:34:50.731+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverStandingsDim_transform', 'scheduled__2024-06-19T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpakvokqjb']
+[2024-06-20T07:34:50.734+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask driverStandingsDim_transform
+[2024-06-20T07:34:50.779+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverStandingsDim_transform scheduled__2024-06-19T00:00:00+00:00 [running]> on host 5c5ee06f6e02
+[2024-06-20T07:34:52.900+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverStandingsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-19T00:00:00+00:00'
+[2024-06-20T07:34:52.904+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-20T07:34:52.939+0000] {python.py:237} INFO - Done. Returned value was:         driverStandingsId  driverId  ...  points_driverstandings  wins
+0                   64976        18  ...                    25.0     1
+116                 64978         1  ...                    15.0     0
+232                 64928        18  ...                    25.0     1
+512                 64930         1  ...                    30.0     0
+680                 64952        18  ...                    43.0     1
+...                   ...       ...  ...                     ...   ...
+517536              67183       829  ...                     0.0     0
+517602              67264       829  ...                     0.0     0
+517927              67503       829  ...                     0.0     0
+518061              67504       834  ...                     0.0     0
+518195              67681       837  ...                     0.0     0
+
+[4502 rows x 5 columns]
+[2024-06-20T07:34:52.948+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-20T07:34:52.986+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverStandingsDim_transform, run_id=scheduled__2024-06-19T00:00:00+00:00, execution_date=20240619T000000, start_date=20240620T073450, end_date=20240620T073452
+[2024-06-20T07:34:53.046+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-20T07:34:53.069+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-20T07:34:53.071+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-20T08:38:41.526+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-20T08:38:41.545+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverStandingsDim_transform scheduled__2024-06-19T00:00:00+00:00 [queued]>
+[2024-06-20T08:38:41.553+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.driverStandingsDim_transform scheduled__2024-06-19T00:00:00+00:00 [queued]>
+[2024-06-20T08:38:41.554+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-20T08:38:41.567+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): driverStandingsDim_transform> on 2024-06-19 00:00:00+00:00
+[2024-06-20T08:38:41.573+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=136) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-20T08:38:41.574+0000] {standard_task_runner.py:63} INFO - Started process 150 to run task
+[2024-06-20T08:38:41.574+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'driverStandingsDim_transform', 'scheduled__2024-06-19T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp19d643nl']
+[2024-06-20T08:38:41.576+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask driverStandingsDim_transform
+[2024-06-20T08:38:41.627+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.driverStandingsDim_transform scheduled__2024-06-19T00:00:00+00:00 [running]> on host c74b9f5f384d
+[2024-06-20T08:38:43.516+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='driverStandingsDim_transform' AIRFLOW_CTX_EXECUTION_DATE='2024-06-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-19T00:00:00+00:00'
+[2024-06-20T08:38:43.521+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-20T08:38:43.591+0000] {python.py:237} INFO - Done. Returned value was:         driverStandingsId  driverId  ...  points_driverstandings  wins
+0                   64976        18  ...                    25.0     1
+116                 64978         1  ...                    15.0     0
+232                 64928        18  ...                    25.0     1
+512                 64930         1  ...                    30.0     0
+680                 64952        18  ...                    43.0     1
+...                   ...       ...  ...                     ...   ...
+517536              67183       829  ...                     0.0     0
+517602              67264       829  ...                     0.0     0
+517927              67503       829  ...                     0.0     0
+518061              67504       834  ...                     0.0     0
+518195              67681       837  ...                     0.0     0
+
+[4502 rows x 5 columns]
+[2024-06-20T08:38:43.634+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-20T08:38:43.739+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=driverStandingsDim_transform, run_id=scheduled__2024-06-19T00:00:00+00:00, execution_date=20240619T000000, start_date=20240620T083841, end_date=20240620T083843
+[2024-06-20T08:38:43.789+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-20T08:38:43.800+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,733 @@
+[2024-06-21T08:56:18.124+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-21T08:56:18.142+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_constructorStandings scheduled__2024-06-09T00:00:00+00:00 [queued]>
+[2024-06-21T08:56:18.148+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_constructorStandings scheduled__2024-06-09T00:00:00+00:00 [queued]>
+[2024-06-21T08:56:18.148+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-21T08:56:18.157+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_constructorStandings> on 2024-06-09 00:00:00+00:00
+[2024-06-21T08:56:18.162+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=617) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-21T08:56:18.163+0000] {standard_task_runner.py:63} INFO - Started process 639 to run task
+[2024-06-21T08:56:18.163+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_fetchAndPublish', 'fetch_and_publish_constructorStandings', 'scheduled__2024-06-09T00:00:00+00:00', '--job-id', '43', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_fetch_and_publish.py', '--cfg-path', '/tmp/tmp0_44v89q']
+[2024-06-21T08:56:18.165+0000] {standard_task_runner.py:91} INFO - Job 43: Subtask fetch_and_publish_constructorStandings
+[2024-06-21T08:56:18.199+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_constructorStandings scheduled__2024-06-09T00:00:00+00:00 [running]> on host da56922fb813
+[2024-06-21T08:56:18.254+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_fetchAndPublish' AIRFLOW_CTX_TASK_ID='fetch_and_publish_constructorStandings' AIRFLOW_CTX_EXECUTION_DATE='2024-06-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-09T00:00:00+00:00'
+[2024-06-21T08:56:18.255+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-21T08:56:18.386+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 1
+[2024-06-21T08:56:19.107+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:19.107+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T08:56:19.108+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:19.210+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T08:56:19.211+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T08:56:19.365+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:19.366+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:19.366+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:19.478+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-21T08:56:19.482+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:19.482+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 2
+[2024-06-21T08:56:19.869+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:19.869+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T08:56:19.870+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:19.972+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T08:56:19.972+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T08:56:19.975+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:19.975+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:19.976+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:19.977+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:19.978+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 3
+[2024-06-21T08:56:20.392+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:20.393+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T08:56:20.393+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:20.495+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T08:56:20.495+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T08:56:20.498+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:20.498+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:20.498+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:20.501+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:20.501+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 4
+[2024-06-21T08:56:20.804+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:20.805+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T08:56:20.805+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:20.907+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T08:56:20.907+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T08:56:20.910+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:20.910+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:20.911+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:20.913+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:20.913+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 5
+[2024-06-21T08:56:21.721+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:21.722+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T08:56:21.722+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:21.824+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T08:56:21.824+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T08:56:21.826+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:21.826+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:21.827+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:21.828+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:21.829+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 6
+[2024-06-21T08:56:22.148+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:22.148+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T08:56:22.149+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:22.250+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T08:56:22.251+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T08:56:22.253+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:22.253+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:22.254+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:22.255+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:22.256+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 7
+[2024-06-21T08:56:22.644+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:22.645+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T08:56:22.645+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:22.747+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T08:56:22.747+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T08:56:22.750+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:22.750+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:22.750+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:22.752+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:22.752+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 8
+[2024-06-21T08:56:23.235+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:23.235+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T08:56:23.235+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:23.337+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T08:56:23.337+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T08:56:23.340+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:23.340+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:23.340+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:23.342+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:23.342+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 9
+[2024-06-21T08:56:23.775+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:23.775+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T08:56:23.776+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:23.877+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T08:56:23.877+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T08:56:23.880+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: connecting to kafka:9092 [('192.168.112.6', 9092) IPv4]
+[2024-06-21T08:56:23.881+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.112.6', 9092)]>: Connection complete.
+[2024-06-21T08:56:23.881+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:23.883+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.112.6', 9092)]>: Closing connection. 
+[2024-06-21T08:56:23.883+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 10
+[2024-06-21T08:56:24.324+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 10. Full response content:
+[2024-06-21T08:56:24.325+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/10/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "10",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:24.325+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 11
+[2024-06-21T08:56:24.743+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 11. Full response content:
+[2024-06-21T08:56:24.743+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/11/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "11",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:24.743+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 12
+[2024-06-21T08:56:25.169+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 12. Full response content:
+[2024-06-21T08:56:25.169+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/12/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "12",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:25.169+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 13
+[2024-06-21T08:56:25.561+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 13. Full response content:
+[2024-06-21T08:56:25.561+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/13/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "13",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:25.561+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 14
+[2024-06-21T08:56:26.156+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 14. Full response content:
+[2024-06-21T08:56:26.156+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/14/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "14",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:26.156+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 15
+[2024-06-21T08:56:26.579+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 15. Full response content:
+[2024-06-21T08:56:26.579+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/15/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "15",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:26.579+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 16
+[2024-06-21T08:56:26.909+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 16. Full response content:
+[2024-06-21T08:56:26.909+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/16/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "16",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:26.909+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 17
+[2024-06-21T08:56:27.262+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 17. Full response content:
+[2024-06-21T08:56:27.262+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/17/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "17",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:27.263+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 18
+[2024-06-21T08:56:27.680+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 18. Full response content:
+[2024-06-21T08:56:27.680+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/18/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "18",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:27.681+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 19
+[2024-06-21T08:56:27.956+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 19. Full response content:
+[2024-06-21T08:56:27.956+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/19/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "19",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:27.956+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 20
+[2024-06-21T08:56:28.388+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 20. Full response content:
+[2024-06-21T08:56:28.389+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/20/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "20",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:28.389+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 21
+[2024-06-21T08:56:28.783+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 21. Full response content:
+[2024-06-21T08:56:28.783+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/21/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "21",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:28.783+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 22
+[2024-06-21T08:56:29.389+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 22. Full response content:
+[2024-06-21T08:56:29.390+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/22/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "22",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:29.390+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 23
+[2024-06-21T08:56:29.874+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 23. Full response content:
+[2024-06-21T08:56:29.874+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/23/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "23",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:29.874+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 24
+[2024-06-21T08:56:30.249+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 24. Full response content:
+[2024-06-21T08:56:30.250+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/24/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "24",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T08:56:30.250+0000] {logging_mixin.py:188} INFO - Total number of constructor standings fetched: 90
+[2024-06-21T08:56:30.250+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-21T08:56:30.250+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-21T08:56:30.257+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_fetchAndPublish, task_id=fetch_and_publish_constructorStandings, run_id=scheduled__2024-06-09T00:00:00+00:00, execution_date=20240609T000000, start_date=20240621T085618, end_date=20240621T085630
+[2024-06-21T08:56:30.271+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-21T08:56:30.277+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-21T11:08:31.749+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-21T11:08:31.773+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_constructorStandings scheduled__2024-06-09T00:00:00+00:00 [queued]>
+[2024-06-21T11:08:31.782+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_constructorStandings scheduled__2024-06-09T00:00:00+00:00 [queued]>
+[2024-06-21T11:08:31.782+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-21T11:08:31.794+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): fetch_and_publish_constructorStandings> on 2024-06-09 00:00:00+00:00
+[2024-06-21T11:08:31.799+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=594) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-21T11:08:31.800+0000] {standard_task_runner.py:63} INFO - Started process 612 to run task
+[2024-06-21T11:08:31.801+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_kafka_fetchAndPublish', 'fetch_and_publish_constructorStandings', 'scheduled__2024-06-09T00:00:00+00:00', '--job-id', '36', '--raw', '--subdir', 'DAGS_FOLDER/ergast_kafka_fetch_and_publish.py', '--cfg-path', '/tmp/tmpfb7hoa_i']
+[2024-06-21T11:08:31.803+0000] {standard_task_runner.py:91} INFO - Job 36: Subtask fetch_and_publish_constructorStandings
+[2024-06-21T11:08:31.847+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_kafka_fetchAndPublish.fetch_and_publish_constructorStandings scheduled__2024-06-09T00:00:00+00:00 [running]> on host 55d87b1d1f78
+[2024-06-21T11:08:31.918+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_kafka_fetchAndPublish' AIRFLOW_CTX_TASK_ID='fetch_and_publish_constructorStandings' AIRFLOW_CTX_EXECUTION_DATE='2024-06-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-09T00:00:00+00:00'
+[2024-06-21T11:08:31.919+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-21T11:08:32.099+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 1
+[2024-06-21T11:08:32.190+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:32.190+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T11:08:32.191+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:32.379+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T11:08:32.380+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T11:08:32.534+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:32.534+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:32.534+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:33.016+0000] {kafka.py:486} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2024-06-21T11:08:33.109+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:33.110+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 2
+[2024-06-21T11:08:33.199+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:33.199+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T11:08:33.200+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:33.303+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T11:08:33.303+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T11:08:33.308+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:33.309+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:33.309+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:33.312+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:33.313+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 3
+[2024-06-21T11:08:33.400+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:33.401+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T11:08:33.401+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:33.504+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T11:08:33.504+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T11:08:33.510+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:33.510+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:33.510+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:33.517+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:33.517+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 4
+[2024-06-21T11:08:33.628+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:33.629+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T11:08:33.629+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:33.732+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T11:08:33.732+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T11:08:33.735+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:33.735+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:33.736+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:33.738+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:33.738+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 5
+[2024-06-21T11:08:33.826+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:33.827+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T11:08:33.827+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:33.929+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T11:08:33.929+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T11:08:33.932+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:33.932+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:33.933+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:33.934+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:33.935+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 6
+[2024-06-21T11:08:34.022+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:34.022+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T11:08:34.023+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:34.125+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T11:08:34.126+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T11:08:34.129+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:34.129+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:34.129+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:34.131+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:34.131+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 7
+[2024-06-21T11:08:34.219+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:34.220+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T11:08:34.220+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:34.322+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T11:08:34.323+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T11:08:34.326+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:34.326+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:34.326+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:34.328+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:34.329+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 8
+[2024-06-21T11:08:34.418+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:34.418+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T11:08:34.419+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:34.524+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T11:08:34.524+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T11:08:34.529+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:34.529+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:34.530+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:34.533+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:34.534+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 9
+[2024-06-21T11:08:34.624+0000] {conn.py:362} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:34.624+0000] {conn.py:957} INFO - Probing node bootstrap-0 broker version
+[2024-06-21T11:08:34.625+0000] {conn.py:393} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:34.727+0000] {conn.py:1019} INFO - Broker version identified as 2.6.0
+[2024-06-21T11:08:34.727+0000] {conn.py:1020} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2024-06-21T11:08:34.730+0000] {conn.py:362} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: connecting to kafka:9092 [('192.168.128.6', 9092) IPv4]
+[2024-06-21T11:08:34.730+0000] {conn.py:393} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('192.168.128.6', 9092)]>: Connection complete.
+[2024-06-21T11:08:34.730+0000] {conn.py:673} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:34.732+0000] {conn.py:673} INFO - <BrokerConnection node_id=1 host=kafka:9092 <connected> [IPv4 ('192.168.128.6', 9092)]>: Closing connection. 
+[2024-06-21T11:08:34.733+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 10
+[2024-06-21T11:08:34.821+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 10. Full response content:
+[2024-06-21T11:08:34.821+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/10/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "10",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:34.821+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 11
+[2024-06-21T11:08:34.908+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 11. Full response content:
+[2024-06-21T11:08:34.909+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/11/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "11",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:34.909+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 12
+[2024-06-21T11:08:34.997+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 12. Full response content:
+[2024-06-21T11:08:34.997+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/12/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "12",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:34.997+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 13
+[2024-06-21T11:08:35.094+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 13. Full response content:
+[2024-06-21T11:08:35.094+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/13/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "13",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:35.094+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 14
+[2024-06-21T11:08:35.202+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 14. Full response content:
+[2024-06-21T11:08:35.202+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/14/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "14",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:35.202+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 15
+[2024-06-21T11:08:35.289+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 15. Full response content:
+[2024-06-21T11:08:35.289+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/15/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "15",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:35.289+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 16
+[2024-06-21T11:08:35.376+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 16. Full response content:
+[2024-06-21T11:08:35.377+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/16/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "16",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:35.377+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 17
+[2024-06-21T11:08:35.464+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 17. Full response content:
+[2024-06-21T11:08:35.464+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/17/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "17",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:35.464+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 18
+[2024-06-21T11:08:35.551+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 18. Full response content:
+[2024-06-21T11:08:35.552+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/18/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "18",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:35.552+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 19
+[2024-06-21T11:08:35.638+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 19. Full response content:
+[2024-06-21T11:08:35.639+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/19/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "19",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:35.639+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 20
+[2024-06-21T11:08:35.735+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 20. Full response content:
+[2024-06-21T11:08:35.735+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/20/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "20",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:35.736+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 21
+[2024-06-21T11:08:35.823+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 21. Full response content:
+[2024-06-21T11:08:35.823+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/21/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "21",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:35.824+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 22
+[2024-06-21T11:08:35.911+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 22. Full response content:
+[2024-06-21T11:08:35.911+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/22/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "22",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:35.912+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 23
+[2024-06-21T11:08:35.999+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 23. Full response content:
+[2024-06-21T11:08:35.999+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/23/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "23",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:35.999+0000] {logging_mixin.py:188} INFO - Fetching constructor standings for round 24
+[2024-06-21T11:08:36.414+0000] {logging_mixin.py:188} INFO - Standings data not found or empty for round 24. Full response content:
+[2024-06-21T11:08:36.414+0000] {logging_mixin.py:188} INFO - {
+    "MRData": {
+        "xmlns": "http://ergast.com/mrd/1.5",
+        "series": "f1",
+        "url": "http://ergast.com/api/f1/2024/24/constructorstandings.json",
+        "limit": "30",
+        "offset": "0",
+        "total": "0",
+        "StandingsTable": {
+            "season": "2024",
+            "round": "24",
+            "StandingsLists": []
+        }
+    }
+}
+[2024-06-21T11:08:36.414+0000] {logging_mixin.py:188} INFO - Total number of constructor standings fetched: 90
+[2024-06-21T11:08:36.415+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-21T11:08:36.415+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-21T11:08:36.422+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_kafka_fetchAndPublish, task_id=fetch_and_publish_constructorStandings, run_id=scheduled__2024-06-09T00:00:00+00:00, execution_date=20240609T000000, start_date=20240621T110831, end_date=20240621T110836
+[2024-06-21T11:08:36.467+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-21T11:08:36.478+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-21T11:08:36.479+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

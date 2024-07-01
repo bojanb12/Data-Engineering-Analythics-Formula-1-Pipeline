@@ -1,0 +1,1693 @@
+[2024-05-31T07:11:05.751+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T07:11:05.764+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T07:11:05.769+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T07:11:05.769+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T07:11:05.777+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T07:11:05.781+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=74) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T07:11:05.781+0000] {standard_task_runner.py:63} INFO - Started process 76 to run task
+[2024-05-31T07:11:05.782+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp2k4sa9u6']
+[2024-05-31T07:11:05.783+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T07:11:05.910+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host b7dbd0ab6e1f
+[2024-05-31T07:11:05.967+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T07:11:05.968+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T07:11:08.814+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:27: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T07:11:09.970+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 76 columns]
+[2024-05-31T07:11:10.029+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T07:11:10.494+0000] {xcom.py:675} ERROR - ("Could not convert '17' with type str: tried to convert to int64", 'Conversion failed for column position with type object'). If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config or make sure to decorate your object with attr.
+[2024-05-31T07:11:10.495+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 486, in _execute_task
+    task_instance.xcom_push(key=XCOM_RETURN_KEY, value=xcom_value, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3197, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 246, in set
+    value = cls.serialize_value(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 673, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 104, in encode
+    return super().encode(o)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 91, in default
+    return serialize(o)
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serde.py", line 148, in serialize
+    data, serialized_classname, version, is_serialized = _serializers[qn].serialize(o)
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serializers/pandas.py", line 49, in serialize
+    table = pa.Table.from_pandas(o)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/table.pxi", line 4525, in pyarrow.lib.Table.from_pandas
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 624, in dataframe_to_arrays
+    arrays[i] = maybe_fut.result()
+                ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 598, in convert_column
+    raise e
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 592, in convert_column
+    result = pa.array(col, type=type_, from_pandas=True, safe=safe)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/array.pxi", line 345, in pyarrow.lib.array
+  File "pyarrow/array.pxi", line 85, in pyarrow.lib._ndarray_to_array
+  File "pyarrow/error.pxi", line 91, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: ("Could not convert '17' with type str: tried to convert to int64", 'Conversion failed for column position with type object')
+[2024-05-31T07:11:10.501+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T071105, end_date=20240531T071110
+[2024-05-31T07:11:10.509+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 3 for task extract_data (("Could not convert '17' with type str: tried to convert to int64", 'Conversion failed for column position with type object'); 76)
+[2024-05-31T07:11:10.536+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-31T07:11:10.633+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T07:11:10.635+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T07:26:34.900+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T07:26:34.917+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T07:26:34.922+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T07:26:34.922+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T07:26:34.932+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T07:26:34.935+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=74) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T07:26:34.936+0000] {standard_task_runner.py:63} INFO - Started process 76 to run task
+[2024-05-31T07:26:34.937+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp5uli0ite']
+[2024-05-31T07:26:34.938+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T07:26:35.070+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 1dd00523a303
+[2024-05-31T07:26:35.125+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T07:26:35.126+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T07:26:37.540+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:27: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T07:26:38.841+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 76 columns]
+[2024-05-31T07:26:38.898+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T07:26:39.340+0000] {xcom.py:675} ERROR - ("Could not convert '17' with type str: tried to convert to int64", 'Conversion failed for column positionText with type object'). If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config or make sure to decorate your object with attr.
+[2024-05-31T07:26:39.341+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 486, in _execute_task
+    task_instance.xcom_push(key=XCOM_RETURN_KEY, value=xcom_value, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3197, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 246, in set
+    value = cls.serialize_value(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 673, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 104, in encode
+    return super().encode(o)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 91, in default
+    return serialize(o)
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serde.py", line 148, in serialize
+    data, serialized_classname, version, is_serialized = _serializers[qn].serialize(o)
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serializers/pandas.py", line 49, in serialize
+    table = pa.Table.from_pandas(o)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/table.pxi", line 4525, in pyarrow.lib.Table.from_pandas
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 624, in dataframe_to_arrays
+    arrays[i] = maybe_fut.result()
+                ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 598, in convert_column
+    raise e
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 592, in convert_column
+    result = pa.array(col, type=type_, from_pandas=True, safe=safe)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/array.pxi", line 345, in pyarrow.lib.array
+  File "pyarrow/array.pxi", line 85, in pyarrow.lib._ndarray_to_array
+  File "pyarrow/error.pxi", line 91, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: ("Could not convert '17' with type str: tried to convert to int64", 'Conversion failed for column positionText with type object')
+[2024-05-31T07:26:39.348+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T072634, end_date=20240531T072639
+[2024-05-31T07:26:39.356+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 3 for task extract_data (("Could not convert '17' with type str: tried to convert to int64", 'Conversion failed for column positionText with type object'); 76)
+[2024-05-31T07:26:39.419+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-31T07:26:39.544+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T07:26:39.546+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T07:33:49.136+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T07:33:49.150+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T07:33:49.155+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T07:33:49.155+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T07:33:49.162+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T07:33:49.166+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T07:33:49.167+0000] {standard_task_runner.py:63} INFO - Started process 69 to run task
+[2024-05-31T07:33:49.167+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpt3_g1jlu']
+[2024-05-31T07:33:49.168+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T07:33:49.305+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host f93411c2eb22
+[2024-05-31T07:33:49.352+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T07:33:49.353+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T07:33:51.807+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:27: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T07:33:53.115+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T07:33:53.116+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/etl_dag.py", line 33, in extract_data
+    df.drop('positionText')
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/frame.py", line 5344, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 4711, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 4753, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 7000, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['positionText'] not found in axis"
+[2024-05-31T07:33:53.126+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T073349, end_date=20240531T073353
+[2024-05-31T07:33:53.136+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 3 for task extract_data ("['positionText'] not found in axis"; 69)
+[2024-05-31T07:33:53.156+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-31T07:33:53.254+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T07:33:53.256+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T07:47:27.484+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T07:47:27.499+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T07:47:27.505+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T07:47:27.505+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T07:47:27.513+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T07:47:27.516+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=60) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T07:47:27.517+0000] {standard_task_runner.py:63} INFO - Started process 62 to run task
+[2024-05-31T07:47:27.517+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpv0dhz08l']
+[2024-05-31T07:47:27.518+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T07:47:27.653+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 34678f300c8c
+[2024-05-31T07:47:27.704+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T07:47:27.704+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T07:47:30.140+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:27: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T07:47:31.614+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 73 columns]
+[2024-05-31T07:47:31.669+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T07:47:32.136+0000] {xcom.py:675} ERROR - ("Could not convert '5511972' with type str: tried to convert to int64", 'Conversion failed for column milliseconds with type object'). If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config or make sure to decorate your object with attr.
+[2024-05-31T07:47:32.137+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 486, in _execute_task
+    task_instance.xcom_push(key=XCOM_RETURN_KEY, value=xcom_value, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3197, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 246, in set
+    value = cls.serialize_value(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 673, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 104, in encode
+    return super().encode(o)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 91, in default
+    return serialize(o)
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serde.py", line 148, in serialize
+    data, serialized_classname, version, is_serialized = _serializers[qn].serialize(o)
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serializers/pandas.py", line 49, in serialize
+    table = pa.Table.from_pandas(o)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/table.pxi", line 4525, in pyarrow.lib.Table.from_pandas
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 624, in dataframe_to_arrays
+    arrays[i] = maybe_fut.result()
+                ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 598, in convert_column
+    raise e
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 592, in convert_column
+    result = pa.array(col, type=type_, from_pandas=True, safe=safe)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/array.pxi", line 345, in pyarrow.lib.array
+  File "pyarrow/array.pxi", line 85, in pyarrow.lib._ndarray_to_array
+  File "pyarrow/error.pxi", line 91, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: ("Could not convert '5511972' with type str: tried to convert to int64", 'Conversion failed for column milliseconds with type object')
+[2024-05-31T07:47:32.144+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T074727, end_date=20240531T074732
+[2024-05-31T07:47:32.151+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 3 for task extract_data (("Could not convert '5511972' with type str: tried to convert to int64", 'Conversion failed for column milliseconds with type object'); 62)
+[2024-05-31T07:47:32.191+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-31T07:47:32.301+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T07:47:32.303+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T07:51:48.784+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T07:51:48.798+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T07:51:48.803+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T07:51:48.803+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T07:51:48.809+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T07:51:48.813+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=74) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T07:51:48.814+0000] {standard_task_runner.py:63} INFO - Started process 76 to run task
+[2024-05-31T07:51:48.814+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmph2_c68m0']
+[2024-05-31T07:51:48.815+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T07:51:48.949+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 4dbb46b7076f
+[2024-05-31T07:51:48.996+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T07:51:48.997+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T07:51:51.528+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:27: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T07:51:53.083+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 73 columns]
+[2024-05-31T07:51:53.134+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T07:51:53.590+0000] {xcom.py:675} ERROR - ("Could not convert '63' with type str: tried to convert to int64", 'Conversion failed for column fastestLap with type object'). If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config or make sure to decorate your object with attr.
+[2024-05-31T07:51:53.591+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 486, in _execute_task
+    task_instance.xcom_push(key=XCOM_RETURN_KEY, value=xcom_value, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3197, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 246, in set
+    value = cls.serialize_value(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 673, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 104, in encode
+    return super().encode(o)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 91, in default
+    return serialize(o)
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serde.py", line 148, in serialize
+    data, serialized_classname, version, is_serialized = _serializers[qn].serialize(o)
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serializers/pandas.py", line 49, in serialize
+    table = pa.Table.from_pandas(o)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/table.pxi", line 4525, in pyarrow.lib.Table.from_pandas
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 624, in dataframe_to_arrays
+    arrays[i] = maybe_fut.result()
+                ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 598, in convert_column
+    raise e
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 592, in convert_column
+    result = pa.array(col, type=type_, from_pandas=True, safe=safe)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/array.pxi", line 345, in pyarrow.lib.array
+  File "pyarrow/array.pxi", line 85, in pyarrow.lib._ndarray_to_array
+  File "pyarrow/error.pxi", line 91, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: ("Could not convert '63' with type str: tried to convert to int64", 'Conversion failed for column fastestLap with type object')
+[2024-05-31T07:51:53.600+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T075148, end_date=20240531T075153
+[2024-05-31T07:51:53.608+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 3 for task extract_data (("Could not convert '63' with type str: tried to convert to int64", 'Conversion failed for column fastestLap with type object'); 76)
+[2024-05-31T07:51:53.645+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-31T07:51:53.748+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T07:51:53.750+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T07:54:57.430+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T07:54:57.444+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T07:54:57.449+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T07:54:57.449+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T07:54:57.456+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T07:54:57.460+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=73) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T07:54:57.460+0000] {standard_task_runner.py:63} INFO - Started process 75 to run task
+[2024-05-31T07:54:57.461+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp_jn12xyg']
+[2024-05-31T07:54:57.462+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T07:54:57.599+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host f7c7c64c07ca
+[2024-05-31T07:54:57.644+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T07:54:57.644+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T07:55:00.216+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:27: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T07:55:01.880+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 73 columns]
+[2024-05-31T07:55:01.933+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T07:55:02.376+0000] {xcom.py:675} ERROR - ("Could not convert '206.069' with type str: tried to convert to double", 'Conversion failed for column fastestLapSpeed with type object'). If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config or make sure to decorate your object with attr.
+[2024-05-31T07:55:02.377+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 486, in _execute_task
+    task_instance.xcom_push(key=XCOM_RETURN_KEY, value=xcom_value, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3197, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 246, in set
+    value = cls.serialize_value(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 673, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 104, in encode
+    return super().encode(o)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 91, in default
+    return serialize(o)
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serde.py", line 148, in serialize
+    data, serialized_classname, version, is_serialized = _serializers[qn].serialize(o)
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serializers/pandas.py", line 49, in serialize
+    table = pa.Table.from_pandas(o)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/table.pxi", line 4525, in pyarrow.lib.Table.from_pandas
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 624, in dataframe_to_arrays
+    arrays[i] = maybe_fut.result()
+                ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 598, in convert_column
+    raise e
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/pandas_compat.py", line 592, in convert_column
+    result = pa.array(col, type=type_, from_pandas=True, safe=safe)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/array.pxi", line 345, in pyarrow.lib.array
+  File "pyarrow/array.pxi", line 85, in pyarrow.lib._ndarray_to_array
+  File "pyarrow/error.pxi", line 91, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: ("Could not convert '206.069' with type str: tried to convert to double", 'Conversion failed for column fastestLapSpeed with type object')
+[2024-05-31T07:55:02.385+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T075457, end_date=20240531T075502
+[2024-05-31T07:55:02.393+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 3 for task extract_data (("Could not convert '206.069' with type str: tried to convert to double", 'Conversion failed for column fastestLapSpeed with type object'); 75)
+[2024-05-31T07:55:02.412+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-31T07:55:02.516+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T07:55:02.518+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T08:21:38.725+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T08:21:38.741+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T08:21:38.747+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T08:21:38.747+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T08:21:38.756+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T08:21:38.760+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=95) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T08:21:38.761+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpshevi9gu']
+[2024-05-31T08:21:38.762+0000] {standard_task_runner.py:63} INFO - Started process 97 to run task
+[2024-05-31T08:21:38.762+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T08:21:38.902+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 325fe4060a2f
+[2024-05-31T08:21:38.947+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T08:21:38.948+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T08:21:41.542+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:27: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T08:22:06.888+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T08:22:06.888+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/etl_dag.py", line 42, in extract_data
+    df['miliseconds'] = pd.to_timedelta(df['milliseconds'], 'milliseconds')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/tools/timedeltas.py", line 201, in to_timedelta
+    values = _convert_listlike(arg._values, unit=unit, errors=errors)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/tools/timedeltas.py", line 266, in _convert_listlike
+    td64arr = sequence_to_td64ns(arg, unit=unit, errors=errors, copy=False)[0]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/arrays/timedeltas.py", line 1062, in sequence_to_td64ns
+    data = _objects_to_td64ns(data, unit=unit, errors=errors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/arrays/timedeltas.py", line 1191, in _objects_to_td64ns
+    result = array_to_timedelta64(values, unit=unit, errors=errors)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "timedeltas.pyx", line 431, in pandas._libs.tslibs.timedeltas.array_to_timedelta64
+ValueError: unit must not be specified if the input contains a str
+[2024-05-31T08:22:06.895+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T082138, end_date=20240531T082206
+[2024-05-31T08:22:06.904+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 3 for task extract_data (unit must not be specified if the input contains a str; 97)
+[2024-05-31T08:22:06.935+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-31T08:22:06.946+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T08:22:06.947+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T08:31:25.460+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T08:31:25.476+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T08:31:25.480+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T08:31:25.480+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T08:31:25.489+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T08:31:25.492+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=60) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T08:31:25.493+0000] {standard_task_runner.py:63} INFO - Started process 62 to run task
+[2024-05-31T08:31:25.493+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpqqogys48']
+[2024-05-31T08:31:25.495+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T08:31:25.627+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 0a3ae7550493
+[2024-05-31T08:31:25.674+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T08:31:25.674+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T08:31:28.183+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:27: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T08:31:53.397+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T08:31:53.448+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T08:31:54.850+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T083125, end_date=20240531T083154
+[2024-05-31T08:31:54.887+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T08:31:54.898+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T08:31:54.899+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T08:43:51.236+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T08:43:51.249+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T08:43:51.253+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T08:43:51.253+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T08:43:51.264+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T08:43:51.267+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=74) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T08:43:51.268+0000] {standard_task_runner.py:63} INFO - Started process 76 to run task
+[2024-05-31T08:43:51.268+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmphvfcvxyr']
+[2024-05-31T08:43:51.270+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T08:43:51.418+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 89fbff6b9d16
+[2024-05-31T08:43:51.467+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T08:43:51.467+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T08:43:53.958+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:27: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T08:44:19.033+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T08:44:19.085+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T08:44:20.526+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T084351, end_date=20240531T084420
+[2024-05-31T08:44:20.560+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T08:44:20.572+0000] {taskinstance.py:3498} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T08:44:20.573+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T08:48:30.930+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T08:48:30.944+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T08:48:30.948+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T08:48:30.948+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T08:48:30.955+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T08:48:30.959+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T08:48:30.960+0000] {standard_task_runner.py:63} INFO - Started process 69 to run task
+[2024-05-31T08:48:30.960+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpcbh4agqw']
+[2024-05-31T08:48:30.964+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T08:48:31.101+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 914469d789a5
+[2024-05-31T08:48:31.150+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T08:48:31.151+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T08:48:33.611+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:27: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T08:48:58.621+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T08:48:58.675+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T08:49:00.102+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T084830, end_date=20240531T084900
+[2024-05-31T08:49:00.160+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T08:49:00.175+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T08:49:00.177+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T08:56:17.108+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T08:56:17.124+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T08:56:17.129+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T08:56:17.129+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T08:56:17.139+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T08:56:17.144+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=68) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T08:56:17.145+0000] {standard_task_runner.py:63} INFO - Started process 70 to run task
+[2024-05-31T08:56:17.144+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpvkwnttg7']
+[2024-05-31T08:56:17.149+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T08:56:17.283+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 906d2d408c3a
+[2024-05-31T08:56:17.336+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T08:56:17.336+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T08:56:19.905+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:27: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T08:56:45.273+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T08:56:45.333+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T08:56:46.784+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T085617, end_date=20240531T085646
+[2024-05-31T08:56:46.829+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T08:56:46.844+0000] {taskinstance.py:3498} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T08:56:46.845+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T09:12:08.111+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T09:12:08.125+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T09:12:08.130+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T09:12:08.130+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T09:12:08.139+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T09:12:08.143+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=74) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T09:12:08.143+0000] {standard_task_runner.py:63} INFO - Started process 76 to run task
+[2024-05-31T09:12:08.144+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpumg7bh6x']
+[2024-05-31T09:12:08.145+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T09:12:08.284+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host b277d7b6eaf3
+[2024-05-31T09:12:08.330+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T09:12:08.331+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T09:12:10.995+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:27: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T09:12:36.264+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T09:12:36.332+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T09:12:37.762+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T091208, end_date=20240531T091237
+[2024-05-31T09:12:37.785+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T09:12:37.799+0000] {taskinstance.py:3498} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T09:12:37.801+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T09:53:18.051+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T09:53:18.065+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T09:53:18.070+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T09:53:18.070+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T09:53:18.080+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T09:53:18.084+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=68) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T09:53:18.085+0000] {standard_task_runner.py:63} INFO - Started process 72 to run task
+[2024-05-31T09:53:18.084+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpd0hnpwzf']
+[2024-05-31T09:53:18.086+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask extract_data
+[2024-05-31T09:53:18.237+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 994d2ba121a7
+[2024-05-31T09:53:18.285+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T09:53:18.285+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T09:53:20.687+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:36: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T09:53:45.544+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T09:53:45.596+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T09:53:47.109+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T095318, end_date=20240531T095347
+[2024-05-31T09:53:47.141+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T09:53:47.156+0000] {taskinstance.py:3498} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T09:53:47.157+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T10:04:18.615+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T10:04:18.629+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T10:04:18.634+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T10:04:18.634+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T10:04:18.643+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T10:04:18.646+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=137) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T10:04:18.647+0000] {standard_task_runner.py:63} INFO - Started process 139 to run task
+[2024-05-31T10:04:18.647+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpl3p9gybz']
+[2024-05-31T10:04:18.648+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T10:04:18.781+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 353c2808d24f
+[2024-05-31T10:04:18.827+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T10:04:18.828+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T10:04:21.263+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:37: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T10:04:46.038+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T10:04:46.096+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T10:04:47.536+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T100418, end_date=20240531T100447
+[2024-05-31T10:04:47.578+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T10:04:47.593+0000] {taskinstance.py:3498} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T10:04:47.594+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T10:21:11.734+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T10:21:11.748+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T10:21:11.752+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T10:21:11.753+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T10:21:11.760+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T10:21:11.764+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T10:21:11.765+0000] {standard_task_runner.py:63} INFO - Started process 69 to run task
+[2024-05-31T10:21:11.765+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpy7mh94n7']
+[2024-05-31T10:21:11.769+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T10:21:11.912+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 4f8e6627ba1c
+[2024-05-31T10:21:11.959+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T10:21:11.960+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T10:21:14.567+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:37: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T10:21:39.300+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T10:21:39.353+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T10:21:40.807+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T102111, end_date=20240531T102140
+[2024-05-31T10:21:40.867+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T10:21:40.889+0000] {taskinstance.py:3498} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T10:21:40.891+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T10:43:53.257+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T10:43:53.270+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T10:43:53.274+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T10:43:53.274+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T10:43:53.281+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T10:43:53.285+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=74) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T10:43:53.285+0000] {standard_task_runner.py:63} INFO - Started process 76 to run task
+[2024-05-31T10:43:53.285+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmprbrdkkwe']
+[2024-05-31T10:43:53.290+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T10:43:53.422+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host a14991e030bf
+[2024-05-31T10:43:53.467+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T10:43:53.467+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T10:43:55.893+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T10:44:20.822+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T10:44:20.873+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T10:44:22.306+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T104353, end_date=20240531T104422
+[2024-05-31T10:44:22.340+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T10:44:22.357+0000] {taskinstance.py:3498} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T10:44:22.358+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T11:00:13.449+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T11:00:13.465+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T11:00:13.470+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T11:00:13.470+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T11:00:13.480+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T11:00:13.484+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=219) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T11:00:13.485+0000] {standard_task_runner.py:63} INFO - Started process 221 to run task
+[2024-05-31T11:00:13.485+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp_i76kq_t']
+[2024-05-31T11:00:13.487+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T11:00:13.629+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host d6facdba5536
+[2024-05-31T11:00:13.676+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T11:00:13.676+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T11:00:16.085+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T11:00:40.721+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T11:00:40.772+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T11:00:42.284+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T110013, end_date=20240531T110042
+[2024-05-31T11:00:42.320+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T11:00:42.338+0000] {taskinstance.py:3498} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T11:00:42.340+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T11:49:30.842+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T11:49:30.857+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T11:49:30.862+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T11:49:30.862+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T11:49:30.873+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T11:49:30.877+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=74) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T11:49:30.878+0000] {standard_task_runner.py:63} INFO - Started process 76 to run task
+[2024-05-31T11:49:30.878+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp7_pvgqgd']
+[2024-05-31T11:49:30.879+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T11:49:31.024+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host e5f19cf3157d
+[2024-05-31T11:49:31.070+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T11:49:31.070+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T11:49:33.594+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T11:49:59.133+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T11:49:59.184+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T11:50:00.677+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T114930, end_date=20240531T115000
+[2024-05-31T11:50:00.725+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T11:50:00.741+0000] {taskinstance.py:3498} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T11:50:00.742+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T12:11:24.347+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T12:11:24.363+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T12:11:24.368+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T12:11:24.368+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T12:11:24.378+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T12:11:24.382+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T12:11:24.383+0000] {standard_task_runner.py:63} INFO - Started process 69 to run task
+[2024-05-31T12:11:24.383+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpk8k5ra7x']
+[2024-05-31T12:11:24.385+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T12:11:24.527+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 635d0579969f
+[2024-05-31T12:11:24.584+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T12:11:24.584+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T12:11:27.320+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T12:11:52.530+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T12:11:52.584+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T12:11:54.110+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T121124, end_date=20240531T121154
+[2024-05-31T12:11:54.161+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T12:11:54.177+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T12:11:54.178+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T12:15:09.749+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T12:15:09.762+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T12:15:09.766+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T12:15:09.766+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T12:15:09.773+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T12:15:09.777+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T12:15:09.778+0000] {standard_task_runner.py:63} INFO - Started process 69 to run task
+[2024-05-31T12:15:09.779+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp6kowm91a']
+[2024-05-31T12:15:09.783+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T12:15:09.925+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 32d043f0486c
+[2024-05-31T12:15:09.971+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T12:15:09.972+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T12:15:12.484+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T12:15:37.404+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T12:15:37.458+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T12:15:38.890+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T121509, end_date=20240531T121538
+[2024-05-31T12:15:38.914+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T12:15:38.930+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T12:15:38.931+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T12:26:42.601+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T12:26:42.618+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T12:26:42.622+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T12:26:42.622+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T12:26:42.631+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T12:26:42.635+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=60) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T12:26:42.636+0000] {standard_task_runner.py:63} INFO - Started process 62 to run task
+[2024-05-31T12:26:42.636+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpzn8zlk51']
+[2024-05-31T12:26:42.641+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T12:26:42.792+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 2b4626dac48c
+[2024-05-31T12:26:42.846+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T12:26:42.847+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T12:26:45.288+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T12:27:09.696+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T12:27:09.747+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T12:27:11.170+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T122642, end_date=20240531T122711
+[2024-05-31T12:27:11.211+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T12:27:11.226+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T12:27:11.227+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T12:31:12.997+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T12:31:13.012+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T12:31:13.017+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T12:31:13.018+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T12:31:13.027+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T12:31:13.031+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=74) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T12:31:13.032+0000] {standard_task_runner.py:63} INFO - Started process 76 to run task
+[2024-05-31T12:31:13.032+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpe1n9mqdz']
+[2024-05-31T12:31:13.033+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T12:31:13.182+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 85acc91f6307
+[2024-05-31T12:31:13.233+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T12:31:13.233+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T12:31:15.688+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T12:31:40.630+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T12:31:40.683+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T12:31:42.104+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T123113, end_date=20240531T123142
+[2024-05-31T12:31:42.162+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T12:31:42.181+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T12:31:42.183+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T12:36:26.228+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T12:36:26.240+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T12:36:26.244+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T12:36:26.245+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T12:36:26.252+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T12:36:26.256+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T12:36:26.257+0000] {standard_task_runner.py:63} INFO - Started process 69 to run task
+[2024-05-31T12:36:26.257+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmptzdasy1o']
+[2024-05-31T12:36:26.261+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T12:36:26.401+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 69a8c1722b53
+[2024-05-31T12:36:26.457+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T12:36:26.458+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T12:36:28.977+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T12:36:54.538+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T12:36:54.606+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T12:36:56.045+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T123626, end_date=20240531T123656
+[2024-05-31T12:36:56.070+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T12:36:56.087+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T12:36:56.089+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T13:15:30.721+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T13:15:30.737+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:15:30.742+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:15:30.743+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T13:15:30.754+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T13:15:30.758+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=481) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T13:15:30.759+0000] {standard_task_runner.py:63} INFO - Started process 483 to run task
+[2024-05-31T13:15:30.759+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpgw19hd20']
+[2024-05-31T13:15:30.761+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T13:15:30.922+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 29de999fd730
+[2024-05-31T13:15:30.973+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T13:15:30.974+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T13:15:33.556+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T13:15:59.232+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T13:15:59.290+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T13:16:00.737+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T131530, end_date=20240531T131600
+[2024-05-31T13:16:00.783+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T13:16:00.800+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T13:16:00.801+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T13:20:11.440+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T13:20:11.457+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:20:11.465+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:20:11.466+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T13:20:11.476+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T13:20:11.480+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=74) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T13:20:11.481+0000] {standard_task_runner.py:63} INFO - Started process 76 to run task
+[2024-05-31T13:20:11.481+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpnm9jgh4b']
+[2024-05-31T13:20:11.486+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T13:20:11.625+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 19edeffeeef7
+[2024-05-31T13:20:11.675+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T13:20:11.676+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T13:20:14.231+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T13:20:39.881+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T13:20:39.938+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T13:20:41.424+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T132011, end_date=20240531T132041
+[2024-05-31T13:20:41.483+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T13:20:41.507+0000] {taskinstance.py:3498} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T13:20:41.521+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T13:30:24.058+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T13:30:24.071+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:30:24.075+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:30:24.075+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T13:30:24.084+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T13:30:24.087+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T13:30:24.088+0000] {standard_task_runner.py:63} INFO - Started process 69 to run task
+[2024-05-31T13:30:24.088+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp4otcmeiv']
+[2024-05-31T13:30:24.090+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T13:30:24.230+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 71bdf4d24007
+[2024-05-31T13:30:24.285+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T13:30:24.285+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T13:30:26.885+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T13:30:52.975+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T13:30:53.033+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T13:30:54.595+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T133024, end_date=20240531T133054
+[2024-05-31T13:30:54.636+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T13:30:54.654+0000] {taskinstance.py:3498} INFO - 5 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T13:30:54.656+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T13:37:59.956+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T13:37:59.969+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:37:59.974+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:37:59.974+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T13:37:59.983+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T13:37:59.987+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=60) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T13:37:59.988+0000] {standard_task_runner.py:63} INFO - Started process 62 to run task
+[2024-05-31T13:37:59.988+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpihwadxoo']
+[2024-05-31T13:37:59.989+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T13:38:00.133+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 140bbde645f4
+[2024-05-31T13:38:00.181+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T13:38:00.182+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T13:38:02.714+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T13:38:28.987+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T13:38:29.049+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T13:38:30.547+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T133759, end_date=20240531T133830
+[2024-05-31T13:38:30.599+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T13:38:30.615+0000] {taskinstance.py:3498} INFO - 5 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T13:38:30.617+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T13:41:51.002+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T13:41:51.017+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:41:51.022+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:41:51.023+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T13:41:51.034+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T13:41:51.038+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=60) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T13:41:51.039+0000] {standard_task_runner.py:63} INFO - Started process 62 to run task
+[2024-05-31T13:41:51.039+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp5ac8qpwv']
+[2024-05-31T13:41:51.040+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T13:41:51.189+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 8abcc7a02d3d
+[2024-05-31T13:41:51.237+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T13:41:51.237+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T13:41:53.738+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T13:42:19.606+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T13:42:19.658+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T13:42:21.096+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T134151, end_date=20240531T134221
+[2024-05-31T13:42:21.143+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T13:42:21.159+0000] {taskinstance.py:3498} INFO - 5 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T13:42:21.160+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T13:45:31.854+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T13:45:31.871+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:45:31.877+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:45:31.877+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T13:45:31.888+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T13:45:31.891+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T13:45:31.893+0000] {standard_task_runner.py:63} INFO - Started process 69 to run task
+[2024-05-31T13:45:31.892+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpmm968xz4']
+[2024-05-31T13:45:31.893+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T13:45:32.039+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 2605f7bd5eb2
+[2024-05-31T13:45:32.091+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T13:45:32.092+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T13:45:34.479+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T13:45:59.427+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T13:45:59.480+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T13:46:00.884+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T134531, end_date=20240531T134600
+[2024-05-31T13:46:00.922+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T13:46:00.939+0000] {taskinstance.py:3498} INFO - 5 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T13:46:00.941+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T13:52:06.471+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T13:52:06.486+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:52:06.490+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:52:06.491+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T13:52:06.501+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T13:52:06.504+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T13:52:06.505+0000] {standard_task_runner.py:63} INFO - Started process 69 to run task
+[2024-05-31T13:52:06.505+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpryelx7g3']
+[2024-05-31T13:52:06.507+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T13:52:06.646+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host a95aa6127783
+[2024-05-31T13:52:06.698+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T13:52:06.698+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T13:52:09.283+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T13:52:35.388+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T13:52:35.445+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T13:52:36.918+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T135206, end_date=20240531T135236
+[2024-05-31T13:52:36.950+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T13:52:36.967+0000] {taskinstance.py:3498} INFO - 5 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T13:52:36.968+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T13:59:02.719+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T13:59:02.734+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:59:02.739+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T13:59:02.739+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T13:59:02.749+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T13:59:02.753+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T13:59:02.754+0000] {standard_task_runner.py:63} INFO - Started process 69 to run task
+[2024-05-31T13:59:02.754+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp0f6ehos4']
+[2024-05-31T13:59:02.755+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T13:59:02.897+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host b6e8a688eec4
+[2024-05-31T13:59:02.956+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T13:59:02.957+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T13:59:05.472+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T13:59:31.984+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T13:59:32.042+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T13:59:33.552+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T135902, end_date=20240531T135933
+[2024-05-31T13:59:33.588+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T13:59:33.608+0000] {taskinstance.py:3498} INFO - 6 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T13:59:33.609+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T14:10:21.168+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T14:10:21.183+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T14:10:21.188+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T14:10:21.189+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T14:10:21.198+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T14:10:21.202+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T14:10:21.202+0000] {standard_task_runner.py:63} INFO - Started process 69 to run task
+[2024-05-31T14:10:21.203+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp1jpi_yvw']
+[2024-05-31T14:10:21.204+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T14:10:21.345+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 7fde08b5b7bb
+[2024-05-31T14:10:21.393+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T14:10:21.394+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T14:10:23.895+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T14:10:49.917+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T14:10:49.970+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T14:10:51.416+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T141021, end_date=20240531T141051
+[2024-05-31T14:10:51.468+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T14:10:51.487+0000] {taskinstance.py:3498} INFO - 6 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T14:10:51.489+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T14:25:33.554+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T14:25:33.569+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T14:25:33.573+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T14:25:33.573+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T14:25:33.583+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T14:25:33.587+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=74) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T14:25:33.588+0000] {standard_task_runner.py:63} INFO - Started process 76 to run task
+[2024-05-31T14:25:33.588+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpm41_37fq']
+[2024-05-31T14:25:33.589+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask extract_data
+[2024-05-31T14:25:33.724+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host e67b5c96142c
+[2024-05-31T14:25:33.774+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T14:25:33.774+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T14:25:36.781+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T14:26:02.517+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T14:26:02.569+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T14:26:04.042+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T142533, end_date=20240531T142604
+[2024-05-31T14:26:04.097+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T14:26:04.114+0000] {taskinstance.py:3498} INFO - 7 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T14:26:04.116+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T14:34:02.064+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T14:34:02.079+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T14:34:02.083+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T14:34:02.083+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T14:34:02.096+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T14:34:02.100+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=60) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T14:34:02.100+0000] {standard_task_runner.py:63} INFO - Started process 62 to run task
+[2024-05-31T14:34:02.101+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpcszzkc1w']
+[2024-05-31T14:34:02.102+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T14:34:02.263+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host b904eb6286a6
+[2024-05-31T14:34:02.319+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T14:34:02.320+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T14:34:05.295+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T14:34:31.051+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T14:34:31.121+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T14:34:32.568+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T143402, end_date=20240531T143432
+[2024-05-31T14:34:32.613+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T14:34:32.631+0000] {taskinstance.py:3498} INFO - 8 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T14:34:32.632+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T14:40:43.305+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T14:40:43.321+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T14:40:43.327+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T14:40:43.327+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T14:40:43.337+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T14:40:43.342+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T14:40:43.342+0000] {standard_task_runner.py:63} INFO - Started process 69 to run task
+[2024-05-31T14:40:43.343+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpcsyl0a95']
+[2024-05-31T14:40:43.345+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask extract_data
+[2024-05-31T14:40:43.488+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 39ebc24e8ca6
+[2024-05-31T14:40:43.539+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T14:40:43.539+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T14:40:46.362+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T14:41:12.312+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T14:41:12.371+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T14:41:13.819+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T144043, end_date=20240531T144113
+[2024-05-31T14:41:13.849+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T14:41:13.868+0000] {taskinstance.py:3498} INFO - 9 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T14:41:13.870+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T14:44:05.607+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T14:44:05.620+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T14:44:05.624+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T14:44:05.624+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T14:44:05.633+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T14:44:05.637+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=60) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T14:44:05.638+0000] {standard_task_runner.py:63} INFO - Started process 62 to run task
+[2024-05-31T14:44:05.638+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpgck6r50n']
+[2024-05-31T14:44:05.639+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T14:44:05.767+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host a9750641015b
+[2024-05-31T14:44:05.816+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T14:44:05.817+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T14:44:08.604+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T14:44:34.451+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T14:44:34.504+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T14:44:36.021+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T144405, end_date=20240531T144436
+[2024-05-31T14:44:36.058+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T14:44:36.079+0000] {taskinstance.py:3498} INFO - 9 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T14:44:36.081+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-31T14:48:10.296+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-31T14:48:10.309+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T14:48:10.314+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [queued]>
+[2024-05-31T14:48:10.314+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-31T14:48:10.324+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract_data> on 2024-05-30 00:00:00+00:00
+[2024-05-31T14:48:10.329+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=60) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-31T14:48:10.330+0000] {standard_task_runner.py:63} INFO - Started process 62 to run task
+[2024-05-31T14:48:10.330+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'f1_data_pipeline_taskflow', 'extract_data', 'scheduled__2024-05-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpud6tmn2v']
+[2024-05-31T14:48:10.332+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_data
+[2024-05-31T14:48:10.469+0000] {task_command.py:426} INFO - Running <TaskInstance: f1_data_pipeline_taskflow.extract_data scheduled__2024-05-30T00:00:00+00:00 [running]> on host 5e099e29bc21
+[2024-05-31T14:48:10.517+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='f1_data_pipeline_taskflow' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-30T00:00:00+00:00'
+[2024-05-31T14:48:10.517+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-31T14:48:13.544+0000] {warnings.py:110} WARNING - /opt/***/dags/etl_dag.py:38: DtypeWarning: Columns (7,8,13,14,17,42,45,63) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(csv_path)
+
+[2024-05-31T14:48:39.502+0000] {python.py:237} INFO - Done. Returned value was:         Unnamed: 0  resultId  ...  wins_constructorstandings    status
+0                0     21232  ...                          1  Finished
+1                1     21232  ...                          1  Finished
+2                2     21232  ...                          1  Finished
+3                3     21232  ...                          1  Finished
+4                4     21232  ...                          1  Finished
+...            ...       ...  ...                        ...       ...
+518412      518412     23041  ...                          0   +4 Laps
+518413      518413     23041  ...                          0   +4 Laps
+518414      518414     23041  ...                          0   +4 Laps
+518415      518415     23041  ...                          0   +4 Laps
+518416      518416     23041  ...                          0   +4 Laps
+
+[518417 rows x 72 columns]
+[2024-05-31T14:48:39.557+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-31T14:48:41.103+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=f1_data_pipeline_taskflow, task_id=extract_data, run_id=scheduled__2024-05-30T00:00:00+00:00, execution_date=20240530T000000, start_date=20240531T144810, end_date=20240531T144841
+[2024-05-31T14:48:41.161+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-31T14:48:41.183+0000] {taskinstance.py:3498} INFO - 9 downstream tasks scheduled from follow-on schedule check
+[2024-05-31T14:48:41.185+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
