@@ -19,7 +19,7 @@
 
 ## Introduction
 
-This project, developed as part of a Data Engineering Internship, aims to build a comprehensive data pipeline for Formula 1 data. The project encompasses various stages, including data modeling, creating an ETL (Extract, Transform, Load) process using Apache Airflow and Kafka, API data scraping, and developing interactive reports using PowerBI. This pipeline is designed to handle large volumes of data, ensure real-time processing, and provide insightful visualizations for stakeholders.
+This project, developed as part of a Data Engineering Internship, aims to build a comprehensive data pipeline for Formula 1 data. The project encompasses various stages, including data modeling, creating an ETL (Extract, Transform, Load) process using Apache Airflow and Kafka, API data scraping, and developing interactive reports using PowerBI. This pipeline is designed to handle large volumes of data, ensure real-time processing, and provide insightful visualizations for the Forula 1 enthusiasts.
 
 ## Features
 
