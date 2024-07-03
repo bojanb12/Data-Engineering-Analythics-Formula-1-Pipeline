@@ -14,83 +14,118 @@
 - [PowerBI Report](#powerbi-report)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
+- [Project Structure](#project-structure)
 - [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 ## Introduction
 
-This project is part of a Data Engineering Internship, aimed at building a robust data pipeline for Formula 1 data. The project involves data modeling, ETL process creation using Apache Airflow and Kafka, API data scraping, and developing a PowerBI report.
+This project, developed as part of a Data Engineering Internship, aims to build a comprehensive data pipeline for Formula 1 data. The project encompasses various stages, including data modeling, creating an ETL (Extract, Transform, Load) process using Apache Airflow and Kafka, API data scraping, and developing interactive reports using PowerBI. This pipeline is designed to handle large volumes of data, ensure real-time processing, and provide insightful visualizations for stakeholders.
 
 ## Features
 
-- **Data Modeling:** Creating a star schema for the Formula 1 dataset.
-- **ETL Process:** Automating data extraction, transformation, and loading using Apache Airflow and Kafka.
-- **API Data Scraping:** Integrating additional data from APIs.
-- **Data Analysis:** Using PowerBI to create interactive reports.
+- **Data Modeling:** Designing a star schema suitable for analytical queries on Formula 1 data.
+- **ETL Process:** Automating data extraction, transformation, and loading using Apache Airflow and Kafka for real-time data streaming.
+- **API Data Scraping:** Integrating additional data sources via API scraping to enrich the dataset.
+- **Data Analysis:** Creating comprehensive and interactive PowerBI reports to visualize and analyze key metrics.
 
 ## Project Tasks
 
 ### Data Modeling
 
-- Designed and implemented a star schema using the Formula 1 dataset.
-- Identified dimensions such as Race, Driver, Team, Circuit, and Time, along with necessary fact tables.
-- Defined primary and foreign keys to establish relationships.
+The project begins with designing and implementing a star schema based on the Formula 1 dataset. This involves:
+
+- **Schema Design:** Using dimensions such as Race, Driver, Team, Circuit, and Time to structure the data.
+- **Entity-Relationship Diagram (ERD):** Defining primary and foreign keys to establish relationships between tables.
 
 ![ER Diagram](path/to/er-diagram.png)
 
 ### ETL Process
 
-- Developed an ETL process using Apache Airflow to automate data handling.
-- Wrote custom operators in Python for data transformation.
-- Implemented Kafka for real-time data streaming.
+The ETL process is automated using Apache Airflow, which schedules and manages data workflows. Key components include:
+
+- **Data Extraction:** Pulling raw data from various sources.
+- **Data Transformation:** Using custom Python operators within Airflow to clean, transform, and prepare the data.
+- **Data Loading:** Ingesting the transformed data into the star schema in the database.
+- **Real-Time Streaming:** Implementing Kafka to handle data streaming, ensuring that data is processed in real-time.
 
 ![ETL Process](path/to/etl-process.png)
 
 ### API Data Scraping
 
-- Identified a suitable API (Ergast API) for additional Formula 1 data.
-- Created a Python script to scrape and integrate this data into the existing pipeline.
+To enrich the existing dataset, additional data is scraped from APIs. This involves:
+
+- **API Selection:** Choosing an appropriate API, such as the Ergast API, for additional Formula 1 data.
+- **Data Integration:** Developing a Python script to fetch data from the API and integrating it into the existing pipeline, ensuring compatibility with the star schema.
 
 ![API Integration](path/to/api-integration.png)
 
 ### Data Analysis
 
-- Created database views to simplify data analysis.
-- Used PowerBI to connect to the database and create dashboards.
+Once the data is processed and stored, analytical tasks are performed to derive insights. This includes:
+
+- **Database Views:** Creating views in the database to simplify complex queries.
+- **Data Visualization:** Using PowerBI to create interactive dashboards that display key metrics and insights.
 
 ![Data Analysis](path/to/data-analysis.png)
 
 ### PowerBI Report
 
-- Designed interactive reports showcasing key metrics like race results, driver performance, team standings, and circuit statistics.
+The final stage involves developing a PowerBI report to visualize the enriched Formula 1 dataset. This report includes:
+
+- **Interactive Dashboards:** Showcasing race results, driver performance, team standings, and circuit statistics.
+- **Actionable Insights:** Providing insights for various stakeholders, including race strategists, team managers, and enthusiasts.
 
 ![PowerBI Dashboard](path/to/powerbi-dashboard.png)
 
 ## Installation
 
-1. Clone the repository:
+To set up the project locally, follow these steps:
+
+1. **Clone the Repository:**
     ```sh
     git clone https://github.com/bojanb12/Data-Engineering-Analythics-Formula-1-Pipeline.git
     ```
-2. Navigate to the project directory:
+2. **Navigate to the Project Directory:**
     ```sh
     cd Data-Engineering-Analythics-Formula-1-Pipeline
     ```
-3. Set up the environment and install dependencies:
+3. **Set Up the Environment and Install Dependencies:**
     ```sh
     pip install -r requirements.txt
+    ```
+4. **Start Docker Containers:**
+    ```sh
+    docker-compose up
     ```
 
 ## Usage
 
-1. Start Docker containers:
-    ```sh
-    docker-compose up
-    ```
-2. Access the Airflow web server at `http://localhost:8080` and trigger the DAGs.
-3. Run the API scraping script:
+To run the project:
+
+1. **Access the Airflow Web Server:**
+    Open your browser and go to `http://localhost:8080` to access the Airflow web interface and trigger the DAGs.
+2. **Run the API Scraping Script:**
     ```sh
     python scripts/api_scrape.py
     ```
-4. Open PowerBI and connect to the database to view the dashboard.
+3. **Visualize Data in PowerBI:**
+    - Open PowerBI.
+    - Connect to the database created by the pipeline.
+    - Load the data and explore the interactive reports.
+
+## Project Structure
+
+The project repository is organized as follows:
+
+```plaintext
+.
+├── dags/
+│   ├── etl_pipeline.py           # ETL pipeline defined using Apache Airflow
+│   └── kafka_pipeline.py         # Kafka pipeline for real-time data processing
+├── scripts/
+│   └── api_scrape.py             # Python script for API data scraping
+├── docker-compose.yml            # Docker Compose file to set up services
+├── requirements.txt              # Python dependencies
+├── README.md                     # Project README file
+└── PowerBI/
+    └── Formula1_Report.pbix      # PowerBI report file
