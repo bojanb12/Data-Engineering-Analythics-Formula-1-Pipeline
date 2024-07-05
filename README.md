@@ -37,7 +37,7 @@ The project begins with designing and implementing a star schema based on the Fo
 - **Schema Design:** Using dimensions such as Race, Driver, Team, Circuit, and Time to structure the data.
 - **Entity-Relationship Diagram (ERD):** Defining primary and foreign keys to establish relationships between tables.
 
-![ER Diagram](path_to_ERD_image)
+![ER Diagram]([path_to_ERD_image](https://github.com/bojanb12/Data-Engineering-Analythics-Formula-1-Pipeline/blob/main/Readme/F1DataSet_Schema%20(5).png))
 
 The star schema includes the following tables:
 
