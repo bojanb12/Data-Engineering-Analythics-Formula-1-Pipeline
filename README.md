@@ -95,6 +95,10 @@ The final stage involves developing a PowerBI report to visualize the enriched F
 
 ![PowerBI Dashboard2](https://github.com/bojanb12/Data-Engineering-Analythics-Formula-1-Pipeline/blob/main/Readme/report1.png)
 
+![PowerBI Dashboard3](https://github.com/bojanb12/Data-Engineering-Analythics-Formula-1-Pipeline/blob/main/Readme/report3.png)
+
+![PowerBI Dashboard4](https://github.com/bojanb12/Data-Engineering-Analythics-Formula-1-Pipeline/blob/main/Readme/report4.png)
+
 ## Installation
 
 To set up the project locally, follow these steps:
