@@ -1,6 +1,5 @@
 # Data Engineering and Analytics: Formula 1 Pipeline
 
-![Project Banner](path_to_banner_image)
 
 ## Table of Contents
 
@@ -37,7 +36,7 @@ The project begins with designing and implementing a star schema based on the Fo
 - **Schema Design:** Using dimensions such as Race, Driver, Team, Circuit, and Time to structure the data.
 - **Entity-Relationship Diagram (ERD):** Defining primary and foreign keys to establish relationships between tables.
 
-![ER Diagram](path_to_ERD_image)
+![ER Diagram](https://github.com/bojanb12/Data-Engineering-Analythics-Formula-1-Pipeline/blob/main/Readme/F1DataSet_Schema%20(5).png)
 
 The star schema includes the following tables:
 
@@ -66,7 +65,10 @@ The ETL process is automated using Apache Airflow, which schedules and manages d
 - **Data Loading:** Ingesting the transformed data into the star schema in the database.
 - **Real-Time Streaming:** Implementing Kafka to handle data streaming, ensuring that data is processed in real-time.
 
-![ETL Process](path_to_ETL_process_image)
+![ETL Process](https://github.com/bojanb12/Data-Engineering-Analythics-Formula-1-Pipeline/blob/main/Readme/csv_pipeline.png)
+
+![Kafka Process](https://github.com/bojanb12/Data-Engineering-Analythics-Formula-1-Pipeline/blob/main/Readme/kafka_consumeAndLoadDag.png)
+
 
 ### API Data Scraping
 
@@ -75,16 +77,12 @@ To enrich the existing dataset, additional data is scraped from APIs. This invol
 - **API Selection:** Choosing an appropriate API, such as the Ergast API, for additional Formula 1 data.
 - **Data Integration:** Developing a Python script to fetch data from the API and integrating it into the existing pipeline, ensuring compatibility with the star schema.
 
-![API Integration](path_to_API_integration_image)
-
 ### Data Analysis
 
 Once the data is processed and stored, analytical tasks are performed to derive insights. This includes:
 
 - **Database Views:** Creating views in the database to simplify complex queries.
 - **Data Visualization:** Using PowerBI to create interactive dashboards that display key metrics and insights.
-
-![Data Analysis](path_to_data_analysis_image)
 
 ### PowerBI Report
 
@@ -93,7 +91,9 @@ The final stage involves developing a PowerBI report to visualize the enriched F
 - **Interactive Dashboards:** Showcasing race results, driver performance, team standings, and circuit statistics.
 - **Actionable Insights:** Providing insights for various stakeholders, including race strategists, team managers, and enthusiasts.
 
-![PowerBI Dashboard](path_to_PowerBI_dashboard_image)
+![PowerBI Dashboard](https://github.com/bojanb12/Data-Engineering-Analythics-Formula-1-Pipeline/blob/main/Readme/report2.png)
+
+![PowerBI Dashboard2](https://github.com/bojanb12/Data-Engineering-Analythics-Formula-1-Pipeline/blob/main/Readme/report1.png)
 
 ## Installation
 
