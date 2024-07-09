@@ -29,7 +29,7 @@ This project, developed as part of a Data Engineering Internship, aims to build 
 
 ### Data Modeling
 
-The destination database for the processed data is implemented using PostgreSQL. The destination database is first created with all tables, restriction and relations, to be ready for the data loading afterwards.
+The destination database for the processed data is implemented using PostgreSQL.
 The first step in the data modeling process involved designing and implementing a star schema based on the Formula 1 dataset.
 
 - **Schema Design:** Using dimensions such as Race, Driver, Team, Circuit, and Time to structure the data.
@@ -55,16 +55,7 @@ The star schema includes the following tables:
 - **Fact Table:**
   - `raceResultsFact`
 
-### ETL Process
-
-The ETL process is automated using Apache Airflow, which schedules and manages data workflows. Key components include:
-
-- **Data Extraction:** Pulling raw data from various sources.
-- **Data Transformation:** Using custom Python operators within Airflow to clean, transform, and prepare the data.
-- **Data Loading:** Ingesting the transformed data into the star schema in the database.
-- **Real-Time Streaming:** Implementing Kafka to handle data streaming, ensuring that data is processed in real-time.
-
-#### Communication and Services
+#### Docker
 
 The Docker Compose setup facilitates seamless communication between services:
 
@@ -73,7 +64,16 @@ The Docker Compose setup facilitates seamless communication between services:
 - **Kafka:** Handles real-time data streaming between various stages of the ETL process.
 - **Docker Services:** These services, defined in `docker-compose.yml`, ensure that all components (Airflow, PostgreSQL, Kafka, etc.) are correctly configured and can communicate efficiently.
 
-The `docker-compose.yml` file specifies the setup and dependencies of each service. For example, the PostgreSQL database for Airflow is initialized with a user and database named 'airflow', while the source database is set up to be populated with initial tables from an SQL script upon starting&#8203;:citation[oaicite:0]{index=0}&#8203;.
+The `docker-compose.yml` file specifies the setup and dependencies of each service. For example, the PostgreSQL database for Airflow is initialized with a user and database named 'airflow', while the source database is set up to be populated with initial tables from an SQL script upon starting.
+
+### ETL Process
+
+The ETL process is automated using Apache Airflow, which schedules and manages data workflows. Key components include:
+
+- **Data Extraction:** Pulling raw data from various sources.
+- **Data Transformation:** Using custom Python operators within Airflow to clean, transform, and prepare the data.
+- **Data Loading:** Ingesting the transformed data into the star schema in the database.
+- **Real-Time Streaming:** Implementing Kafka to handle data streaming, ensuring that data is processed in real-time.
 
 ![ETL Process](https://github.com/bojanb12/Data-Engineering-Analythics-Formula-1-Pipeline/blob/main/Readme/csv_pipeline.png)
 
