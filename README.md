@@ -29,7 +29,8 @@ This project, developed as part of a Data Engineering Internship, aims to build 
 
 ### Data Modeling
 
-The project begins with designing and implementing a star schema based on the Formula 1 dataset. This involves:
+The destination database for the processed data is implemented using PostgreSQL. The destination database is first created with all tables, restriction and relations, to be ready for the data loading afterwards.
+The first step in the data modeling process involved designing and implementing a star schema based on the Formula 1 dataset.
 
 - **Schema Design:** Using dimensions such as Race, Driver, Team, Circuit, and Time to structure the data.
 - **Entity-Relationship Diagram (ERD):** Defining primary and foreign keys to establish relationships between tables.
