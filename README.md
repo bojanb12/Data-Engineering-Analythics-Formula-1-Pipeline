@@ -55,7 +55,7 @@ The star schema includes the following tables:
 - **Fact Table:**
   - `raceResultsFact`
 
-#### Docker
+### Docker
 
 The Docker Compose setup facilitates seamless communication between services:
 
