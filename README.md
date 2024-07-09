@@ -1,6 +1,5 @@
 # Data Engineering and Analytics: Formula 1 Pipeline
 
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -64,10 +63,20 @@ The ETL process is automated using Apache Airflow, which schedules and manages d
 - **Data Loading:** Ingesting the transformed data into the star schema in the database.
 - **Real-Time Streaming:** Implementing Kafka to handle data streaming, ensuring that data is processed in real-time.
 
+#### Communication and Services
+
+The Docker Compose setup facilitates seamless communication between services:
+
+- **PostgreSQL Server:** Used as the main database for storing transformed data.
+- **Airflow PostgreSQL Server:** Acts as the metadata database for Airflow, ensuring task scheduling and execution.
+- **Kafka:** Handles real-time data streaming between various stages of the ETL process.
+- **Docker Services:** These services, defined in `docker-compose.yml`, ensure that all components (Airflow, PostgreSQL, Kafka, etc.) are correctly configured and can communicate efficiently.
+
+The `docker-compose.yml` file specifies the setup and dependencies of each service. For example, the PostgreSQL database for Airflow is initialized with a user and database named 'airflow', while the source database is set up to be populated with initial tables from an SQL script upon starting&#8203;:citation[oaicite:0]{index=0}&#8203;.
+
 ![ETL Process](https://github.com/bojanb12/Data-Engineering-Analythics-Formula-1-Pipeline/blob/main/Readme/csv_pipeline.png)
 
 ![Kafka Process](https://github.com/bojanb12/Data-Engineering-Analythics-Formula-1-Pipeline/blob/main/Readme/kafka_consumeAndLoadDag.png)
-
 
 ### API Data Scraping
 
