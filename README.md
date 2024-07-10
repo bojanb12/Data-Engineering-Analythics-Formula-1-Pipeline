@@ -134,10 +134,7 @@ To set up the project locally, follow these steps:
 To run the project:
 
 1. Access the Airflow Web Server: Open your browser and go to `http://localhost:8080` to access the Airflow web interface and trigger the DAGs.
-2. Run the API Scraping Script:
-    ```sh
-    python scripts/api_scrape.py
-    ```
+2. Wait for all the DAGs to finish loading into the database.
 3. Visualize Data in PowerBI:
     - Open PowerBI.
     - Connect to the database created by the pipeline.
